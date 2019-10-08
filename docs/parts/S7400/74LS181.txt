@@ -1,0 +1,78 @@
+.NAME=74LS181
+.PINS=24
+bo
+ao
+S3
+S2
+S1
+SO
+CN
+M
+fo
+f1
+f2
+GND
+f3
+A=B
+p
+CN+4
+g
+b3
+a3
+b2
+a2
+b1
+a1
+VCC
+This device provides a 4-bit Arithmetic Logic Unit/Function
+Generator.  16 Logical functions and 16 arithmetic functions
+are supported by this device.
+ 
+When the mode input (M) is low arithmatic functions are selected
+by the select (S3,S2,S1,S0) inputes.  When the mode input is high
+logical functions are selected.
+ 
+TRUTH TABLE - Active High data
++-----------+----------+-------------------------+-------------------------+
+| SELECTION |    M=H   | M=L (ARITHMETIC)        | M=L (ARITHMETIC)        |
+|S3 S2 S1 S0|  (LOGIC) | /Cn=H (no carry)        | /Cn=L (with carry)      |
+============================================================================
+| L  L  L  L| /A       | A                       | A PLUS 1                |
+| L  L  L  H| /(A+B)   | A+B                     | (A+B) PLUS 1            |
+| L  L  H  L| /AM-^TB     | A+/B                    | (A+/B) PLUS 1           |
+| L  L  H  H| 0        | MINUS 1 (2'S COMPL)     | ZERO                    |
+| L  H  L  L| /(AM-^TB)   | A PLUS AM-^T/B             | A PLUS AM-^T/B PLUS 1      |
+| L  H  L  H| /B       | (A+B) PLUS AM-^T/B         | (A+B) PLUS AM-^T/B PLUS 1  |
+| L  H  H  L| A XOR B  | A MINUS B MINUS 1       | A MINUS B               |
+| L  H  H  H| AM-^T/B     | AM-^T/B MINUS 1            | AM-^T/B                    |
+| H  L  L  L| /A+B     | A PLUS AM-^TB              | A PLUS AM-^TB PLUS 1       |
+| H  L  L  H|/(A XOR B)| A PLUS B                | A PLUS B PLUS 1         |
+| H  L  H  L| B        | (A+/B) PLUS AM-^TB         | (A+/B) PLUS AM-^TB PLUS 1  |
+| H  L  H  H| AM-^TB      | AM-^TB MINUS 1             | AM-^TB                     |
+| H  H  L  L| 1        | A PLUS A                | A PLUS A PLUS 1         |
+| H  H  L  H| A+/B     | (A+B) PLUS A            | (A+B) PLUS A PLUS 1     |
+| H  H  H  L| A+B      | (A+/B) PLUS A           | (A+/B) PLUS A PLUS 1    |
+| H  H  H  H| A        | A MINUS 1               | A                       |
++-----------+----------+-------------------------+-------------------------+
+TRUTH TABLE - Active Low data
++-----------+----------+-------------------------+-------------------------+
+| SELECTION |    M=H   | M=L (ARITHMETIC)        | M=L (ARITHMETIC)        |
+|S3 S2 S1 S0|  (LOGIC) | /Cn=L (no carry)        | /Cn=H (with carry)      |
+============================================================================
+| L  L  L  L| /A       | A MINUS 1               | A                       |
+| L  L  L  H| /(AM-^TB)   | AM-^TB MINUS 1             | AM-^TB                     |
+| L  L  H  L| /A+B     | AM-^T/B MINUS 1            | AM-^T/B                    |
+| L  L  H  H| 1        | MINUS 1 (2'S COMPL)     | ZERO                    |
+| L  H  L  L| /(A+B)   | A PLUS (A+/B)           | A PLUS (A+/B) PLUS 1    |
+| L  H  L  H| /B       | AM-^TB PLUS (A+/B)         | AM-^TB PLUS (A+/B) PLUS 1  |
+| L  H  H  L| /(A XOR B| A MINUS B MINUS 1       | A MINUS B               |
+| L  H  H  H| A+/B     | A+/B                    | (A+/B) PLUS 1           |
+| H  L  L  L| /AM-^TB     | A PLUS (A+B)            | A PLUS (A+B) PLUS 1     |
+| H  L  L  H| A XOR B  | A PLUS B                | A PLUS B PLUS 1         |
+| H  L  H  L| B        | AM-^T/B PLUS (A+B)         | AM-^T/B PLUS (A+B) PLUS 1  |
+| H  L  H  H| A+B      | (A+B)                   | (A+B) PLUS 1            |
+| H  H  L  L| 0        | A PLUS A                | A PLUS A PLUS 1         |
+| H  H  L  H| AM-^T/B     | AM-^TB PLUS A              | AM-^TB PLUS A PLUS 1       |
+| H  H  H  L| AM-^TB      | AM-^T/B PLUS A             | AM-^T/B PLUS A PLUS 1      |
+| H  H  H  H| A        | A                       | A PLUS 1                |
++-----------+----------+-------------------------+-------------------------+

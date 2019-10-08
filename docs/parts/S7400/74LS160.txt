@@ -1,0 +1,47 @@
+.NAME=74LS160
+.PINS=16
+clr
+CLK
+A
+B
+C
+D
+ENP
+GND
+load
+ENT
+QD
+QC
+QB
+QA
+RCO
+VCC
+This device contains a 4-bit presettable decade counter with
+asynchonus clear.  These counters can be preset by applying the
+starting count to A-D and then taking /LOAD low.  Both enable
+inputs (ENP and ENT) must be high for the counter to count.
+A Low placed on the /CLR pin will reset the counter to zero 
+regardless of any other input.
+
+PROPAGATION DELAY
++----------+-------------+----------+------------------------+
+| FUNCTION |   FROM      |    TO    | TIME                   |
+==============================================================
+| tPLH     | CLK         | RCO      | 20-35 ns               |
++----------+-------------+----------+------------------------+
+| tPHL     | CLK         | RCO      | 18-35 ns               |
++----------+-------------+----------+------------------------+
+| tPLH     | CLK         | Any Q    | 13-24 ns               |
++----------+             +----------+------------------------+
+| tPHL     | (/LOAD high)| Any Q    | 18-27 ns               |
++----------+-------------+----------+------------------------+
+| tPLH     | CLK         | Any Q    | 13-24 ns               |
++----------+             +----------+------------------------+
+| tPHL     | (/LOAD low) | Any Q    | 18-27 ns               |
++----------+-------------+----------+------------------------+
+| tPLH     | ENT         | RCO      |  9-14 ns               |
++----------+-------------+----------+------------------------+
+| tPHL     | ENT         | RCO      |  9-14 ns               |
++----------+-------------+----------+------------------------+
+| tPHL     | /CLR        | Any Q    | 20-28 ns               |
++----------+-------------+----------+------------------------+

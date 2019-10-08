@@ -1,0 +1,111 @@
+Lets try one more circuit.
+
+1.    Make sure you are starting on a clean board by pressing the
+      NEW button in the upper right corner of the screen.
+
+2.    Get a power supply part and place it neat the left side of
+      the screen about half way down the screen.
+
+3.    Pull down the parts menu and select miscelaneous chips.
+      Select the CLOCK and place it about 5 holes to the right of the
+      power supply.
+
+4.    Pull down the parts menu and select counters.  Select the
+      74LS161 and place it about 5 holes to the right of the CLOCK.
+
+5.    Pull down the parts menu and select decoders.  Select the
+      74LS138 and place it about 5 holes to the right of the 74LS161.
+
+6.    Pull down the parts menu and select OUTPUT DEVICES.  Select
+      any color of LED and place it about 5 holes above the 74LS138.
+
+7.    Now get another LED and place it about 2 holes to the right
+      of the first LED.
+
+8.    Place 6 more LEDs in a line to the right of the above two
+      LEDs in order to make a line of 8 LEDs.
+
+9.    Select red wires from the WCLR menu.
+
+10.   Connect a wire from the positive pole of the power supply
+      to the anode of the leftmost LED.  Remember the anode is towards
+      the bottom of the screen.
+
+11.   Connect all of the LED anodes together.
+
+12.   Connect a wire from the positive power supply to pin 7 of
+      the 74LS161.
+
+13.   Connect a wire from pin 7 of the 74LS161 to pin 10 of the
+      74LS161.
+
+14.   Connect a wire from the positive power supply to pin 6 of
+      the 74LS138.
+
+15.   Select black wires from the WCLR menu.
+
+16.   Connect a wire from the negative power terminal to pin 4
+      of the 74LS138.
+
+17.   Connect a wire between pins 4 and 5 of the 74LS138.
+
+18.   Select blue wires from the WCLR menu.
+
+19.   Connect a wire from pin 8 of the CLOCK to pin 2 of the
+      74LS161.
+
+20.   Connect a wire from pin 14 of the 74LS161 to pin 1 of the
+      74LS138.
+
+21.   Connect a wire from pin 13 of the 74LS161 to pin 2 of the
+      74LS138.
+
+22.   Connect a wire from pin 12 of the 74LS161 to pin 3 of the
+      74LS138.
+
+23.   Connect a wire from pin 15 of the 74LS138 to the cathode
+      of the rightmost LED.  Remember the cathode is towards the top of
+      the screen.
+
+24.   Connect a wire from pin 14 of the 74LS138 to the cathode
+      of the LED just to the left of the last one.
+
+25.   Connect a wire from pin 13 of the 74LS138 to the cathode
+      of the LED just to the left of the last one.
+
+26.   Connect a wire from pin 12 of the 74LS138 to the cathode
+      of the LED just to the left of the last one.
+
+27.   Connect a wire from pin 11 of the 74LS138 to the cathode
+      of the LED just to the left of the last one.
+
+28.   Connect a wire from pin 10 of the 74LS138 to the cathode
+      of the LED just to the left of the last one.
+
+29.   Connect a wire from pin 9 of the 74LS138 to the cathode of
+      the LED just to the left of the last one.
+
+30.   Connect a wire from pin 7 of the 74LS138 to the cathode of
+      the LED	 just to the left of the last one.
+
+Now turn on the circuit.  You should see the LEDs lighting in
+sequence from the right to the left.  This circuit is an example of
+a sequencer.
+
+  Using the above circuit perform these steps:
+
+1.    Click on pin 14 of the 74LS161 and select add probe.
+      Type 'A' for the label.
+
+2.    Click on pin 13 of the 74LS161 and select add probe.
+      Type 'B' for the label.
+
+3.    Click on pin 12 of the 74LS161 and select add probe.
+      Type 'C' for the label.
+
+4.    Click on pin 11 of the 74LS161 and select add probe.
+      Type 'D' for the label.
+
+Before running this circuit, turn on the digi-scope by selecting the
+SCOPE option in the CIRCUIT menu.  When this circuit is run you will
+see the signal traces in the digi-scope screen.

@@ -1,0 +1,145 @@
+Digital Circuit Emulator (DCE)
+
+by Michael H. Riley
+
+DCE stands for Digital Circuit Emulator.  This program contains
+the code for emulating a large number of TTL (7400 series) chips.
+This program allows you to put together electronic circuits and
+test them without the need to hardwire the actual circuit.  DCE
+also provides an excellent platform for learning Digital Electronics
+because experimentation is so easy.
+
+
+EDIT MODE:
+
+The edit mode is used to build your circuit.  In this mode parts
+can be placed, wires connected and digi-scope probes attached or
+removed.
+
+
+FILE Menu:
+
+NEW - This command will erase the current circuit.
+
+LOAD - This command will allow you to load a previously saved
+circuit.  A file access box will be displayed on the screen show
+ing the available circuit files.
+
+SAVE - This command will allow you to save the current circuit.
+The file access box will be displayed and selection of a save
+file can be performed.
+
+CIRCUIT Menu:
+
+RUN - This command turns on the power to your circuit.	The circuit
+will be flipped right-side up and the RUN mode is started.  See the
+section on RUN mode for operation of this mode.
+
+STATUS - This command will show the current status of the circuit.
+How many parts, wires, and nets will be shown.  The run statistics
+for the last run will also be shown.
+
+CHECK - This command will perform several simple checks on your
+circuit.  The purpose of these checks are to look for simple
+wiring errors.
+
+SCOPE - This command turns on and off the digiscope.  When the digi-
+scope is enabled, the traces for all connected probees will be
+displayed.
+
+PART - This command is used for placing new parts in your circuit.
+When selected a menu of device groups will appear.  All the devices
+in DCE are placed together in common groups.  Select the group you
+require and the menu will be replaced with all the parts available
+in that group.	Click on the part you need and the menus will go
+away and the cursor will change to a picture of a hand.  Click on
+the hole where you want to place the chip.  The hole that is selected
+is where pin 1 of the device will be placed.  When placing custom
+chips, the file access box will appear with the names of all the
+custom chips that are available, select the chip you wish to use and
+then the cursor will change to the placement cursor.
+
+DATA - This command brings up the parts menu for accessing on-
+line data sheets.  This menu works exactly like the PART function
+menu.  When a device is selected the data sheet for the part will
+be displayed on the screen.
+
+WIRE - This command allows you to change the color in which wires
+are drawn.
+
+CHIP FUNCTIONS MENU:
+When any pin of a placed part is clicked, a menu appears allowing
+you to select options for this part.
+
+ADD WIRE - This option allows you to connect a wire from the
+selected pin to another pin.  When selected the cursor will change
+to a hand.  Click on the other pin you want to connect the wire to.
+
+CUT WIRE - This option allows you to remove a connection on
+the selected pin.  When selected the cursor will change to a cross.
+Click on the pin on the other side of the wire to remove the wire.
+
+MOVE PART - This option will allow you to move an already placed
+part.  When selected the cursor will change to the hand cursor.
+Click on the hole where you want to move the chip to.
+
+DELETE PART - This option will delete the selected part as well
+as all wires and probes conneceted to the selected part.
+
+ADD PROBE - This option connects a digi-scope probe to the selected
+pin.  Pins with digi-scope probes attached have their circles filled in.
+
+REMOVE PROBE - This option removes a digi-scope probe from the
+selected pin.
+
+SHOW NET - This command will re-draw the circuit board, but only
+show the wires that have a signal path to the selected pin.
+
+SHOW ALL - This command resets the viewer to display all wires.
+
+DATA SHEET - This command will call up the data sheet for the selected
+part.
+
+
+RUN MODE:
+
+The run mode flips the circuit board right-side up and then applies
+power to the circuit.  In this mode switches can be manipulated and
+output can be seen if output devices exist in the circuit.
+
+While a circuit is running any switch can be changed just by
+clicking on the switch.	 Buttons will remain pressed only as long
+as the mouse button is held down over the button.  Dip switch
+settings can also be changed.  Note: Dip switch settings will
+always remain in the state they were last set.  When a circuit is
+saved, any dip switch settings will also be saved.
+
+NOTES:
+
+1.    You do not need to connect the GND or VCC connections of
+any chips.     these connections are placed on an internally used
+Net.  You also cannot get power from these pins, If you need GND
+or +5v then place a power-supply part.
+
+2.    Due to the way that wiring nets are resolved you must be
+careful how you use switches.  Technically switches do not have
+inputs and outputs, but in DCE the wiring nets only work with
+inputs and outputs, therefore the switches have been altered to
+work with DCE's wiring scheme.  On a switch, the inputs will have
+SQUARE pins while the outputs will have the usual CIRCLE pins.
+The normal position of a switch is indicated with a line going
+between the center pin and the normal pin.
+
+3.    Leds have a line located near the Cathode (-) end.  Both
+leads of an LED must be connected for the LED to work.  Pin 1
+of an LED is the cathode.
+
+4.    Unlike previous versions of DCE, the anode connection of the
+TIL311 and MAN10A parts must be connected for the LED portion of
+the part to function.
+
+5.    The 74LS47 has a peculiar mode when it comes to this simulation.
+If you use the RBI then you must have a connection on the RBO/BI
+connection for proper operation.  If you do not make a connection here,
+then when the display is blanked, it will not unblank.
+

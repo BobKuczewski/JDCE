@@ -1,0 +1,53 @@
+.NAME=74176
+.PINS=14
+load
+QC
+C
+A
+QA
+CLK2
+GND
+CLK1
+QB
+B
+D
+QD
+clr
+VCC
+This device contains a 4-bit presettable decade counter with
+two clock inputs.  CLK1 controls Qa while CLK2 controls Qd,Qc,
+and Qb.  To get the full count range Qa must be connected to
+CLK2 and then CLK1 is used.  The device can be preset by placing
+the starting value on A-D and then taking /LOAD low.  The
+device can be cleared by taking /CLR low.
+
+PROPAGATION DELAY
++----------+----------+------------+------------------------+
+| FUNCTION |   FROM   |    TO      | TIME                   |
+=============================================================
+| tPLH     | CLK1     | Qa         |  8-13 ns               |
++----------+----------+------------+------------------------+
+| tPHL     | CLK1     | Qa         | 11-17 ns               |
++----------+----------+------------+------------------------+
+| tPLH     | CLK2     | Qb         | 11-17 ns               |
++----------+----------+------------+------------------------+
+| tPHL     | CLK2     | Qb         | 17-26 ns               |
++----------+----------+------------+------------------------+
+| tPLH     | CLK2     | Qc         | 27-41 ns               |
++----------+----------+------------+------------------------+
+| tPHL     | CLK2     | Qc         | 34-51 ns               |
++----------+----------+------------+------------------------+
+| tPLH     | CLK2     | Qd         | 13-20 ns               |
++----------+----------+------------+------------------------+
+| tPHL     | CLK2     | Qd         | 17-26 ns               |
++----------+----------+------------+------------------------+
+| tPLH     | A,B,C,D  | Qa,Qb,Qc,Qd| 19-29 ns               |
++----------+----------+------------+------------------------+
+| tPHL     | A,B,C,D  | Qa,Qb,Qc,Qd| 31-46 ns               |
++----------+----------+------------+------------------------+
+| tPLH     | /LOAD    | Any        | 29-43 ns               |
++----------+----------+------------+------------------------+
+| tPHL     | /LOAD    | Any        | 32-48 ns               |
++----------+----------+------------+------------------------+
+| tPHL     | /CLR     | Any        | 32-48 ns               |
++----------+----------+------------+------------------------+

@@ -1,0 +1,41 @@
+.NAME=CDP1852
+.PINS=24
+CS1/cs1
+MODE
+DI0
+DO0
+DI1
+DO1
+DI2
+DO2
+DI3
+DO3
+CLOCK
+VSS
+CS2
+clear
+DO4
+DI4
+DO5
+DI5
+DO6
+DI6
+DO7
+DI7
+sr/SR
+VDD
+
+This device contains an 8-bit input/output port.  The device acts
+as an input port when MODE=0 or as an output port when MODE=1
+  
+In Input mode, the data is strobed into the register while CLOCK is
+high and latched when CLOCK goes low.  When CLOCK goes low, the /SR
+will go low to indicate the presence of a data byte.  CS1 and CS2
+must be high to enable the output register to be read.  when the
+chip is deselected, the SR output will return high.
+  
+In the output mode the outputs are always enabled.  Data is latched
+into the register when CS1 is low and CS2 and CLOCK are high.  When
+either CS1 goes high or CS2 goes low the SR output will be set high,
+on the next high to low transition of clock, SR will return low.
+

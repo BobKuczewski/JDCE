@@ -1,0 +1,21 @@
+.NAME=CD4008
+.PINS=16
+A3
+B2
+A2
+B1
+A1
+BO
+AO
+VSS
+CIN
+SO
+S1
+S2
+S3
+COUT
+B3
+VDD
+This device contains a single 4-bit adder.  The outputs (S) will
+indicate the binary addition of A and B.  A carry input is provided
+on CIN and a carry output is provided on COUT.

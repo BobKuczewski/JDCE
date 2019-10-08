@@ -1,0 +1,15 @@
+:0008 01 00
+:000C E6 F8 00   ; (f8)=0  port 0 output
+:000F E6 F6 00   ; (f6)=0  port 2 output
+:0012 E6 FB 90   ; (fb)=90 enable interrupts
+:0015 E6 F4 FF   ; (f4)=ff timer0 count
+:0018 E6 F5 05   ; (f5)=05 prescaler=1, modulo count
+:001B E6 F1 03   ; (f1)=3  load timer and start
+:001E E6 FF 30   ; (ff)=30 stack pointer
+:0021 8D 02 00   ; jp 0200
+:0100 20 00      ; 00++
+:0102 BF         ; iret
+:0200 E4 10 02   ; 02=10
+:0203 20 10      ; 10++
+:0205 8D 02 00   ; jp 0200
+

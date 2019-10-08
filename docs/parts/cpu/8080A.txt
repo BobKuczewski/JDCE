@@ -1,0 +1,208 @@
+.NAME=8080A
+.PINS=40
+A10
+VSS
+D4
+D5
+D6
+D7
+D3
+D2
+D1
+D0
+VBB
+RESET
+HOLD
+INT
+CLK2
+INTE
+DBIN
+wr
+SYNC
+VCC
+HLDA
+CLK1
+READY
+WAIT
+A0
+A1
+A2
+VDD
+A3
+A4
+A5
+A6
+A7
+A8
+A9
+A15
+A12
+A13
+A14
+A11
+
+A0-A15    Address Bus
+D0-D7     Bi-directional Data Bus
+RESET     A high on this pin will reset the cpu
+HOLD      A high on this pin will initiate the hold state
+          Address and Data buses will be tri-stated
+INT       A high on this pin will initiate an interrupt request
+INTE      A high output on this pin indicates interrupts are enabled
+DBIN      A high output on this pin indicates a data in operation
+/WR       A low output indicates a memory or io write
+SYNC      A high output indicates t1 of each machine cycle
+HLDA      A high output indicates the cpu is in the hold state
+READY     A low on this pin will force a wait state before t3
+WAIT      A high output on this pin will indicate the cpu is in wait state
+CLK1      Clock input 1
+CLK2      Clock input 2
+          Note that the clock pulses cannot overlap
+
+Status word output on D0-D7 during sync pulse:
+                    D0    D1    D2    D3    D4    D5    D6    D7
+                    INTA  /WO   Stack HLTA  OUT   M1    INP   MEMR
+Instruction Fetch:  0     1     0     0     0     1     0     1
+Memory Read:        0     1     0     0     0     0     0     1
+Memory Write:       0     0     0     0     0     0     0     0
+Stack Read:         0     1     1     0     0     0     0     1
+Stack Write:        0     0     1     0     0     0     0     0
+Input Read:         0     1     0     0     0     0     1     0
+Output Write:       0     0     0     0     1     0     0     0
+Int Ack:            1     1     0     0     0     1     0     0
+Halt Ack:           0     1     0     1     0     0     0     1
+Int Ack while Halt: 1     1     0     1     0     1     0     0
+
+ Mnemonic     Op   SZAPC  Description                 Notes
+  ACI n        CE   *****  Add with Carry Immediate    A=A+n+CY
+  ADC r      (21X)  *****  Add with Carry              A=A+r+CY
+  ADC M        8E   *****  Add with Carry to Memory    A=A+[HL]+CY
+  ADD r      (20X)  *****  Add                         A=A+r
+  ADD M        86   *****  Add to Memory               A=A+[HL]
+  ADI n        C6   *****  Add Immediate               A=A+n
+  ANA r      (24X)  ****0  AND Accumulator             A=A&r
+  ANA M        A6   ****0  AND Accumulator and Memory  A=A&[HL]
+  ANI n        E6   **0*0  AND Immediate               A=A&n
+  CALL a       CD   -----  Call unconditional          -[SP]=PC,PC=a
+  CC a         DC   -----  Call on Carry               If CY=1
+  CM a         FC   -----  Call on Minus               If S=1
+  CMA          2F   -----  Complement Accumulator      A=~A
+  CMC          3F   ----*  Complement Carry            CY=~CY
+  CMP r      (27X)  *****  Compare                     A-r
+  CMP M        BF   *****  Compare with Memory         A-[HL]
+  CNC a        D4   -----  Call on No Carry            If CY=0
+  CNZ a        C4   -----  Call on No Zero             If Z=0
+  CP a         F4   -----  Call on Plus                If S=0
+  CPE a        EC   -----  Call on Parity Even         If P=1
+  CPI n        FE   *****  Compare Immediate           A-n
+  CPO a        E4   -----  Call on Parity Odd          If P=0
+  CZ a         CC   -----  Call on Zero                If Z=1
+  DAA          27   *****  Decimal Adjust Accumulator  A=BCD format
+  DAD B        09   ----*  Double Add BC to HL         HL=HL+BC
+  DAD D        19   ----*  Double Add DE to HL         HL=HL+DE
+  DAD H        29   ----*  Double Add HL to HL         HL=HL+HL
+  DAD SP       39   ----*  Double Add SP to HL         HL=HL+SP
+  DCR r      (0X5)  ****-  Decrement                   r=r-1
+  DCR M        35   ****-  Decrement Memory            [HL]=[HL]-1
+  DCX B        0B   -----  Decrement BC                BC=BC-1
+  DCX D        1B   -----  Decrement DE                DE=DE-1
+  DCX H        2B   -----  Decrement HL                HL=HL-1
+  DCX SP       3B   -----  Decrement Stack Pointer     SP=SP-1
+  DI           F3   -----  Disable Interrupts
+  EI           FB   -----  Enable Interrupts
+  HLT          76   -----  Halt
+  IN p         DB   -----  Input                       A=[p]
+  INR r      (0X4)  ****-  Increment                   r=r+1
+  INR M        3C   ****-  Increment Memory            [HL]=[HL]+1
+  INX B        03   -----  Increment BC                BC=BC+1
+  INX D        13   -----  Increment DE                DE=DE+1
+  INX H        23   -----  Increment HL                HL=HL+1
+  INX SP       33   -----  Increment Stack Pointer     SP=SP+1
+  JMP a        C3   -----  Jump unconditional          PC=a
+  JC a         DA   -----  Jump on Carry               If CY=1
+  JM a         FA   -----  Jump on Minus               If S=1
+  JNC a        D2   -----  Jump on No Carry            If CY=0
+  JNZ a        C2   -----  Jump on No Zero             If Z=0
+  JP a         F2   -----  Jump on Plus                If S=0
+  JPE a        EA   -----  Jump on Parity Even         If P=1
+  JPO a        E2   -----  Jump on Parity Odd          If P=0
+  JZ a         CA   -----  Jump on Zero                If Z=1
+  LDA a        3A   -----  Load Accumulator direct     A=[a]
+  LDAX B       0A   -----  Load Accumulator indirect   A=[BC]
+  LDAX D       1A   -----  Load Accumulator indirect   A=[DE]
+  LHLD a       2A   -----  Load HL Direct              HL=[a]
+  LXI B,nn     01   -----  Load Immediate BC           BC=nn
+  LXI D,nn     11   -----  Load Immediate DE           DE=nn
+  LXI H,nn     21   -----  Load Immediate HL           HL=nn
+  LXI SP,nn    31   -----  Load Immediate Stack Ptr    SP=nn
+  MOV r1,r2  (1XX)  -----  Move register to register   r1=r2
+  MOV M,r    (16X)  -----  Move register to Memory     [HL]=r
+  MOV r,M    (1X6)  -----  Move Memory to register     r=[HL]
+  MVI r,n    (0X6)  -----  Move Immediate              r=n
+  MVI M,n      36   -----  Move Immediate to Memory    [HL]=n
+  NOP          00   -----  No Operation
+  ORA r      (26X)  **0*0  Inclusive OR Accumulator    A=Avr
+  ORA M        B6   **0*0  Inclusive OR Accumulator    A=Av[HL]
+  ORI n        F6   **0*0  Inclusive OR Immediate      A=Avn
+  OUT p        D3   -----  Output                      [p]=A
+  PCHL         E9   -----  Jump HL indirect            PC=[HL]
+  POP B        C1   -----  Pop BC                      BC=[SP]+
+  POP D        D1   -----  Pop DE                      DE=[SP]+
+  POP H        E1   -----  Pop HL                      HL=[SP]+
+  POP PSW      F1   -----  Pop Processor Status Word   {PSW,A}=[SP]+
+  PUSH B       C5   -----  Push BC                     -[SP]=BC
+  PUSH D       D5   -----  Push DE                     -[SP]=DE
+  PUSH H       E5   -----  Push HL                     -[SP]=HL
+  PUSH PSW     F5   -----  Push Processor Status Word  -[SP]={PSW,A}
+  RAL          17   ----*  Rotate Accumulator Left     A={CY,A}<-
+  RAR          1F   ----*  Rotate Accumulator Righ     A=->{CY,A}
+  RET          C9   -----  Return                      PC=[SP]+
+  RC           D8   -----  Return on Carry             If CY=1
+  RM           F8   -----  Return on Minus             If S=1
+  RNC          D0   -----  Return on No Carry          If CY=0
+  RNZ          C0   -----  Return on No Zero           If Z=0
+  RP           F0   -----  Return on Plus              If S=0
+  RPE          E8   -----  Return on Parity Even       If P=1
+  RPO          E0   -----  Return on Parity Odd        If P=0
+  RZ           C8   -----  Return on Zero              If Z=1
+  RLC          07   ----*  Rotate Left Circular        A=A<-
+  RRC          0F   ----*  Rotate Right Circular       A=->A
+  RST z      (3X7)  -----  Restart                     -[SP]=PC,PC=z
+  SBB r      (23X)  *****  Subtract with Borrow        A=A-r-CY
+  SBB M        9E   *****  Subtract with Borrow        A=A-[HL]-CY
+  SBI n        DE   *****  Subtract with Borrow Immed  A=A-n-CY
+  SHLD a       22   -----  Store HL Direct             [a]=HL
+  SPHL         F9   -----  Move HL to SP               SP=HL
+  STA a        32   -----  Store Accumulator           [a]=A
+  STAX B       02   -----  Store Accumulator indirect  [BC]=A
+  STAX D       12   -----  Store Accumulator indirect  [DE]=A
+  STC          37   ----1  Set Carry                   CY=1
+  SUB r      (22X)  *****  Subtract                    A=A-r
+  SUB M        96   *****  Subtract Memory             A=A-[HL]
+  SUI n        D6   *****  Subtract Immediate          A=A-n
+  XCHG         EB   -----  Exchange HL with DE         HL<->DE
+  XRA r      (25X)  **0*0  Exclusive OR Accumulator    A=Axr
+  XRA M        AE   **0*0  Exclusive OR Accumulator    A=Ax[HL]
+  XRI n        EE   **0*0  Exclusive OR Immediate      A=Axn
+  XTHL         E3   -----  Exchange stack Top with HL  [SP]<->HL
+             (XXX) Octal opcode
+  --------------------------------------------------------------
+   PSW              -*01          Flag unaffected/affected/reset/set
+   S                S             Sign (Bit 7)
+   Z                 Z            Zero (Bit 6)
+   AC                 A           Auxilary Carry (Bit 4)
+   P                   P          Parity (Bit 2)
+   CY                   C         Carry (Bit 0)
+  --------------------------------------------------------------
+   A B C D E H L         Registers (8-bit)
+   BC DE HL              Register pairs (16-bit)
+   PC                    Program Counter register (16-bit)
+   PSW                   Processor Status Word (8-bit)
+   SP                    Stack Pointer register (16-bit)
+  --------------------------------------------------------------
+   a                     16-bit address quantity (0 to 65535)
+   n                     8-bit data quantity (0 to 255)
+   nn                    16-bit data quantity (0 to 65535)
+   p                     8-bit I/O port number (0 to 255)
+   r                     Register (X=B,C,D,E,H,L,M,A)
+   z                     Vector (X=0H,8H,10H,18H,20H,28H,30H,38H)
+  --------------------------------------------------------------

@@ -1,0 +1,30 @@
+.NAME=CDP1857
+.PINS=16
+DI0
+DI1
+DO0
+DO1
+DO2
+DO3
+DI2
+VSS
+DI3
+mrd
+DB3
+DB2
+DB1
+DB0
+CS
+VDD
+This device containa a 4 bit bus buffer/separator.
+
+TRUTH TABLE
++----+------++---------+---------+
+| CS | /MRD || DB0-DB3 | DO0-DO3 |
+==================================
+|  L |   X  ||    Z    |    Z    |
++----+------++---------+---------+
+|  H |   L  ||    Z    |   DBx   |
++----+------++---------+---------+
+|  H |   H  ||   DIx   |    Z    |
++----+------++---------+---------+

@@ -1,0 +1,89 @@
+Electricity
+
+  In most metals the electrons are loosely bound to their atoms and can
+easily be moved from atom to atom.  When an electron is pushed into an
+atom, another electron will be released which then can be pushed into
+another atom and so forth.  This free movement activity is called
+electricity.  A conductor is any material that allows this free
+movement of electrons, while an insulator is any material that prevents
+the free movement of electrons.  Most all metals are conductive,
+although some are more conductive than others.  Copper is one of the
+most conductive metals and therefore is used the most in wires.
+
+  Electrons are negatively charged particles.  An atom having more
+electrons than protons will be negatively charged, this is often called
+a negative ion.  An atom having fewer electrons than protons is
+positively charged and is called a positive ion.  When two particles
+have opposite charges they are attracted to each other, while if the
+charges are the same the particles will repel each other.  This
+opposite-attracting force is fundamental to all use of electricity.  In
+an electric circuit there are two poles, The positive pole which
+contains mostly positive ions, and the negative pole containing mostly
+negative ions.  Like all things in nature a balance is sought between
+the two poles.  The negative pole containing an abundance of electrons
+(high pressure) will flow towards the positive pole (low pressure) in
+order to equalize.
+
+  There are three forces at work in all electric circuits. Voltage,
+Amperage, and Resistance.  Voltage is the force that causes the
+electrons to flow towards the positive pole.  The greater the pressure
+differential between the poles, the more the electrons will want to
+flow, and therefore the more voltage.  This can be likened to two water
+tanks, one full of water on top of a hill and the other empty at the
+bottom of the hill with a pipe between them.  The water in the top tank
+wants to run downhill and fill the bottom tank.  The higher the top
+tank is above the lower tank increases the pressure for the water to
+flow to the lower tank.
+
+  Amperage refers to the number of electrons that are actually flowing.
+Using our water example,  amperage would refer to how much water is
+actually flowing through the pipe.  If the pressure is increased, more
+water will flow through the pipe, this is the same with electrons, if
+the voltage is increased, more electrons will flow through the wire,
+therefore voltage has a direct influence on amperage.
+
+  Resistance is the force in the electronic components that resist the
+flow of electrons.  If there is little or no resistance between the
+poles the circuit is said to be "Short", which is potentially damaging
+to the power source.  Again using our water example, if we reduce the
+size of the pipe less water can flow through it, less current, and
+therefore less amperage.  Resistance therefore has a direct
+relationship with amperage.
+
+  Ohms law specifies the relationship between Voltage (E), Amperage (I),
+and resistance (R).  The formula for Ohms law is E=IR.  Using this
+formula, if you know two of the forces you can compute the third.  If
+you know the current and the resistance you can compute the voltage
+using this formula.  If you know the voltage and the resistance you can
+compute the current with the formula I=E/R and if you know the voltage
+and the current you can compute the resistance with the formula R=E/I.
+
+  There are two basic ways of producing electricity.  The first way is
+chemically.  Certain chemicals will react with certain metals producing
+either an abundance of electrons or an abundance of holes.  One such
+example is the lemon battery.  Using an ordinary lemon, a piece of
+copper, and a piece of zinc, you can make a simple battery.  The zinc
+will react with the citric acid in the lemon and produce an abundance
+of electrons.  The copper will react with the citric acid and produce
+an abundance of holes.  This allows a voltage potential to develop
+between the zinc and copper plates.  All batteries are based upon a
+similar principle, the creation of electricity by chemical interaction
+with certain metals.
+
+  The second way of producing electricity is magnetically.  The
+theories of electricity and magnetism are very closely tied together.
+When electrons are flowing along a wire a moving magnetic field is
+created around the wire.  Electro-magnets are based upon this
+principle.  The coil of wire in the electro-magnet allows for strong
+magnetic fields to be generated when electricity is passed through the
+wire.  We can also apply these forces in reverse.  If we take a magnet
+and move it along wire we can induce voltage onto the wire.  The moving
+magnetic field will cause electrons to flow in the direction of the
+moving magnetic field.  A generator is nothing more than a large amount
+of coiled wire with a strong moving magnet rotating on the inside.
+
+  Now that we know what electricity is and how it works lets look into
+"electronics."  Electronic components are designed to alter the flow of
+electricity in a circuit.  It is this alteration of the electric flow
+that allows us to perform useful functions with electricity.  We will
+look at resisters, capacitors, inductors, diodes, and transistors.

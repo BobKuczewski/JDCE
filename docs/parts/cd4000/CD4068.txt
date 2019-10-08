@@ -1,0 +1,26 @@
+.NAME=CD4068
+.PINS=14
+NC
+A
+B
+C
+D
+NC
+VSS
+NC
+H
+G
+F
+E
+Y
+VDD
+This device contains a single 8-input NAND gate.
+
+TRUTH TABLE
++------------++---+
+| ALL INPUTS || Y |
+===================
+| ANY LOW    || H |
+-------------++---+
+| ALL HIGH   || L |
++------------++---+

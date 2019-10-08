@@ -1,0 +1,30 @@
+8 21 14 0 0
+parts.cpu.CZ86E08 9 5 bootz8
+parts.input.CClock 21 5
+parts.output.CTIL311 9 20
+parts.output.CTIL311 15 20
+parts.input.CPower 3 9
+parts.output.CLED_G 23 15
+parts.output.CLED_G 26 15
+parts.output.CLED_G 29 15
+4 2 2 5 1
+2 5 2 8 1
+2 8 3 5 1
+3 5 3 8 1
+4 1 2 1 9
+2 1 3 1 9
+0 15 3 3 2
+0 16 3 2 2
+0 17 3 13 2
+0 18 3 12 2
+0 1 2 3 2
+0 2 2 2 2
+0 3 2 13 2
+0 4 2 12 2
+1 1 0 7 11
+3 8 5 1 1
+5 1 6 1 1
+6 1 7 1 1
+0 11 7 2 2
+0 12 6 2 2
+0 13 5 2 2

@@ -1,0 +1,48 @@
+.NAME=74LS93
+.PINS=14
+CLKB
+RO(1)
+RO(2)
+NC
+VCC
+NC
+NC
+QC
+QB
+GND
+QD
+QA
+NC
+CLKA
+This device contains a 4-bit binary counter with two clocks.
+CLKA controls the Qa output while CLKB controls the Qd,Qc, and
+Qb outputs.  To get the full binary count you connect Qa to CLKB
+and then use CLKA.  The counter is reset to zero by bringing
+both R0 inputs high.
+
+PROPAGATION DELAY
++----------+----------+----------+------------------------+
+| FUNCTION |   FROM   |    TO    | TIME                   |
+===========================================================
+| tPLH     | CLKA     | Qa       | 10-16 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | CLKA     | Qa       | 12-18 ns               |
++----------+----------+----------+------------------------+
+| tPLH     | CLKA     | Qd       | 46-70 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | CLKA     | Qd       | 46-70 ns               |
++----------+----------+----------+------------------------+
+| tPLH     | CLKB     | Qb       | 10-16 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | CLKB     | Qb       | 14-21 ns               |
++----------+----------+----------+------------------------+
+| tPLH     | CLKB     | Qc       | 21-32 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | CLKB     | Qc       | 23-35 ns               |
++----------+----------+----------+------------------------+
+| tPLH     | CLKB     | Qd       | 34-51 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | CLKB     | Qd       | 34-51 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | R0       | Any      | 26-40 ns               |
++----------+----------+----------+------------------------+

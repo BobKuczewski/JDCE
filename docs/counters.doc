@@ -1,0 +1,129 @@
+COUNTERS
+
+  Counters are circuits that count clock pulses.  Most counters in the
+7400 series family are 4-bit counters and are of two types: Binary and
+decade (or BCD).  The majority of counters are constructed from J-K
+Type flip-flops.  The included circuit "JKCOUNT.CKT" demonstrates a
+counter built out of J-K flip-flops.
+
+  Load the circuit called "74LS68.CKT".  This circuit utilizes a binary
+counter connected to an led hex digit display.  Press the CLR button
+and then start pressing the CLK button.  Keep counting and notice when
+the counter resets back to zero.  This chip is known as a BCD or Decade
+counter because the count is limited from 0 to 9.  Now load
+"74LS69.CKT" and notice how this counter differs from the last one.
+This counter counts all the way through F before resetting back to
+zero.  This is known as a Binary counter.
+
+  The 74LS68 and 74LS69 counters are said to be pin compatible, meaning
+that the wiring connections are identical.  One chip can be replaced
+with the other in the same circuit, the only difference is in how far
+each counter counts.  Many of the counters in the 7400 series have
+Decade and Binary pin compatible equivalents.
+
+  Lets take a closer look at the 74LS68 and '69.  These chips are
+actually dual counter chips, meaning there are two 4 bit counters on
+each chip.  Call up the data sheet on one of these chips.  The second
+counter on these chips contains a full 4-bit counter with a clear
+input. while the first counter is separated into two parts.  Notice the
+first counter has two clock signals.  The first clock signal controls
+only Qa.  The second clock signal then controls Qb, Qc, and Qd.  In
+order to get the full count available on counter 1 you must connect Qa
+to the second clock input.  Why would they do this you might be asking.
+ Well the first counter can be used in three different ways.  First by
+using only the second clock you now have a counter that counts half of
+the full potential of the chip.  In the '68 the count will count to 4
+and then reset and the '69 will count to 7 before resetting.  This
+gives you other counts in case the usual decade and binary counts are
+not adequate.  In the second use, you tie the Qa output to the second
+clock and provide the full count just like in the second counter.  In
+the third usage you can tie the Qd input to the first clock, and now Qa
+will represent a clock pulse that is a multiple of the input clock. for
+instance, in the '68 if we tie Qd to the first clock, it now takes 5
+clock pulses before Qa will go high, then it will take another 5 clock
+pulses for Qa to go low, therefore Qa now represents a new clock that
+is 10 times slower than the input clock.  You are not restricted to
+attaching Qd to the first clock, you could in fact use any of the
+outputs to trigger the first clock, each of which will give you a
+different output clock.  Load circuit "74LS68S.CKT".  run this circuit
+using the digi-scope mode, and notice the output clock in relation to
+the input clock.
+
+  Now lets look at the 74LS160 counter.  Load "74LS160.CKT".  This chip
+contains a single 4 bit Decade counter.  There are three main
+differences between this counter and the previous counters.  First this
+counter has only a single clock input, and more importantly this
+counter is presettable.  The starting count can be set in this counter
+by taking the LOAD input low.  Try experimenting with this circuit.
+This counter has another useful feature, a ripple carry output.  This
+output when connected to the CLOCK input of another counter allows us
+to count using multiple digits.  Notice that the RCO led turns on when
+the counter is on the last count (in this case 9) and then goes low
+again when the counter rolls over to zero.  This counter's clock input
+triggers on the negative edge, therefore when RCO goes low again, the
+clock input of another counter will be stimulated at the proper time.
+
+  Like the 74LS68, this counter also has a Binary equivalent.  The
+74LS161 counter is pin compatible with the '160, but counts all the way
+through F.  Load the circuit "74LS161.CKT" and try experimenting with
+this circuit.  Notice all the same capabilities as the '160 are also in
+the '161, only the terminal count is different.
+
+  There is another counter that is pin compatible with the '160, this
+is the 74LS162.  This chip is also a decade counter, but with one very
+important difference.  The CLEAR input to this chip is synchronous with
+the clock.  In the '160 and '161 whenever the CLEAR input was brought
+low, the counter immediately cleared to zero.  In the '162 after the
+CLEAR is pulsed low the counter will continue to hold the last count
+until a clock pulse occurs.  Load the circuit "74LS162.CKT" and
+experiment with this feature.  Set the count to some value other than
+zero and then press the CLEAR button.  Notice that the counter did not
+reset to zero.  Now press the CLOCK button, now the counter resets.
+This type of clear function is called Synchronous Clear.  The 74LS163
+is the Binary version of the '162.  The circuit "74LS163.CKT"
+demonstrates the use of the '163.
+
+  Now lets take a look at the 74LS190 counter.  This Decade counter is
+not only presettable but also can count down as well as up.  The
+circuit "74LS190.CKT" demonstrates this counter.  Try providing clock
+pulses while the switch is in the UP position and note that the counter
+counts upwards.  Change the switch to the down position and note that
+the counter counts downwards.  Two outputs are provided for cascading
+other counters.  The RCO is an active low carry/borrow output, while
+the MAX/MIN is active high carry/borrow output.  When the counter is
+about to wrap around these two outputs become active.  Notice also with
+this counter that the count changes on the positive edge of the clock.
+Remember the counters we looked at previously triggered on the negative
+edge.  The 74LS191 counter is the pin compatible binary version of the
+'190.  The circuit "74LS191.CKT" demonstrates the '191 counter.
+
+  Now lets look at the 74LS192.  The '192 is also an Up Down counter.
+The main difference between this counter and the '190 is that this
+counter has separate clocks for the up and down counts as well as
+separate carry and borrow outputs.  The circuit "74LS192.CKT"
+demonstrates the usage of this chip.  This chip like the last two also
+are triggered on the positive edge of the clock.  The 74LS193 is the
+pin campatable Binary equivalent.  The circuit "74LS193.CKT"
+demonstrates the '193.
+
+  There are also two other characteristics found in counters, and this
+has to do with the output switching of the device.  The two output
+types are Ripple, and Synchronous.  In ripple counters one flip-flop is
+used to clock the next one.  These counters typically have lower
+propagation delays but they very briefly present an invalid count at
+their outputs.  This invalid output occurs during the propagation delay
+of the device.  For instance when the ripple counter counts from 1 to
+2, during the propagation delay a 3 will appear on the outputs for a
+brief moment.  For synchronized systems this is not generally
+considered a problem, whereas in asynchronus circuits this can produce
+invalid results.
+
+  Synchronous counters clock the output flip-flops all at the same time
+which prevents the invalid counts during the propagation delay.  The
+drawback to synchronous counters is that they usually have longer
+propagation delays and therefore may not be suitable in high speed
+circuits.
+
+  Due to the way DCE controls timing, ripple counters will not exhibit
+the characteristics described above.  All counters used in DCE will
+appear as synchronous counters to other chips in the circuit.

@@ -1,0 +1,16 @@
+5 10 8 0 0
+parts.input.CPower 4 15
+parts.S7400.C74ls161 12 17
+parts.output.CTIL311 13 30
+parts.input.CBT_SPDT_I 7 24
+parts.input.CClock 12 10
+0 1 2 1 9
+0 2 3 1 1
+3 1 2 8 1
+2 1 3 3 9
+3 2 2 5 11
+1 14 2 3 5
+1 13 2 2 5
+1 12 2 13 5
+1 11 2 12 5
+4 1 1 2 2

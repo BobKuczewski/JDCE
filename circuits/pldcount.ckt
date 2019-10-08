@@ -1,0 +1,36 @@
+7 28 14 0 0
+parts.pld.C5C031 10 13 counter
+parts.input.CPower 5 13
+parts.output.CBARGRPH8 10 7
+parts.input.CBM_SPDT_I 8 23
+parts.input.CBM_SPDT_I 13 23
+parts.input.CBM_SPDT_I 18 23
+parts.input.CBT_SPDT_I 24 13
+1 2 2 1 1
+2 1 2 2 1
+2 2 2 3 1
+2 3 2 4 1
+2 4 2 5 1
+2 5 2 6 1
+2 6 2 7 1
+2 7 2 8 1
+1 2 3 3 1
+4 3 3 3 1
+4 3 5 3 1
+1 1 3 1 9
+3 1 4 1 9
+4 1 5 1 9
+3 2 0 1 2
+4 2 0 2 2
+5 2 0 3 2
+5 3 6 1 1
+5 1 6 3 9
+6 2 0 11 2
+0 12 2 16 11
+0 13 2 15 11
+0 14 2 14 11
+0 15 2 13 11
+0 16 2 12 11
+0 17 2 11 11
+0 18 2 10 11
+0 19 2 9 11

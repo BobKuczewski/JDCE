@@ -1,0 +1,38 @@
+.NAME=74LS55
+.PINS=14
+A
+B
+C
+D
+NC
+NC
+GND
+Y
+NC
+E
+F
+G
+H
+VCC
+This device consists of a single 2-wide 4-input AND-OR-INVERT
+gate performing the boolean expression: Y=/(ABCD+EFGH).
+ 
+TRUTH TABLE
++---------+---------++---+
+| A B C D | E F G H || Y |
+==========================
+| H H H H | X X X X || L |
++---------+---------++---+
+| X X X X | H H H H || L |
++---------+---------++---+
+| ALL OTHERS        || H |
++-------------------++---+
+
+PROPAGATION DELAY
++----------+----------+----------+------------------------+
+| FUNCTION |   FROM   |    TO    | TIME                   |
+===========================================================
+| tPLH     | Any      | Y        | 12-20 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | Any      | Y        | 13-20 ns               |
++----------+----------+----------+------------------------+

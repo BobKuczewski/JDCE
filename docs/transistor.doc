@@ -1,0 +1,85 @@
+THE TRANSISTOR
+
+  The transistor is similar to the diode, except instead of only one PN
+junction there are two.  The transistor is basicly an electrically
+operated switch.  There are two main types of transistors, the NPN and
+the PNP.  The NPN transistor is made from one piece of P-material
+sandwiched between two pieces of N-material while the PNP transistor is
+made from one piece of N-material sandwiched between two pieces of
+P-material.  Our discussion here of transistors will demonstrate the
+operation of a typical NPN transistor.  A PNP transistor works the same
+way but the charges are reversed.
+
+  Figure 1 shows the basic construction of the NPN transistor.  It
+is vary much like two diodes attached together sharing one P-material.
+There are three wires on the transistor which are called the Collector
+(C), the Base (B), and the Emitter (E).  When voltage is applied to the
+base, current can flow from the Emitter to the Collector.
+                 N           P           N
+           +-----------+-----------+-----------+
+      (C)  ! -   -   - ! +   +  +  ! -   -   - ! (E)
+      -----!    -  -   !    +    + !    -  -   !-----
+           !  -     -  !  +    +   !  -     -  !
+           +-----------+-----------+-----------+
+                             ! (B)
+                             !
+               Figure 1
+
+
+  Figure 2 shows what happens in the transistor when voltage is
+applied to the emitter and the collector but no voltage is applied to
+the base.  Like in the diode the electrons flowing in the emitter
+(N-material) will produce an abundance of electrons.  The holes in the
+base material (P-material) are mutually attracted to the electrons in
+the emitter, but since no voltage is applied to the base, the threshold
+voltage will not be exceeded.  Meanwhile in the collector the electrons
+are drawn to the positive charge being applied and like the diode when
+inverse voltage is applied a zone of non-conductance is created at the
+boundary of the collector and the base.  This prevents any voltage from
+passing through the transistor.
+                 N           P           N
+           +-----------+-----------+-----------+
+      (C)  !----       !       ++++!-----------! (E)
+    + -----!----       !       ++++!-----------!----- -
+           !----       !       ++++!-----------!
+           +-----------+-----------+-----------+
+                             ! (B)
+                             !
+               Figure 2
+
+
+  Now lets look at what happens when a voltage is applied to the base.
+Notice in Figure 3 that the base-emitter junction resembles what
+happens in the diode when the voltage is forward.  This allows current
+to flow from the emitter to the base just like current flowed in the
+diode.  Now when there is a positive charge on the collector there is
+an added voltage potential pulling on the electrons.  This will produce
+an abundance of electrons in the base material as well as the emitter
+material (see Figure 4).  Now just as the electrons in the collector
+material were drawn to the positive charge, the electrons in the base
+material will also be drawn to the positive charge.
+                 N           P           N
+           +-----------+-----------+-----------+
+      (C)  !----       !+++++++++++!-----------! (E)
+    + -----!----       !+++++++++++!-----------!----- -
+           !----       !+++++++++++!-----------!
+           +-----------+-----------+-----------+
+                             ! (B)
+                             !
+                             +
+               Figure 3
+                 N           P           N
+           +-----------+-----------+-----------+
+      (C)  !-----------!-----------!-----------! (E)
+    + -----!-----------!-----------!-----------!----- -
+           !-----------!-----------!-----------!
+           +-----------+-----------+-----------+
+                             ! (B)
+                             !
+                             +
+               Figure 4
+
+
+  The PNP transistor works in a very similar fashion except the charges
+are reversed.  A positive charge is applied to the emitter and a
+negative charge is applied to the base to allow conductivity.

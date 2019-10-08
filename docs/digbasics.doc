@@ -1,0 +1,68 @@
+BASICS
+
+  All of the devices talked about above are called "Analog" devices.
+This is because there function is based upon varying voltage or current
+levels.  For instance, the resister lowered the amount of current, or
+the coil allowed us to create more voltage than was applied to it.  In
+digital electronics we work in only two voltage levels, termed High and
+Low.  The High value equates to the voltage source of the power supply.
+ In the case of the 7400 series parts the voltage used is 5 volts,
+therefore a "High" signal is equivalent to 5 volts.  The "Low" signal
+equates to ground (or the negative pole of the power source), and
+represents no current flow, or zero volts.
+
+  There is also a third state called High-Z.  This state represents an
+unconnected pin, or not at 5v but also not at 0v.  Normally multiple
+outputs from parts cannot be tied together or damage to the device will
+occur.  Parts that have tri-state outputs allow you to connect multiple
+outputs together without harm to the devices so long as only one device
+is actually enabled.  In the 7400 series parts that we will be using,
+an unconnected (or High Z) input is considered High for input purposes.
+ Other series of chips may have different rules concerning High Z
+inputs.
+
+  Many circuits have clock inputs.  These inputs are used to
+synchronize the operation of a circuit.  Clock pulses come in two
+varieties, Active High and Active Low.  The Active High clock is at a
+low level in the rest state and at a high level in the active state.
+There are also two edges for each clock pulse.  In the active high
+clock the low to high transition of the signal is also referred to as
+the leading edge, rising edge, or positive edge of the pulse.  The high
+to low transition is referred to as the trailing edge, falling edge, or
+negative edge of the pulse.  The active low clock is at a high level in
+the rest state and a low level in the active state.  The active low
+clock also has two edges, but they are a little bit different since the
+falling edge is now the leading edge and the rising edge is now the
+trailing edge.
+
+  The basic building blocks of digital circuits are made using various
+combinations of resisters, transistors, and diodes.  The 7400 series
+chips all belong to the TTL family of logic devices.  The TTL stands
+for Transistor-Transistor Logic.  There are also many other families of
+chips.  These include CMOS (Complimentary Metal Oxide Semi-conductor),
+VMOS, NMOS, NChannel, DTL (Diode-Transistor Logic), and RTL
+(Resister-Transistor Logic).  Each of these varying technologies have
+differing characteristics.  Most TTL devices operate on 5V while most
+CMOS devices can run anywhere from 3v to 15v.  CMOS devices typically
+use less power than TTL, but they are also much more sensitive to
+static discharge and can easily be destroyed.
+
+  The 7400 series also has many different variations.  You can identify
+which type a chip is by looking immediately after the "74".  If there
+are no letters then the device is considered Standard TTL.  An example
+is the 7400 NAND gate.  If there is a "S" then the device uses Schottky
+diodes which improve switching times, therefore the device operates
+faster.  An example is the 74S32 OR gate.  If there is a "LS" then the
+device is a low-power Schottky device.  These devices consume less
+power and also have the improved switching capability.  An example is
+the 74LS04 Hex Inverter.  If there is a "C" then the device is actually
+a CMOS equivalent of the TTL chip.  The CMOS versions use considerably
+less power than the standard version.  An example is the 74C08 AND gate.
+
+  Commonly we abbreviate the names of chips when we are talking about
+chips all belonging to the same family.  Instead of saying 74244 we can
+abbreviate the part number to just '244.  The apostrophe symbol (') is
+to denote an abbreviation of the chip name.  This abbreviation is
+normally only used when talking about chips belonging to the same
+family, if chips from different families are being used at the same
+time it is customary to use the full name.

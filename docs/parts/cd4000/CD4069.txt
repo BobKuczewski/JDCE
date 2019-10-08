@@ -1,0 +1,26 @@
+.NAME=CD4069
+.PINS=14
+A1
+Y1
+A2
+Y2
+A3
+Y3
+VSS
+Y4
+A4
+Y5
+A5
+Y6
+A6
+VDD
+This device contains six independent inverters.
+
+TRUTH TABLE
++---++---+
+| A || Y |
+==========
+| L || H |
+----++---+
+| H || L |
++---++---+

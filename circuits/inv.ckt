@@ -1,0 +1,12 @@
+4 5 4 0 2
+parts.S7400.C74ls04 11 10
+parts.input.CPower 7 10
+parts.output.CLED_R 14 17
+parts.input.CBT_SPDT_I 14 4
+1 2 2 1 1
+1 2 3 1 1
+1 1 3 3 9
+3 2 0 1 2
+0 2 2 2 3
+14 3 A
+14 16 Y

@@ -1,0 +1,38 @@
+.NAME=7451
+.PINS=14
+A1
+A2
+B2
+C2
+D2
+Y2
+GND
+Y1
+C1
+D1
+NC
+NC
+B1
+VCC
+This device contains 2 independent 2-wide AND-OR-INVERT gates.
+They perform the boolean function Y=/(AB+CD).
+ 
+TRUTH TABLE
++-----+-----++---+
+| A B | C D || Y |
+==================
+| H H | X X || L |
++-----+-----++---+
+| X X | H H || L |
++-----+-----++---+
+| ALL OTHERS|| H |
++-----------++---+
+
+PROPAGATION DELAY
++----------+----------+----------+------------------------+
+| FUNCTION |   FROM   |    TO    | TIME                   |
+===========================================================
+| tPLH     | Any      | Y        | 13-22 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | Any      | Y        |  8-15 ns               |
++----------+----------+----------+------------------------+

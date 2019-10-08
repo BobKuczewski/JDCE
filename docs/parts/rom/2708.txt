@@ -1,0 +1,53 @@
+.NAME=2708
+.PINS=24
+A7
+A6
+A5
+A4
+A3
+A2
+A1
+AO
+QO
+Q1
+Q2
+VSS
+Q3
+Q4
+Q5
+Q6
+Q7
+PRGM
+VDD
+cs/WE
+VBB
+A9
+A8
+VCC
+This device contains a 1K x 8-bit eprom.  Programming of this device
+is normally done with a special programmer.  For purposes of this
+simulation the programming can be read from .ROM files.
+
+Maximum access time is typically 450ns
+
+The .ROM file is a straight ASCII file containing hex data describing
+the image for the rom.  Two types of data can be entered into this
+file: Hex data to be placed into the rom and hex address data to set
+the write pointer.  Hex data consists of two characters of hex data
+that will be written to the current write pointer in the rom.  A Hex
+address is preceeded by a colon (:), this resets the current write
+pointer for following data.  It is not necessary to load the rom in
+sequential order, you can in fact jump all over the address space in
+any order you choose.
+ 
+Below is a sample .ROM file:
+ 
+    00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+    :1000
+    FF FF FF FF
+    :0200
+    0A 0A 0A 0A
+ 
+This file would set the first 16 addresses to the numbers 00-0F, then
+four FF's are stored starting at address 1000h, and then 4 0A's are
+stored starting at address 200h.

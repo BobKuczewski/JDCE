@@ -1,0 +1,191 @@
+FLIP-FLOPS
+
+  There are two states any device can be placed into.  When a stimulus
+is placed on an input, the device is said to be in the Active state.
+When there is no stimulus on any input, the device is said to be in the
+Inactive or rest state.  In all of the gate devices when the stimulus
+is removed the output will return to a default value.  For instance, in
+the AND gate the output will return Low.  This characteristic is called
+"Monostable", meaning the device in its inactive state is stable in
+only one output state, like the AND gate returning low.
+
+  Flip-Flops are special circuits that can retain the stimulated output
+even when the stimuli are removed.  These devices are considered to be
+"Bistable", meaning the output is stable in two states.  If the
+stimulated flip-flop outputs a High, the flip-flop will still be
+outputting a High when the stimulus is removed.  If the stimulated
+flip-flop outputs a Low, then the flip-flop will still be outputting a
+low when the stimuli are removed.  There are three basic types of
+flip-flops.  They are: S-R type, D-type, and J-K type.  Most all
+flip-flop devices have complimentary outputs.  In addition to the main
+output (called Q) there is an inverted output (called NOT Q or /Q).
+Flip-flops are also considered edge-triggered devices.  The output of a
+flip-flop will occur only on a specific edge of an input.  For
+instance, if the device is negative-edge triggered, the output will
+only be set when the clock input is taken from high to low.  After the
+edge transition the output will not change again until another
+negative-edge is encountered.
+
+  The flip-flop is one of the most useful circuits available in digital
+electronics.  Using flip-flops you can design all kinds of different
+circuits including: Counters, Memories, Shift registers, and so on.  In
+this and later chapters you will learn many uses for the various types
+of flip-flops.
+
+  The most basic flip-flop is the S-R type.  The S-R stands for
+Set-Reset.  This flip-flop has two active-low inputs that can either
+set the output to a High (Set) or a Low (Reset).  An S-R flip-flop is
+made by interconnecting 2 NAND gates.  The S input is connected to one
+input of one of the NAND gates while the R input is connected to one
+input of the second NAND gate.  Then the outputs of each NAND gate are
+connected to the unused input of the other NAND gate.  The output of
+the S-NAND gate is used as the Q output and the output of the R-NAND
+gate is used as the /Q output.  These flip-flops are most often used to
+de-bounce switches.  Mechanical switches when switched can produce 20
+or more individual pulses.  If connected to a counter or other
+multi-pulse inputting device erroneous results could occur.  An S-R
+flip-flop will trigger on the first pulse and all other pulses would be
+ignored.  Below is the truth table for a S-R flip-flop:
+
+	S	R	Q	/Q
+	H	H	Q°	/Q°
+	L	H	H	L
+	H	L	L	H
+	L	L	H*	H*
+	* - Unstable
+
+  There are two differences in this truth table from previous truth
+tables we have looked at.  In the first line (where both inputs are
+High) we see the symbols Q° and /Q°.  These represent the last state of
+the Q and /Q outputs.  In other words if the last state of Q was L then
+Q° represents low, if the last state of Q was H then Q° represents
+High.  The last line of the table represents the S-R flip-flops
+unstable state.  In this state the outputs are not considered stable,
+since when either input is brought high again the outputs will change.
+
+  There are two sample S-R flip-flop circuits provided.  They are
+called "SRFF-1.CKT" and "SRFF-2.CKT".  "SRFF-1.CKT" contains a 74LS00
+NAND gate wired to act as a S-R flip-flop, while "SRFF-2.CKT" uses the
+74LS279 QUAD S-R Flip-Flop.  In both circuits the switches are active
+low.
+
+  The D-type flip-flop is an improvement upon the S-R type.  In the
+D-type flip-flop there are two additional inputs, Clock and Data.  The
+S input is renamed to PRESET and the R input is renamed to CLEAR.  Both
+PRESET and CLEAR operate the same as in the S-R flip-flop.  The Data
+input and Clock input are used together to set the output of the
+flip-flop when both CLEAR and PRESET are high.  The D-type flip-flop is
+constructed from 3 S-R flip-flops.  Most D-type flip-flops are
+positive-edge triggered, meaning the data is transferred from the D
+input to the outputs on the rising edge of the clock pulse.  The D-type
+flip-flop is useful for memories and shift registers.  Below is the
+typical truth table for D-type flip-flops:
+
+	PRE	CLR	CLK	D	Q	/Q
+	L	L	X	X	H*	H*
+	L	H	X	X	L	H
+	H	L	X	X	H	L
+	H	H	/	L	L	H
+	H	H	/	H	H	L
+	H	H	L	X	Q°	/Q°
+	H	H	H	X	Q°	/Q°
+	* - This state is considered unstable
+	° - Previous state of Q and /Q
+
+  This table uses two more new symbols.  The "X" symbol means the
+particular input does not matter whether it is High or Low.  The "/"
+symbol means on the Positive-Edge.
+
+  The included circuit "DFF-1.CKT" demonstrates a D-type flip-flop
+constructed out of S-R flip-flops.  Circuit "DFF-2.CKT" demonstrates
+the 74LS74 Dual D-type flip-flop device.  All switches in both circuits
+are active high, therefore make sure PRE and CLR are on before using
+CLK and D.
+
+  Now lets look at a couple of applications for D-type flip-flops.
+Figure 4-2 demonstrates a memory circuit built from a D-type flip-flop.
+ In this circuit the input is connected to the Data input of the
+flip-flop.  The Q connection then provides the output from the memory
+cell.  Data will be stored into the flip-flop when the 'WRITE' input
+changes state from low to high.  Nearly all static memory chips store
+information using this method.  The included circuit "DFFMEM.CKT" is a
+pre-wired circuit demonstrating the memory application for D-type
+flip-flops.
+
+  Another useful application for the D-type flip-flop is pulse
+detection.  Figure 4-3 shows a basic circuit for asynchronus positive
+pulse detection.  Notice the input is connected to the Clock input of
+the flip-flop.  The Data input is then tied to ground.  When a positive
+pulse is placed onto IN this triggers the flip-flop placing a logic low
+on Q and a logic high on /Q.  The /Q will show a high when any positive
+pulse is detected on IN.  If /CLR is pulsed low, the output of the
+pulse detector will be reset to low.  The included circuit
+"PULSE-1.CKT" demonstrates this use for the D flip-flop.
+
+  In the above circuit, any positive pulse at any time will trigger the
+output of the circuit.  This ability to detect a pulse at any time is
+referred to as Asynchronus.  There are times when you only want to
+detect the pulse at a given time.  To detect a pulse at a given time
+you must use a Synchronous pulse detector.  Figure 4-4 shows a circuit
+for a Synchronous positive pulse detector.  This circuit will only
+sample the input on the positive edge of CLOCK.  In this circuit the
+input line (IN) is connected to the D input of the flip-flop.  The
+active-high pulse detection is then output on Q.  The synchronous clock
+source is then connected to the C input.  Lets take a close look at how
+this circuit works.  If  the input is low when CLOCK is pulsed then Q
+(OUT) will be set low and /Q will be set high.  The high value on /Q is
+fed back into /S, which according to the truth table for D flip-flops
+will have no effect.  In essence if the input was low when CLOCK is
+pulsed, then the output of the circuit will remain low.  Now if a high
+is placed on IN when CLOCK is pulsed Q will become high while /Q will
+become low.  OUT is now showing the fact that a positive pulse was
+detected.  The low being output from /Q is then fed back into /S which
+according to the truth table will set Q high (which it already is), and
+/Q to low (which also already is).  This feedback will force the
+flip-flop to continue to output a high regardless of the states of IN
+or CLOCK.  In fact the only way to reset Q to low is to pulse CLR low.
+Remember when both /S and /R are low the outputs of Q and /Q will be
+high, which removes the feedback signal on /S and allows the circuit to
+once again output a low when CLR goes back high.
+
+  Pulse detection is a very useful capability and in later lessons we
+will be revisiting pulse detection and why it is so useful.  Remember
+in the Asynchronus detector, any positive pulse can be detected at any
+time, while in the Synchronous detector, the pulse is only sampled at a
+set time.  By very slight modification of these two detectors you can
+detect negative pulses.  Try modifying these basic circuits to produce
+negative pulse detectors.
+
+  The J-K type is the most advanced flip-flop.  Instead of a single
+data input (D) there are two, J and K.  Depending on the states of J
+and K when the flip-flop is triggered depends on what happens at the
+outputs.  J-K flip-flops come in two main types: Master-Slave and
+negative-edge triggered.  In the Master-Slave type the data from J and
+K are transferred to a master circuit on the positive-edge of the clock
+pulse and transferred to the slave (outputs) on the negative edge,
+while the negative-edge triggered type transfers the data from the J
+and K inputs directly to the outputs on the negative-edge of the clock
+pulse.  The J-K type flip-flop is particularly useful in making
+counters.  Below is a typical truth table for a J-K Master-Slave
+flip-flop:
+
+	PRE	CLR	CLK	J	K	Q	/Q
+	L	L	X	X	X	H*	H*
+	L	H	X	X	X	H	L
+	H	L	X	X	X	L	H
+	H	H	L	X	X	Q°	/Q°
+	H	H	/\	L	L	Q°	/Q°
+	H	H	/\	L	H	H	L
+	H	H	/\	H	L	L	H
+	H	H	/\	H	H	/Q°	Q°
+	* - This state is considered unstable
+	° - The previous state of Q and /Q
+
+  Note the new symbol used in this table "/\".  This symbol represents
+a single clock pulse from the positive-edge to the negative-edge.  Also
+look at what happens to the outputs in the last line of the table.
+When both the J and K inputs are high the outputs toggle rather than
+follow the data.  The truth table for a negative-edge triggered J-K
+flip flop is virtually identical to the Master-Slave table except the
+symbol "\" is used in place of the "/\" symbol.  The "\" symbol
+represents the negative-edge of the clock pulse.

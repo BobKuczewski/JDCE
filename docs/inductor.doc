@@ -1,0 +1,31 @@
+THE INDUCTOR
+  
+   When electricity flows through a wire an electro-magnetic field is
+created around the wire.  In normal wiring this field is rather weak.
+By coiling a lot of wire in a small space the effect of the
+electro-magnetic field can be strengthened.  Like the capacitor, an
+inductor can store energy.  Energy is stored in a coil by the EM field.
+ Unlike the capacitor which stops current flow, the coil allows the
+current to flow through it.  As electricity flows into the coil an EM
+field develops.  The more electricity sent through the coil the more
+the EM field builds.  As the EM field builds the coil will start to
+develop resistance.  Eventually there will be so much resistance that
+no more current will flow.  When the input current is discontinued the
+magnetic field will collapse which will then induce voltage onto the
+wire in the coil and electricity will then flow out of the coil.
+Unlike the capacitor when the input voltage is removed, the stored
+energy is released regardless if there is or is not a circuit between
+the poles of the coil.  The storage capability of a coil is measured in
+henries.  The principle use of coils is to alter the amount of voltage
+or current in a circuit.  In most coils the voltage that flows out
+during the collapse of the magnetic field actually produces more
+voltage than what was used to charge the device.  The coil of a car
+works this way.  The coil is charged with 12 volts and then when the
+voltage is removed a current of several thousand volts is released to
+the spark plugs.   A transformer is an inductor that contains two coils
+of wire called the primary and secondary windings.  The primary winding
+is used to build the EM field.  Then when the voltage is removed from
+the primary winding the EM field collapses and induces voltage onto
+both windings.  The voltage that flows out the secondary winding can be
+computed by the ratio of turns in the primary winding divided by the
+number of turns in the secondary winding.

@@ -1,0 +1,48 @@
+.NAME=CD4000
+.PINS=14
+NC
+NC
+A1
+B1
+C1
+Y1
+VSS
+A3
+Y3
+Y2
+C2
+B2
+A2
+VDD
+This device contains two independent 3-input NOR gates as well as
+a single inverter.
+
+TRUTH TABLE - GATES 1 AND 2
++---+---+---++---+
+| A | B | C || Y |
+==================
+| L | L | L || H |
+----+---+---++---+
+| L | L | H || L |
+----+---+---++---+
+| L | H | L || L |
+----+---+---++---+
+| L | H | H || L |
+----+---+---++---+
+| H | L | L || L |
+----+---+---++---+
+| H | L | H || L |
+----+---+---++---+
+| H | H | L || L |
+----+---+---++---+
+| H | H | H || L |
++---+---+---++---+
+
+TRUTH TABLE - GATE 3
++---++---+
+| A || Y |
+==========
+| L || H |
+----++---+
+| H || L |
++---++---+

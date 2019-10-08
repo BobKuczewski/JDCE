@@ -1,0 +1,49 @@
+.NAME=74LS183
+.PINS=14
+A1
+NC
+B1
+C1N
+C1N+1
+M-^D1
+GND
+M-^D2
+NC
+C2N+1
+C2N
+B2
+A2
+VCC
+These dual full adders feature an individual carry output from
+each bit for use in multiple-input, carry-save techniques to
+produce the true sum and true carry outputs.
+
+TRUTH TABLE
++----+---+---++---+------+
+| Cn | B | A || M-^D | Cn+1 |
+==========================
+| L  | L | L || L | L    |
++----+---+---++---+------+
+| L  | L | H || H | L    |
++----+---+---++---+------+
+| L  | H | L || H | L    |
++----+---+---++---+------+
+| L  | H | H || L | H    |
++----+---+---++---+------+
+| H  | L | L || H | L    |
++----+---+---++---+------+
+| H  | L | H || L | H    |
++----+---+---++---+------+
+| H  | H | L || L | H    |
++----+---+---++---+------+
+| H  | H | H || H | H    |
++----+---+---++---+------+
+
+PROPAGATION DELAY
++----------+----------+----------+------------------------+
+| FUNCTION |   FROM   |    TO    | TIME                   |
+===========================================================
+| tPLH     | Input    | Output   |  9-15 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | Input    | Output   | 20-33 ns               |
++----------+----------+----------+------------------------+

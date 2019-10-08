@@ -1,0 +1,262 @@
+MENU Arithmatic {
+ ITEM parts.S7400.C74ls83  74LS83 - 4-bit binary adder
+ ITEM parts.S7400.C74ls85  74LS85 - 4-bit magnitude comparator
+ ITEM parts.S7400.C74ls181 74LS181 - ALU/Function generator
+ ITEM parts.S7400.C74s182  74S182 - Look-ahead carry generator
+ ITEM parts.S7400.C74ls183 74LS183 - Dual carry-save full adders
+ ITEM parts.S7400.C74284   74284 - 4-bit by 4-bit multiplier hi
+ ITEM parts.S7400.C74285   74285 - 4-bit by 4-bit multiplier lo
+ ITEM parts.S7400.C74ls381 74LS381 - ALU/Function generator
+ ITEM parts.S7400.C74ls382 74LS382 - ALU/Function generator
+ ITEM parts.S7400.C74ls684 74LS684 - 8-Bit magnitude comparator
+ ITEM parts.S7400.C74ls686 74LS686 - 8-Bit magnitude comparator
+ ITEM parts.S7400.C74ls688 74LS688 - 8-Bit magnitude comparator
+ }
+MENU Buffers/Drivers {
+ ITEM parts.S7400.C74ls125 74LS125 - Quad tri-state buffer
+ ITEM parts.S7400.C74ls126 74LS126 - Quad tri-state buffer
+ ITEM parts.S7400.C74ls240 74LS240 - Octal tri-state inverting buffer
+ ITEM parts.S7400.C74ls241 74LS241 - Octal tri-state buffer
+ ITEM parts.S7400.C74ls244 74LS244 - Octal tri-state buffer
+ ITEM parts.S7400.C74ls245 74LS245 - Octal tri-state bus transceiver
+ ITEM parts.S7400.C74ls367 74LS367 - Hex tri-state buffer
+ }
+MENU Counters {
+ ITEM parts.S7400.C74ls68  74LS68 - Dual 4-bit decade counter
+ ITEM parts.S7400.C74ls69  74LS69 - Dual 4-bit binary counter
+ ITEM parts.S7400.C74ls90  74LS90 - Decade counter
+ ITEM parts.S7400.C74ls92  74LS92 - Divide-by-12 counter
+ ITEM parts.S7400.C74ls93  74LS93 - 4-bit binary counter
+ ITEM parts.S7400.C74143   74143 - Decade counter with 7-segment
+ ITEM parts.S7400.C74ls160 74LS160 - Decade counter
+ ITEM parts.S7400.C74ls161 74LS161 - Binary counter
+ ITEM parts.S7400.C74ls162 74LS162 - Decade counter
+ ITEM parts.S7400.C74ls163 74LS163 - Binary counter
+ ITEM parts.S7400.C74ls169 74LS169 - 4-bit up/down binary counter
+ ITEM parts.S7400.C74176   74176 - Presettable decade counter
+ ITEM parts.S7400.C74177   74177 - Presettable binary counter
+ ITEM parts.S7400.C74ls190 74LS190 - BCD up/down counter
+ ITEM parts.S7400.C74ls191 74LS191 - 4-bit up/down counter
+ ITEM parts.S7400.C74ls192 74LS192 - BCD counter
+ ITEM parts.S7400.C74ls193 74LS193 - 4-bit counter
+ ITEM parts.S7400.C74ls590 74LS590 - 8-bit binary counter
+ }
+MENU Decoders {
+ ITEM parts.S7400.C74ls42  74LS42 - BCD to decimal decoder
+ ITEM parts.S7400.C7445    7445 - BCD to decimal decoder
+ ITEM parts.S7400.C74ls47  74LS47 - Seven segment decoder
+ ITEM parts.S7400.C74ls137 74LS137 - 3-line to 8-line decoder, latched
+ ITEM parts.S7400.C74ls138 74LS138 - 3-line to 8-line decoder
+ ITEM parts.S7400.C74ls139 74LS139 - Dual 2-line to 4-line decoder
+ ITEM parts.S7400.C74ls145 74LS145 - BCD to decimal decoder
+ ITEM parts.S7400.C74154   74154 - 4-line to 16-line decoder
+ ITEM parts.S7400.C74ls155 74LS155 - Dual 2-line to 4-line decoder
+ ITEM parts.S7400.C74ls156 74LS156 - Dual 2-line to 4-line decoder OC
+ ITEM parts.S7400.C74159   74159 - 4-line to 16-line decoder OC
+ ----
+ ITEM parts.output.C9370    9370 - Hex seven segment decoder
+ }
+MENU Flip-Flops {
+ ITEM parts.S7400.C74ls74  74LS74 - Dual D-type flip flops
+ ITEM parts.S7400.C74ls75  74LS75 - 4-bit bistable latch
+ ITEM parts.S7400.C74116   74116 - Dual 4-bit latches
+ ITEM parts.S7400.C74ls171 74LS171 - Quad D-type /w clear
+ ITEM parts.S7400.C74ls173 74LS173 - Quad D-type tri-state
+ ITEM parts.S7400.C74ls174 74LS174 - Hex D-type flip flops
+ ITEM parts.S7400.C74ls175 74LS175 - Quad D-type flip flops
+ ITEM parts.S7400.C74ls273 74LS273 - Octal D-type flip flops
+ ITEM parts.S7400.C74ls279 74LS279 - Quad S-R type flip flops
+ ITEM parts.S7400.C74ls373 74LS373 - Octal D-type latches
+ }
+MENU Gates {
+ ITEM parts.S7400.C74ls00  74LS00 - Nand
+ ITEM parts.S7400.C74ls02  74LS02 - Nor
+ ITEM parts.S7400.C74ls08  74LS08 - And
+ ITEM parts.S7400.C74ls10  74LS10 - 3-input nand
+ ITEM parts.S7400.C74ls11  74LS11 - 3-input and
+ ITEM parts.S7400.C74ls20  74LS20 - 4-input nand
+ ITEM parts.S7400.C74ls21  74LS21 - 4-input and
+ ITEM parts.S7400.C7425    7425 - Dual 4-input nor with strobe
+ ITEM parts.S7400.C74ls27  74LS27 - 3-input nor
+ ITEM parts.S7400.C74ls30  74LS30 - 8-input nand
+ ITEM parts.S7400.C74ls32  74LS32 - Quad 2-input or
+ ITEM parts.S7400.C74ls86  74LS86 - Exclusive or
+ ITEM parts.S7400.C74ls132 74LS132 - Nand schmitt trigger
+ ITEM parts.S7400.C74s133  74S133 - 13-input Nand
+ ITEM parts.S7400.C74s134  74S134 - Tri-state 12-input Nand
+ ITEM parts.S7400.C74s136  74S136 - Quad exclusive or OC
+ ITEM parts.S7400.C74265   74265 - Quad complementary elements
+ ITEM parts.S7400.C74ls266 74LS266 - Quad exclusive nor
+ }
+MENU Inverters {
+ ITEM parts.S7400.C74ls04  74LS04 - Hex inverter
+ ITEM parts.S7400.C74ls05  74LS05 - Hex inverter OC
+ ITEM parts.S7400.C74ls14  74LS14 - Hex inverter schmitt trigger
+ }
+MENU J-K Flip-Flops {
+ ITEM parts.S7400.C7470    7470 - And gated J-K Flip Flop
+ ITEM parts.S7400.C7472    7472 - And gated J-K Master-Slave
+ ITEM parts.S7400.C7473    7473 - Dual J-K with clear
+ ITEM parts.S7400.C74ls73  74LS73 - Dual J-K with clear
+ ITEM parts.S7400.C7476    7476 - Dual J-K with clear,preset
+ ITEM parts.S7400.C74ls76  74LS76 - Dual J-K with clear,preset
+ ITEM parts.S7400.C74ls78  74LS78 - Dual J-K negative-edge
+ ITEM parts.S7400.C74107   74107 - Dual J-K with clear
+ ITEM parts.S7400.C74ls107 74LS107 - Dual J-K with clear
+ ITEM parts.S7400.C74ls109 74LS109 - Dual J-not-K Flip Flops
+ ITEM parts.S7400.C74111   74111 - Dual J-K Flip Flops
+ ITEM parts.S7400.C74ls112 74LS112 - Dual J-K with clear,preset
+ ITEM parts.S7400.C74ls113 74LS113 - Dual J-K with preset
+ ITEM parts.S7400.C74ls114 74LS114 - Dual J-K with common clear,clock
+ }
+MENU Memories {
+ ITEM parts.S7400.C74ls170  74LS170 - 4x4-bit register file OC
+ ITEM parts.S7400.C74ls612  74LS612 - Memory mapper
+ ITEM parts.ram.C2114     2114 - 1kx4 static ram
+ ITEM parts.ram.CCDM6116A CDM6116A - 2kx8 static ram
+ ITEM parts.ram.CCDM6264  CDM6264 - 8kx8 static ram
+ ITEM parts.ram.C4164     4164 - 64kx1 dynamic ram
+ ITEM parts.rom.C2708     2708 - 1kx8 EPROM
+ ITEM parts.rom.C2716     2716 - 2kx8 EPROM
+ ITEM parts.rom.C2732     2732 - 4kx8 EPROM
+ ITEM parts.rom.C2764     2764 - 8kx8 EPROM
+ }
+MENU Miscelaneous Chips {
+ ITEM parts.S7400.C74180     74180 - 9-bit parity generator/checker
+ ITEM parts.input.CClock     CLOCK - Clock source
+ ITEM parts.cdp1800.CCDP1802BC CDP1802BC - Microprocessor
+ ITEM parts.pld.C5C031     5C031 - Programmable logic device
+ ITEM parts.cpu.C8080A     8080A - Microprocessor
+ ITEM parts.cpu.CZ86E08    Z86E08 - Z8 Microcontroller
+ ITEM parts.input.CKeyboard  Keyboard - Keyboard matrix
+ }
+MENU Multi-Gates {
+ ITEM parts.S7400.C7451   7451 - 2-wide and-or-invert
+ ITEM parts.S7400.C74ls51 74LS51 - 2-wide and-or-invert
+ ITEM parts.S7400.C7454   7454 - 4-wide and-or-invert
+ ITEM parts.S7400.C74ls54 74LS54 - 4-wide and-or-invert
+ ITEM parts.S7400.C74ls55 74LS55 - 2-wide 4-input and-or-invert
+ ITEM parts.S7400.C74s64  74S64 - 4-2-3-2-input and-or-invert
+ ITEM parts.S7400.C74s135 74S135 - Quad exclusive or/nor gates
+ }
+MENU Multiplexers {
+ ITEM parts.S7400.C74ls147 74LS147 - 10 to 4-line priority encoder
+ ITEM parts.S7400.C74ls148 74LS148 - 8 to 3-line priority encoder
+ ITEM parts.S7400.C74150   74150 - 16 to 1-line selector/multiplexer
+ ITEM parts.S7400.C74ls151 74LS151 - 8 to 1-line selector/multiplexer
+ ITEM parts.S7400.C74ls153 74LS153 - Dual 4 to 1-line selector/multiplexer
+ ITEM parts.S7400.C74ls157 74LS157 - Quad 2 to 1-line data selector
+ ITEM parts.S7400.C74ls158 74LS158 - Quad 2 to 1-line data selector INV
+ ITEM parts.S7400.C74ls251 74LS251 - 8 to 1-line selector tri-state
+ ITEM parts.S7400.C74ls253 74LS253 - Dual 4 to 1-line selector tri-state
+ ITEM parts.S7400.C74ls257 74LS257 - Quad 2 to 1-line selector tri-state
+ ITEM parts.S7400.C74ls258 74LS258 - Quad 2 to 1-line selector tri-state INV
+ ITEM parts.S7400.C74ls604 74LS604 - Octal 2-input multiplexed latches
+ }
+MENU Output Devices {
+ ITEM parts.output.CLED_R     LED - Red
+ ITEM parts.output.CLED_G     LED - Green
+ ITEM parts.output.CLED_Y     LED - Yellow
+ ITEM parts.output.CLED_B     LED - Blue
+ ITEM parts.output.CLED_W     LED - White
+ ----
+ ITEM parts.output.CBARGRPH4  BARGRPH4 - 4-segment bar graph display
+ ITEM parts.output.CBARGRPH6  BARGRPH6 - 6-segment bar graph display
+ ITEM parts.output.CBARGRPH8  BARGRPH8 - 8-segment bar graph display
+ ITEM parts.output.CBARGRPH10 BARGRPH10 - 10-segment bar graph display
+ ----
+ ITEM parts.output.CMAN10A    MAN10A - 7-segment led display
+ ITEM parts.output.CTIL311    TIL311 - Hex display with decoder
+ }
+MENU Shift Registers {
+ ITEM parts.S7400.C74ls91  74LS91 - 8-bit serial-in serial-out
+ ITEM parts.S7400.C7494    7494 - 4-bit serial/par-in serial-out
+ ITEM parts.S7400.C74ls95  74LS95 - 4-bit parallel-access
+ ITEM parts.S7400.C74ls96  74LS96 - 5-bit parallel-access
+ ITEM parts.S7400.C74ls164 74LS164 - 8-bit parallel-out serial-in
+ ITEM parts.S7400.C74ls165 74LS165 - 8-bit parallel-in serial-out
+ ITEM parts.S7400.C74ls166 74LS166 - 8-bit parallel-in serial-out /w clear
+ ITEM parts.S7400.C74178   74178 - 4-bit parallel-access
+ ITEM parts.S7400.C74ls194 74LS194 - 4-bit bidirectional universal register
+ ITEM parts.S7400.C74ls195 74LS195 - 4-bit parallel-access J/K serial
+ ITEM parts.S7400.C74198   74198 - 8-bit bidirectional universal register
+ ITEM parts.S7400.C74199   74199 - 8-bit parallel-access J/K serial
+ }
+MENU Switches {
+ ITEM parts.input.CBT_SPST   Switch SPST
+ ITEM parts.input.CBT_SPDT_I Switch SPDT 2-in 1-out
+ ITEM parts.input.CBT_SPDT_O Switch SPDT 2-out 1-in
+ ITEM parts.input.CBT_DPDT_I Switch DPDT 4-in 2-out
+ ITEM parts.input.CBT_DPDT_O Switch DPDT 4-out 2-in
+ ----
+ ITEM parts.input.CBM_SPST   Button SPST
+ ITEM parts.input.CBM_SPDT_I Button SPDT 2-in 1-out
+ ITEM parts.input.CBM_SPDT_O Button SPDT 2-out 1-in
+ ----
+ ITEM parts.input.CDIPSW4    DIPSW4 4-position dip switch
+ ITEM parts.input.CDIPSW8    DIPSW8 8-position dip switch
+ }
+MENU Pic {
+ ITEM parts.pic.C12C509A   12C509A PIC Microcontroller
+ ITEM parts.pic.C24LC256   256kbit serial eeprom
+ }
+MENU CD4000 Series {
+ MENU Arithmatic {
+   ITEM parts.cd4000.CCD4008  CD4008 - 4-bit Adder with carry
+   }
+ MENU Buffers/Drivers {
+   ITEM parts.cd4000.CCD4010  CD4010 - Hex non-inverting buffers
+   ITEM parts.cd4000.CCD4050  CD4050 - Hex non-inverting buffers
+   }
+ MENU Counters {
+   ITEM parts.cd4000.CCD4020  CD4020 - 14-bit counter
+   ITEM parts.cd4000.CCD4024  CD4024 - 7-bit counter
+   }
+ MENU Flip Flops {
+   ITEM parts.cd4000.CCD4013  CD4013  - Dual independent D-type flip-flops
+   }
+ MENU Gates {
+   ITEM parts.cd4000.CCD4000     CD4000 Dual 3-input NOR gates plus an inverter
+   ITEM parts.cd4000.CCD4001     CD4001 Quad 2-input NOR gates
+   ITEM parts.cd4000.CCD4002     CD4002 Dual 4-input NOR gates
+   ITEM parts.cd4000.CCD4011     CD4011 Quad 2-input NAND gates
+   ITEM parts.cd4000.CCD4012     CD4012 Dual 4-input NAND gates
+   ITEM parts.cd4000.CCD4023     CD4023 Triple 3-input NAND gates
+   ITEM parts.cd4000.CCD4025     CD4025 Triple 3-input NOR gates
+   ITEM parts.cd4000.CCD4030     CD4030 Quad XOR gates
+   ITEM parts.cd4000.CCD4068     CD4068 8-input NAND gate
+   ITEM parts.cd4000.CCD4070     CD4070 Quad XOR gates
+   ITEM parts.cd4000.CCD4071     CD4071 Quad OR gates
+   ITEM parts.cd4000.CCD4072     CD4072 Dual 4-input OR gates
+   ITEM parts.cd4000.CCD4073     CD4073 Triple 3-input AND gates
+   ITEM parts.cd4000.CCD4075     CD4075 Triple 3-input OR gates
+   ITEM parts.cd4000.CCD4077     CD4077 Quad XNOR gates
+   ITEM parts.cd4000.CCD4078     CD4078 8-input NOR gate
+   ITEM parts.cd4000.CCD4081     CD4081 Quad AND gates
+   ITEM parts.cd4000.CCD4082     CD4082 Dual 4-input AND gates
+   }
+ MENU Inverters {
+   ITEM parts.cd4000.CCD4009  CD4009 - Hex inverter
+   ITEM parts.cd4000.CCD4049  CD4049 - Hex inverter
+   ITEM parts.cd4000.CCD4069  CD4069 - Hex inverter
+   }
+ MENU J-K Flip Flops {
+   ITEM parts.cd4000.CCD4027  CD4027 - Dual J-K flip-flops
+   }
+ MENU Shift Registers {
+   ITEM parts.cd4000.CCD4014  CD4014 - 8-bit parallel-in/serial-out shift register
+   }
+  }
+MENU CDP1800 Series {
+  ITEM parts.cdp1800.CCDP1852  CDP1852 - 8-bit Input/Output port
+  ITEM parts.cdp1800.CCDP1853  CDP1853 - 1 of 8 decoder, active-high
+  ITEM parts.cdp1800.CCDP1857  CDP1857 - 4-bit bus driver/separator
+  ITEM parts.cdp1800.CCDP1872  CDP1872 - 8-bit Input Port
+  ITEM parts.cdp1800.CCDP1874  CDP1874 - 8-bit Input Port
+  ITEM parts.cdp1800.CCDP1875  CDP1875 - 8-bit Output Port
+  ITEM parts.cdp1800.CCDP1878  CDP1878 - Dual Counter/Timer
+  ITEM parts.cdp1800.CCDP1881  CDP1881 - 6-bit Memory Decoder
+  ITEM parts.cdp1800.CCDP1882  CDP1882 - 6-bit Memory Decoder
+  ITEM parts.cdp1800.CCDP1883  CDP1883 - 7-bit Memory Decoder
+  }
+ITEM parts.input.CPower     Power Supply

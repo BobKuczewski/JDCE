@@ -1,0 +1,106 @@
+BUILDING BLOCKS
+
+  In digital electronics their are three basic building blocks which
+are called gates.  All digital circuits can be made from these three
+gates.  The gates are called AND, OR, and NOT.  It is essential that
+you fully understand the use of these gates, for with these gate you
+can build any digital circuit.
+
+  The AND gate can be likened to a circuit with two switches in series.
+ Both switches must be on for current to flow.  In an AND gate all
+inputs must be logic high for the gate to output a High.  The schematic
+diagram for the AND gate is shown in figure 1.  The truth table for
+the AND gate is as follows:
+
+
+	A   B ! Y
+        ------+--                        +-------
+	L   L ! L                   A ---!       \
+	L   H ! L                        !        !--- Y
+	H   L ! L                   B ---!       /
+	H   H ! H                        +-------
+                                    Figure 1
+
+  The included circuit "AND.CKT" contains a 74LS08 Quad AND device.
+Both the A and B switches are active high,  therefore the Y LED will
+only light when both switches are on.
+
+  The OR gate is like a circuit that has two switches in parallel.  If
+either switch is on the current is allowed to flow.  In the OR gate if
+any input is logic high then the output will be logic high.  The
+schematic diagram for the OR gate is show in figure 2.  The truth
+table for the OR gate is as follows:
+
+	A   B ! Y
+        ------+--                        +-------
+	L   L ! L                   A ----\      \
+	L   H ! H                          !      !--- Y
+	H   L ! H                   B ----/      /
+	H   H ! H                        +-------
+                                    Figure 2
+
+
+  The included circuit "OR.CKT" contains a 74LS32 Quad OR device.  Both
+the A and B switches are active high,  therefore the Y LED will light
+when either switch is on.
+
+  The NOT gate, also referred to as an "Inverter", is used to change
+the level of a signal.  If the input is logic high, then the output
+will be logic low.  If the input is logic low, then the output will be
+logic high.  The schematic diagram of the NOT gate is show in figure
+3.  The truth table for the NOT gate is a follows:
+
+                                    !\
+	A ! Y                       ! \
+        --+--                  A ---!  >O--- Y
+	L ! H                       ! /
+	H ! L                       !/
+                               Figure 3
+
+  The included circuit "INV.CKT" contains a 74LS04 Hex Inverter.  The A
+switch is active high,  therefore the Y LED will only light when the
+switch is off.
+
+  There is one more gate that is commonly used That is actually a
+permutation of the OR gate.  This gate is called Exclusive-OR  If both
+inputs to this gate are the same, then the output will be low.  If both
+inputs are different levels then the output will be high.  This device
+is very useful as a comparator between two signals.  The schematic
+diagram of the Exclusive-OR gate is show in figure 4.  The truth
+table for the Exclusive-OR gate is shown below:
+
+	A   B ! Y
+        ------+--                        \ +-------
+	L   L ! L                   A ----\ \      \
+	L   H ! H                          ! !      !--- Y
+	H   L ! H                   B ----/ /      /
+	H   H ! L                        / +-------
+                                    Figure 4
+
+  The included circuit "XOR.CKT" contains a 74LS86 Quad XOR device.
+Both the A and B switches are active high,  therefore the Y LED will
+only light when either A or B is on but will not light if both switches
+are on or off.
+
+  Many times it is useful to have the opposite function of one of the
+base gates (in other words, an inverted output).  These inverted output
+gates are called: NAND, NOR, and Exclusive-NOR.  The schematic diagrams
+and associated truth tables for these gates are show below:
+
+        XNOR                   NOR                    NAND
+      \ +-------               +-------               +-------
+ A ----\ \      \         A ----\      \         A ---!       \
+        ! !      !O-- Y          !      !O-- Y        !        !O-- Y
+ B ----/ /      /         B ----/      /         B ---!       /
+      / +-------               +-------               +-------
+
+      A  B ! Y                A  B ! Y                A  B ! Y
+      -----+--                -----!--                -----!--
+      L  L ! H                L  L ! H                L  L ! H
+      L  H ! L                L  H ! L                L  H ! H
+      H  L ! L                H  L ! L                H  L ! H
+      H  H ! H                H  H ! L                H  H ! L
+
+
+  The included circuits "XNOR.CKT", "NOR.CKT", and "NAND.CKT" have
+examples of these devices.

@@ -1,0 +1,203 @@
+.NAME=Z86E08
+.PINS=18
+P2-4
+P2-5
+P2-6
+P2-7
+VCC
+XTAL2
+XTAL1
+P3-1
+P3-2
+P3-3
+P0-0
+P0-1
+P0-2
+GND
+P2-0
+P2-1
+P2-2
+P2-3
+
+Instruction      Opcode          dst type  src type
+ADC dst,src      12 (ddddssss)       r         r    (d)=(d)+(s)+cy
+ADC dst,src      13 (ddddssss)       r         Ir   (d)=(d)+[(s)]+cy
+ADC dst,src      14 S D              R         R    d=d+s+cy
+ADC dst,src      15 S D              R         IR   d=d+[s]+cy
+ADC dst,src      16 D S              R         IM   d=d+#s+cy
+ADC dst,src      17 D S              IR        IM   [d]=[d]+#s+cy
+ADD dst,src      02 (ddddssss)       r         r    (d)=(d)+(s)
+ADD dst,src      03 (ddddssss)       r         Ir   (d)=(d)+[(s)]
+ADD dst,src      04 S D              R         R    d=d+s
+ADD dst,src      05 S D              R         IR   d=d+(s)
+ADD dst,src      06 D S              R         IM   d=d+#s
+ADD dst,src      07 D S              IR        IM   [d]=[d]+#s
+AND dst,src      52 (ddddssss)       r         r    (d)=(d) & (s)
+AND dst,src      53 (ddddssss)       r         Ir   (d)=(d) & [(s)]
+AND dst,src      54 S D              R         R    d=d & s
+AND dst,src      55 S D              R         IR   d=d & [s]
+AND dst,src      56 D S              R         IM   d=d & #s
+AND dst,src      57 D S              IR        IM   [d]=[d] & #s
+CALL dst         D6 H L              DA
+CALL dst         D4 D                IRR
+CCF              EF                                 cy=~cy
+CLR dst          B0 D                R              d=0
+CLR dst          B1 D                IR             [d]=0
+COM dst          60 D                R              d=~d
+COM dst          61 D                IR             [d]=~[d]
+CP  dst,src      A2 (ddddssss)       r         r    (d)-(s)
+CP  dst,src      A3 (ddddssss)       r         Ir   (d)=[(s)]
+CP  dst,src      A4 S D              R         R    d-s
+CP  dst,src      A5 S D              R         IR   d-[s]
+CP  dst,src      A6 D S              R         IM   d-#s
+CP  dst,src      A7 D S              IR        IM   [d]-#s
+DEC dst          00 D                R              d=d-1
+DEC dst          01 D                IR             [d]=[d]-1
+DECW dst         80 D                RR             d,d+1=d,d+1 -1
+DECW dst         81 D                IR             [d,d+1]=[d,d+1]-1
+DI               8F                                 ie=0
+DJNZ r,dst       rA D                RA
+EI               9F                                 ie=1
+HALT             7F
+INC dst          rE                  r              (d)=(d)+1
+INC dst          20 D                R              d=d+1
+INC dst          21 D                IR             [d]=[d]+1
+INCW dst         A0 D                RR             d,d+1=d,d+1 +1
+INCW dst         A1 D                IR             [d,d+1]=[d,d+1]+1
+IRET             BF
+JP dst           30 D                IRR
+JP cc,dst        (cccc)D H L         DA
+JR cc,dst        (cccc)B D           OFS
+LD dst,src       (dddd)C S           r         IM   (d)=#s
+LD dst,src       (dddd)8 S           r         R    (d)=s
+LD dst,src       (ssss)9 D           R         r    d=(s)
+LD dst,src       E3 (ddddssss)       r         Ir   (d)=[(s)]
+LD dst,src       F3 (ddddssss)       Ir        r    [(d)]=(s)
+LD dst,src       E4 S D              R         R    d=s
+LD dst,src       E5 S D              R         IR   d=[s]
+LD dst,src       E6 D S              R         IM   d=#s
+LD dst,src       E7 D S              IR        IM   [d]=#s
+LD dst,src       F5 S D              IR        R    [d]=d
+LD dst,src       C7 (ddddxxxx) S     r         X    (d)=[s+x]
+LD dst,src       D7 (ssssxxxx) D     X         r    [d]=[(s)+x]
+LDC dst,src      C2 (ddddssss)       r         PM   (d)={(s)}
+LDCI dst,src     C3 (ddddssss)       Ir        PM
+NOP              FF
+OR  dst,src      42 (ddddssss)       r         r
+OR  dst,src      43 (ddddssss)       r         Ir
+OR  dst,src      44 S D              R         R
+OR  dst,src      45 S D              R         IR
+OR  dst,src      46 D S              R         IM
+OR  dst,src      47 D S              IR        IM
+POP dst          50 D                R
+POP dst          51 D                IR
+PUSH src         70 S                R
+PUSH src         71 S                IR
+RCF              CF
+RET              AF
+RL dst           90 D                R
+RL dst           91 D                IR
+RLC dst          10 D                R
+RLC dst          11 D                IR
+RR dst           E0 D                R
+RR dst           E1 D                IR
+RRC dst          C0 D                R
+RRC dst          C1 D                IR
+SBC dst,src      32 (ddddssss)       r         r
+SBC dst,src      33 (ddddssss)       r         Ir
+SBC dst,src      34 S D              R         R
+SBC dst,src      35 S D              R         IR
+SBC dst,src      36 D S              R         IM
+SBC dst,src      37 D S              IR        IM
+SCF              DF
+SRA dst          D0 D                R
+SRA dst          D1 D                IR
+SRP src          31 S                          IM
+STOP             6F
+SUB dst,src      22 (ddddssss)       r         r
+SUB dst,src      23 (ddddssss)       r         Ir
+SUB dst,src      24 S D              R         R
+SUB dst,src      25 S D              R         IR
+SUB dst,src      26 D S              R         IM
+SUB dst,src      27 D S              IR        IM
+SWAP dst         F0 D                R
+SWAP dst         F1 D                IR
+TCM dst,src      62 (ddddssss)       r         r
+TCM dst,src      63 (ddddssss)       r         Ir
+TCM dst,src      64 S D              R         R
+TCM dst,src      65 S D              R         IR
+TCM dst,src      66 D S              R         IM
+TCM dst,src      67 D S              IR        IM
+TM  dst,src      72 (ddddssss)       r         r
+TM  dst,src      73 (ddddssss)       r         Ir
+TM  dst,src      74 S D              R         R
+TM  dst,src      75 S D              R         IR
+TM  dst,src      76 D S              R         IM
+TM  dst,src      77 D S              IR        IM
+WDH              4F
+WDT              5F
+XOR dst,src      B2 (ddddssss)       r         r
+XOR dst,src      B3 (ddddssss)       r         Ir
+XOR dst,src      B4 S D              R         R
+XOR dst,src      B5 S D              R         IR
+XOR dst,src      B6 D S              R         IM
+XOR dst,src      B7 D S              IR        IM
+ 
+Condition Codes (cccc)
+0  Always False
+1  Less Than
+2  Less Than or Equal
+3  Unsigned Less Than or Equal
+4  Overflow
+5  Minus
+6  Zero
+7  Carrz
+8  Aways True
+9  Greater Than or Equal
+A  Greater Than
+B  Unsigned Greater Than
+C  No OverFlow
+D  Plus
+E  Non Zero
+F  No Carry
+ 
+Control Registers
+FF Stack Pointer Low
+FE Stack Pointer Hi
+FD Register Pointer
+   D4-D7 - Working register pointer
+FC Program Control Flags
+FB Interrupt Mask Register
+   D0-D5 Int enable (1=Enabled, 0=Disabled)
+   D7    Enable Interrupts (1=Enabled, 0=Disabled)
+FA Interrupt Request Register
+   D0-D5 Interrupt requests (1=Interrupt, 0=No interrupt)
+F9 Interrupt Priority Register
+   D4,D3,D0  001 C>A>B
+             010 A>B>C
+             011 A>C>B
+             100 B>C>A
+             101 C>B>A
+             110 B>A>C
+   D1 Group C  0=irq1>irq4 1=irq4>irq1
+   D2 Group B  0=irq2>irq0 1=irq0>irq2
+   D5 Group A  0=irq5>irq3 1=irq3>irq5
+F8 Port 0-1 Mode Register
+   D1,D0 = Port 0 mode (0=out, 1=in)
+F7 Port 3 Mode Register
+F6 Port 2 Mode Register
+   per bit (0=out, 1=in)
+F5 T0 Prescaler
+   D0    Count mode (0=Single Pass, 1=Modulo)
+   D2-D7 Prescaler
+F4 Timer/Counter 0
+F3 T1 Prescaler
+   D0    Count mode (0=Single Pass, 1=Modulo)
+   D1    Clock source (1=Internal, 0=External)
+   D2-D7 Prescaler
+F2 Timer/Counter 1
+F1 Timer Mode
+   D0    1=Load timer T0
+   D1    0=Disable T0, 1=Enable T0
+   D2    1=Load timer T1
+   D3    0=Disable T1, 1=Enable T1

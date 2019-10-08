@@ -1,0 +1,21 @@
+.NAME=CD4020
+.PINS=16
+Q12
+Q13
+Q14
+Q6
+Q5
+Q7
+Q4
+VSS
+Q1
+CLK
+RES
+Q9
+Q8
+Q1O
+Q11
+VDD
+This device contains a single 14-bit counter.  Outputs are provided
+for bit 1 and bits 4 through 14.  The counter can be reset to zero
+by bringing RES high.

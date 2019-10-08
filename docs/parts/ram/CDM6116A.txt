@@ -1,0 +1,39 @@
+.NAME=CDM6116A
+.PINS=24
+A7
+A6
+A5
+A4
+A3
+A2
+A1
+AO
+I/O1
+I/O2
+I/O3
+GND
+I/O4
+I/O5
+I/O6
+I/O7
+I/O8
+ce
+A1O
+oe
+we
+A9
+A8
+VCC
+This device contains a 2k x 8-bit memory array with tri-state
+outputs.
+
+TRUTH TABLE
++-----+-----+-----++----------+
+| /CE | /OE | /WE || MODE     |
+===============================
+| H   | X   | X   || Z        |
++-----+-----+-----++----------+
+| L   | L   | H   || DATA OUT |
++-----+-----+-----++----------+
+| L   | X   | L   || DATA IN  |
++-----+-----+-----++----------+

@@ -1,0 +1,68 @@
+.NAME=74LS47
+.PINS=16
+DB
+DC
+lt
+bi/rbo
+rbi
+DD
+DA
+GND
+E
+D
+C
+B
+A
+G
+F
+VCC
+This device consists of a 4-input BCD to 7-Segment display
+decoder.  This device incorporates both a lamp test and
+zero blanking capability.
+ 
+The Data inputs (DD,DC,DB,DA) specify in BCD the numeral to
+be displayed.  Numerals are provided for 0-9 and special
+symbols for A thru F.
+ 
+The output segments are defined as follows:
+ 
+       A
+     +---+
+   F | G | B
+     +---+
+   E | D | C
+     +---+
+ 
+Symbols A thru F are defined as follows:
+ 
+      A      B      C      D      E      F
+                  |   |  +---   |
+    +---    ---+  +---+  +---   +---
+    +---    ---+         ----   +---
+ 
+Notes: 1. The blanking input (/BI) must be high for display
+          output.  The ripple-blanking-input (/RBI) must be
+          high if blanking of a decimal zero is not desired
+ 
+       2. When the blanking input (/BI) is held low, the display
+          is blanked regardless of any other input.
+ 
+       3. When the ripple-blanking-input (/RBI) and the data
+          inputs (DD,DC,DB,DA) are low, the display will be
+          blanked and ripple-blanking-output (/RBO) goes low.
+ 
+       4. When the blanking-input (/BI) is held high and lamp
+          test (/LT) is held low, all segments will be lit.
+
+PROPAGATION DELAY
++----------+----------+----------+------------------------+
+| FUNCTION |   FROM   |    TO    | TIME                   |
+===========================================================
+| tOFF     | A,B,C,D  | Outputs  | 100 ns                 |
++----------+----------+----------+------------------------+
+| tON      | A,B,C,D  | Outputs  | 100 ns                 |
++----------+----------+----------+------------------------+
+| tOFF     | /RBI     | Outputs  | 100 ns                 |
++----------+----------+----------+------------------------+
+| tON      | /RBI     | Outputs  | 100 ns                 |
++----------+----------+----------+------------------------+

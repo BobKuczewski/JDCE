@@ -1,0 +1,70 @@
+.NAME=74143
+.PINS=24
+scei
+CLK
+clr
+rbi
+BI
+bi/rbo
+DPIN
+DPOUT
+D
+F
+E
+GND
+G
+C
+A
+B
+QA
+QB
+QC
+QD
+strb
+MAX
+peci
+VCC
+This device contains an integrated 4-bit decade counter, latch,
+and 7-segment display decoder/driver.
+ 
+FUNCTION      PIN        DESCRIPTION
+/CLR          3            When low the counter is reset to zero.
+CLK           2            Each low-to-high transition of the clock
+                           will increment the counter if both enable
+                           inputs are low.
+/PCEI         23           Must be low for counting, counter is
+                           inhibited when high.
+/SCEI         1            Must be low for counting, counter is
+                           inhibited when high.
+MAX           22           Will go low when the counter is at 9.
+                           high otherwise.
+/STRB         21           When low the display latches will follow
+                           the counter.  When high the latched data
+                           remains on the display.
+Qa,Qb,Qc,Qd   17-20        These outputs represent the output of the
+                           data latches.
+DPIN          7            This is the Decimal-point input.
+BI            5            When high the display will be blanked.
+/RBI          4            When this input is low and the latch data
+                           contains zero, the display will be
+blanked
+                           and the /RBO will go low.
+/BI/RBO       6            When this pin is low, the display is, blanked
+                           (see also /RBI).
+a-g,DPOUT     15,16,14,9   Outputs for driving the 7-segment display.
+              11,10,13,8
+
+PROPAGATION DELAY
++----------+-----------+------------+------------------------+
+| FUNCTION |   FROM    |    TO      | TIME                   |
+==============================================================
+| tPLH     | Look-ahead| MAX        | 12-20 ns               |
++----------+-----------+------------+------------------------+
+| tPHL     | Look-ahead| MAX        | 23-35 ns               |
++----------+-----------+------------+------------------------+
+| tPLH     | CLK       | MAX        | 26-40 ns               |
++----------+-----------+------------+------------------------+
+| tPHL     | CLK       | MAX        | 29-45 ns               |
++----------+-----------+------------+------------------------+
+| tPLH     | CLK       | Qa,Qb,Qc,Qd| 28-45 ns               |
++----------+-----------+------------+------------------------+

@@ -1,0 +1,184 @@
+COMPONENTS BY NUMERICAL ORDER:
+
+2114      - 1Kx4 STATIC RAM                           MEMORIES
+2708      - 1Kx8 EPROM                                MEMORIES
+2716      - 2Kx8 EPROM                                MEMORIES
+2732      - 4Kx8 EPROM                                MEMORIES
+2764      - 8Kx8 EPROM                                MEMORIES
+4164      - 64kx1 DYNAMIC RAM                         MEMORIES
+5C031     - PROGRAMMABLE LOGIC DEVICE (registered)    MISCELANEOUS
+7425      - DUAL 4-INPUT NOR WITH STROBE              GATES
+7445      - BCD TO DECIMAL DECODER                    DECODERS
+7451      - 2-WIDE AND-OR-INVERT                      MULTI-GATES
+7454      - 4-WIDE AND-OR-INVERT                      MULTI-GATES
+7470      - AND GATED J-K FLIP FLOP                   J-K FLIP FLOPS
+7472      - AND GATED J-K MASTER-SLAVE                J-K FLIP FLOPS
+7473      - DUAL J-K WITH CLEAR                       J-K FLIP FLOPS
+7476      - DUAL J-K WITH CLEAR,PRESET                J-K FLIP FLOPS
+7494      - 4-BIT SERIAL/PAR-IN SERIAL-OUT            SHIFT REGISTERS
+74107     - DUAL J-K FLIP FLOPS                       J-K FLIP FLOPS
+74111     - DUAL J-K FLIP FLOPS                       J-K FLIP FLOPS
+74116     - DUAL 4-BIT LATCHES                        FLIP FLOPS
+74143     - DECADE COUNTER WITH 7-SEGMENT             COUNTERS
+74150     - 16 TO 1-LINE SELECTOR/MULTIPLEXER         MULTIPLEXERS
+74154     - 4-LINE TO 16-LINE DECODER                 DECODERS
+74159     - 4-LINE TO 16-LINE DECODER OC              DECODERS
+74176     - PRESETTABLE DECADE COUNTER                COUNTERS
+74177     - PRESETTABLE BINARY COUNTER                COUNTERS
+74178     - 4-BIT PARALLEL-ACCESS                     SHIFT REGISTERS
+74180     - 9-BIT PARITY GENERATOR/CHECKER            MISCELANEOUS
+74198     - 8-BIT BIDIRECTIONAL UNIVERSAL REGISTER    SHIFT REGISTERS
+74199     - 8-BIT PARALLEL-ACCESS J/K SERIAL          SHIFT REGISTERS
+74265     - QUAD COMPLEMENTARY ELEMENTS               GATES
+74284     - 4-BIT BY 4-BIT MULTIPLIER (HI)            ARITHMETIC
+74285     - 4-BIT BY 4-BIT MULTIPLIER (LO)            ARITHMETIC
+74LS00    - NAND                                      GATES
+74LS02    - NOR                                       GATES
+74LS04    - HEX INVERTER                              INVERTERS
+74LS05    - HEX INVERTER OC                           INVERTERS
+74LS08    - AND                                       GATES
+74LS10    - 3-INPUT NAND                              GATES
+74LS11    - 3-INPUT AND                               GATES
+74LS14    - HEX INVERTER SCDMITT TRIGGER              INVERTERS
+74LS20    - 4-INPUT NAND                              GATES
+74LS21    - 4-INPUT AND                               GATES
+74LS27    - 3-INPUT NOR                               GATES
+74LS30    - 8-INPUT NAND                              GATES
+74LS32    - QUAD 2-INPUT OR                           GATES
+74LS42    - BCD TO DECIMAL DECODER                    DECODERS
+74LS47    - SEVEN SEGMENT DECODER                     DECODERS
+74LS51    - 2-WIDE AND-OR-INVERT                      MULTI-GATES
+74LS54    - 4-WIDE AND-OR-INVERT                      MULTI-GATES
+74LS55    - 2-WIDE 4 INPUT AND-OR-INVERT              MULTI-GATES
+74LS68    - DUAL 4-BIT DECADE COUNTER                 COUNTERS
+74LS69    - DUAL 4-BIT BINARY COUNTER                 COUNTERS
+74LS73    - DUAL J-K WITH CLEAR                       J-K FLIP FLOPS
+74LS74    - DUAL D-TYPE FLIP FLOPS                    FLIP FLOPS
+74LS75    - 4-BIT BISTABLE LATCH                      FLIP FLOPS
+74LS76    - DUAL J-K WITH CLEAR,PRESET                J-K FLIP FLOPS
+74LS78    - DUAL J-K NEGATIVE EDGE                    J-K FLIP FLOPS
+74LS83    - 4-BIT BINARY ADDER                        ARITHMETIC
+74LS85    - 4-BIT MAGNITUDE COMPARATOR                ARITHMETIC
+74LS86    - EXCLUSIVE-OR                              GATES
+74LS90    - DECADE COUNTER                            COUNTERS
+74LS91    - 8-BIT SERIAL-IN SERIAL-OUT                SHIFT REGISTERS
+74LS92    - DIVIDE-BY-TWELVE COUNTER                  COUNTERS
+74LS93    - 4-BIT BINARY COUNTER                      COUNTERS
+74LS95    - 4-BIT PARALLEL-ACCESS                     SHIFT REGISTERS
+74LS96    - 5-BIT PARALLEL-ACCESS                     SHIFT REGISTERS
+74LS107   - DUAL J-K WITH CLEAR                       J-K FLIP FLOPS
+74LS109   - DUAL J-NOT-K FLIP FLOPS                   J-K FLIP FLOPS
+74LS112   - DUAL J-K WITH CLEAR,PRESET                J-K FLIP FLOPS
+74LS113   - DUAL J-K WITH PRESET                      J-K FLIP FLOPS
+74LS114   - DUAL J-K w/ COMMON CLEAR,CLOCK            J-K FLIP FLOPS
+74LS125   - QUAD TRI-STATE BUFFER                     BUFFERS/DRIVERS
+74LS126   - QUAD TRI-STATE BUFFER                     BUFFERS/DRIVERS
+74LS132   - NAND SCMITT TRIGGER                       GATES
+74LS137   - 3-LINE TO 8-LINE DECODER LATCHED          DECODERS
+74LS138   - 3-LINE TO 8-LINE DECODER                  DECODERS
+74LS139   - DUAL 2-LINE TO 4-LINE DECODER             DECODERS
+74LS145   - BCD TO DECIMAL DECODER                    DECODERS
+74LS147   - 10 TO 4-LINE PRIORITY ENCODER             MULTIPLEXERS
+74LS148   - 8 TO 3-LINE PRIORITY ENCODER              MULTIPLEXERS
+74LS151   - 8 TO 1-LINE SELECTOR/MULTIPLEXER          MULTIPLEXERS
+74LS153   - DUAL 4 TO 1-LINE SELECTOR/MULTIPLEXER     MULTIPLEXERS
+74LS155   - DUAL 2-LINE TO 4-LINE DECODER             DECODERS
+74LS156   - DUAL 2-LINE TO 4-LINE DECODER OC          DECODERS
+74LS157   - QUAD 2 TO 1-LINE DATA SELECTOR            MULTIPLEXERS
+74LS158   - QUAD 2 TO 1-LINE DATA SELECTOR INV        MULTIPLEXERS
+74LS160   - DECADE COUNTER                            COUNTERS
+74LS161   - BINARY COUNTER                            COUNTERS
+74LS162   - DECADE COUNTER                            COUNTERS
+74LS163   - BINARY COUNTER                            COUNTERS
+74LS164   - 8-BIT PARALLEL-OUT SERIAL-IN              SHIFT REGISTERS
+74LS165   - 8-BIT PARALLEL-IN SERIAL-OUT              SHIFT REGISTERS
+74LS166   - 8-BIT PARALLEL-IN SERIAL-OUT /w CLEAR     SHIFT REGISTERS
+74LS169   - 4-BIT UP/DOWN BINARY COUNTER              COUNTERS
+74LS170   - 4x4-BIT REGISTER FILE OC                  MEMORIES
+74LS171   - QUAD D-TYPE /w CLEAR                      FLIP FLOPS
+74LS173   - QUAD D-TYPE TRI-STATE                     FLIP FLOPS
+74LS174   - HEX D-TYPE FLIP FLOPS                     FLIP FLOPS
+74LS175   - QUAD D-TYPE FLIP FLOPS                    FLIP FLOPS
+74LS181   - ALU/FUNCTION GENERATOR                    ARITHMETIC
+74LS183   - DUAL CARRY-SAVE FULL ADDERS               ARITHMETIC
+74LS190   - BCD UP/DOWN COUNTER                       COUNTERS
+74LS191   - 4-BIT UP/DOWN COUNTER                     COUNTERS
+74LS192   - BCD COUNTER                               COUNTERS
+74LS193   - 4-BIT COUNTER                             COUNTERS
+74LS194   - 4-BIT BIDIRECTIONAL UNIVERSAL REGISTER    SHIFT REGISTERS
+74LS195   - 4-BIT PARALLEL-ACCESS J/K SERIAL          SHIFT REGISTERS
+74LS240   - OCTAL TRI-STATE INVERTING BUFFER          BUFFERS/DRIVERS
+74LS241   - OCTAL TRI-STATE BUFFER                    BUFFERS/DRIVERS
+74LS244   - OCTAL TRI-STATE BUFFER                    BUFFERS/DRIVERS
+74LS245   - OCTAL TRI-STATE BUS TRANSCEIVER           BUFFERS/DRIVERS
+74LS251   - 8 TO 1-LINE SELECTOR 3-STATE              MULTIPLEXERS
+74LS253   - DUAL 4 TO 1-LINE SELECTOR 3-STATE         MULTIPLEXERS
+74LS257   - QUAD 2 TO 1-LINE SELECTOR 3-STATE         MULTIPLEXERS
+74LS258   - QUAD 2 TO 1-LINE SELECTOR INV 3-STATE     MULTIPLEXERS
+74LS266   - QUAD EXCLUSIVE-NOR                        GATES
+74LS273   - OCTAL D-TYPE FLIP-FLOPS                   FLIP FLOPS
+74LS279   - QUAD S-R TYPE FLIP-FLOPS                  FLIP FLOPS
+74LS367   - HEX TRI-STATE BUFFER                      BUFFERS/DRIVERS
+74LS373   - OCTAL D-TYPE LATCHES                      FLIP FLOPS
+74LS381   - ALU/FUNCTION GENERATOR                    ARITHMETIC
+74LS382   - ALU/FUNCTION GENERATOR                    ARITHMETIC
+74LS590   - 8-BIT BINARY COUNTER                      COUNTERS
+74LS604   - OCTAL 2-INPUT MULTIPLEXED LATCHES         MULTIPLEXERS
+74LS612   - MEMORY MAPPER                             MEMORIES
+74LS684   - 8-BIT MAGNITUDE COMPARATOR                ARITHMETIC
+74LS686   - 8-BIT MAGNITUDE COMPARATOR                ARITHMETIC
+74LS688   - 8-BIT MAGNITUDE COMPARATOR                ARITHMETIC
+74S64     - 4-2-3-2 INPUT AND-OR-INVERT               MULTI-GATES
+74S133    - 13-INPUT NAND                             GATES
+74S134    - TRI-STATE 12-INPUT NAND                   GATES
+74S135    - QUAD EXCLUSIVE-OR/NOR GATES               MULTI-GATES
+74S136    - QUAD EXCLUSIVE-OR OC                      GATES
+74S182    - LOOK-AHEAD CARRY GENERATOR                ARITHMETIC
+8080A     - MICROPROCESSOR                            MISCELANEOUS
+9370      - HEX SEVEN SEGMENT DECODER                 DECODERS
+CD4000    - Dual 3-input NOR gates plus an inverter   CD4000 SERIES
+CD4001    - Quad 2-input NOR gates                    CD4000 SERIES
+CD4002    - Dual 4-input NOR gates                    CD4000 SERIES
+CD4008    - 4-bit Adder with carry                    CD4000 SERIES
+CD4009    - Hex inverter                              CD4000 SERIES
+CD4010    - Hex non-inverting buffers                 CD4000 SERIES
+CD4011    - Quad 2-input NAND gates                   CD4000 SERIES
+CD4012    - Dual 4-input NAND gates                   CD4000 SERIES
+CD4013    - Dual independent D-type flip-flops        CD4000 SERIES
+CD4014    - 8-bit parallel-in/serial-out shift register   CD4000 SERIES
+CD4020    - 14-bit counter                            CD4000 SERIES
+CD4023    - Triple 3-input NAND gates                 CD4000 SERIES
+CD4024    - 7-bit counter                             CD4000 SERIES
+CD4025    - Triple 3-input NOR gates                  CD4000 SERIES
+CD4027    - Dual J-K flip-flops                       CD4000 SERIES
+CD4030    - Quad XOR gates                            CD4000 SERIES
+CD4049    - Hex inverter                              CD4000 SERIES
+CD4050    - Hex non-inverting buffers                 CD4000 SERIES
+CD4068    - 8-input NAND gate                         CD4000 SERIES
+CD4069    - Hex inverter                              CD4000 SERIES
+CD4070    - Quad XOR gates                            CD4000 SERIES
+CD4071    - Quad OR gates                             CD4000 SERIES
+CD4072    - Dual 4-input OR gates                     CD4000 SERIES
+CD4073    - Triple 3-input AND gates                  CD4000 SERIES
+CD4075    - Triple 3-input OR gates                   CD4000 SERIES
+CD4077    - Quad XNOR gates                           CD4000 SERIES
+CD4078    - 8-input NOR gate                          CD4000 SERIES
+CD4081    - Quad AND gates                            CD4000 SERIES
+CD4082    - Dual 4-input AND gates                    CD4000 SERIES
+CDM6116A  - 2Kx8 STATIC RAM                           MEMORIES
+CDM6264   - 8Kx8 STATIC RAM                           MEMORIES
+CDP1802BC - MICROPROCESSOR                            MISCELANEOUS
+CDP1852   - 8-bit Input/Ouput Port                    CDP1800 SERIES
+CDP1853   - 1 of 8 decoder, active-high               CDP1800 SERIES
+CDP1857   - 4-bit bus driver/separator                CDP1800 SERIES
+CDP1872   - 8-bit Input Port                          CDP1800 SERIES
+CDP1874   - 8-bit Input Port                          CDP1800 SERIES
+CDP1875   - 8-bit Output Port                         CDP1800 SERIES
+CDP1881   - 6-bit Memory Decoder                      CDP1800 SERIES
+CDP1882   - 6-bit Memory Decoder                      CDP1800 SERIES
+CDP1883   - 7-bit Memory Decoder                      CDP1800 SERIES
+CLOCK     - CLOCK SOURCE                              MISCELANEOUS
+MAN10A    - 7-SEGMENT LED DISPLAY                     OUTPUT DEVICES
+TIL311    - HEX DISPLAY /w DECODER                    OUTPUT DEVICES
+Z86E08    - Z8 MICROCONTROLLER                        MISCELANEOUS
+

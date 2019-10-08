@@ -1,0 +1,48 @@
+.NAME=74S182
+.PINS=16
+g1
+p1
+go
+po
+g3
+p3
+p
+GND
+CN+Z
+g
+CN+Y
+CN+X
+CN
+g2
+p2
+VCC
+This device incorporates a high-speed, look-ahead carry generators
+capable of anticipating a carry across four binary adders.
+ 
+TRUTH TABLES
++-----------------------------++----+ +------------++------+
+| /G3 /G2 /G1 /G0 /P3 /P2 /P1 || /G | | /G0 /P0 Cn || Cn+x |
+===================================== ======================
+|  L   X   X   X   X   X   X  ||  L | |  L   X   X ||   H  |
+|  X   L   X   X   L   X   X  ||  L | |  X   L   H ||   H  |
+|  X   X   L   X   L   L   X  ||  L | | ALL OTHERS ||   L  |
+|  X   X   X   L   L   L   L  ||  L | +------------++------+
+| ALL OTHER COMBINATIONS      ||  H |
++-----------------------------++----+
++--------------------++------+ +-----------------++----+
+| /G1 /G0 /P1 /P0 Cn || Cn+y | | /P3 /P2 /P1 /P0 || /P |
+============================== =========================
+|  L   X   X   X   X ||   H  | |  L   L   L   L  ||  L |
+|  X   L   L   X   X ||   H  | | ALL OTHERS      ||  H |
+|  X   X   L   L   H ||   H  | +-----------------++----+
+| ALL OTHERS         ||   L  |
++--------------------++------+
++----------------------------++------+
+| /G2 /G1 /G0 /P2 /P1 /P0 Cn || Cn+z |
+======================================
+|  L   X   X   X   X   X   X ||   H  |
+|  X   L   X   L   X   X   X ||   H  |
+|  X   X   L   L   L   X   X ||   H  |
+|  X   X   X   L   L   L   H ||   H  |
+| ALL OTHER COMBINATIONS     ||   L  |
++----------------------------++------+

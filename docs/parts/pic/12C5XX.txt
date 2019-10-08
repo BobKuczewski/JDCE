@@ -1,0 +1,176 @@
+.NAME=12C5XX
+.PINS=8
+VDD
+GP5
+GP4
+GP3
+GP2
+GP1
+GP0
+VSS
+
+Alternate functions on some pins:
+GP5 - OSC1, CLKIN
+GP4 - OSC2
+GP3 - /MCLR, VPP
+GP2 - T0CKI
+
+ADDWF f,d	0001 11df ffff
+ANDLW k		1110 kkkk kkkk
+ANDWF f,d	0001 01df ffff
+BCF f,b		0100 bbbf ffff
+BSF f,b		0101 bbbf ffff
+BTFSC f,b	0110 bbbf ffff
+BTFSS f,b	0111 bbbf ffff
+CALL k		1001 kkkk kkkk
+CLRF f		0000 011f ffff
+CLRW		0000 0100 0000
+CLRWDT k	0000 0000 0100
+COMF f,d	0010 01df ffff
+DECF f,d	0000 11df ffff
+DECFSZ f,d	0010 11df ffff
+GOTO k		101k kkkk kkkk
+INCF f,d	0010 10df ffff
+INCFSZ f,d	0011 11df ffff
+IORLW k		1101 kkkk kkkk
+IORWF f,d	0001 00df ffff
+MOVF f,d	0010 00df ffff
+MOVLW k		1100 kkkk kkkk
+MOVWF f		0000 001f ffff
+NOP		0000 0000 0000
+OPTION		0000 0000 0010
+RETLW k		1000 kkkk kkkk
+RLF f,d		0011 01df ffff
+RRF f,d		0011 00df ffff
+SLEEP		0000 0000 0011
+SUBWF f,d	0000 10df ffff
+SWAPF f,d	0011 10df ffff
+TRIS		0000 0000 0110
+XORLW k		1111 kkkk kkkk
+XORWF f,d	0001 10df ffff
+
+          Value on power-on     reset
+- TRIS        --11 1111        --11 1111
+- OPTION      1111 1111        1111 1111
+0 INDF        xxxx xxxx        0000 0000 - Indirect read/write
+1 TMR0        xxxx xxxx        0000 0000
+2 PCL         1111 1111        1111 1111
+3 STATUS      0001 1xxx        q00q quuu
+4 FSR         110x xxxx        1100 0000 - register for indirect access
+5 OSCCAL      1000 0000        0000 0000
+6 GPIO        --xx xxxx        --00 0000
+
+TRIS Register - GPIO control register, set with TRIS command
+  bit 5 - GP6
+          1 - Input
+          0 - Output
+  bit 4 - GP5
+          1 - Input
+          0 - Output
+  bit 3 - GP4
+          1 - Input
+          0 - Output
+  bit 2 - GP3 - Always input
+  bit 1 - GP2
+          1 - Input
+          0 - Output
+  bit 0 - GP1
+          1 - Input
+          0 - Output
+
+Option Register - written with OPTION command
+  bit 7 - GPWU - Wake up on pin change (GP0, GP1, GP3)
+          1 - Disabled
+          0 - Enabled
+  bit 6 - GGPU - Enable weak pullups (GP0, GP1, GP3)
+          1 - Disabled
+          0 - Enabled
+  bit 5 - T0CS - Timer0 clock source
+          1 - Transition on T0CKKI pin
+          0 - Transition on internal instruction cycle clock, Fosc/4
+  bit 4 - T0SE - Source edge select
+          1 - Increment on high to low transition of T0CLKI pin
+          0 - Increment on low to high transition of T0CLKI pin
+  bit 3 - PSA - Prescaler assignment bit
+          1 - Prescaler assigned to the WDT
+          0 - Prescaler assigned to Timer0
+  bits 2-0 - Prescaler rate select
+          value Timer0   WDT
+           000   1:2     1:1
+           001   1:4     1:2
+           010   1:8     1:4
+           011   1:16    1:8
+           100   1:32    1:16
+           101   1:64    1:32
+           110   1:128   1:64
+           111   1:256   1:128
+
+Status register:
+  bit 7 - GPWUF - GPIO Reset Bit
+          1 - reset due to wakeup from sleep on pin change
+          0 - After powerup or other reset
+  bit 5 - PA0 - Program page preselect bits
+          1 - Page 1 (upper 512 bytes of program memory)
+          0 - Page 0 (lower 512 bytes of program memory)
+  bit 4 - TO - Time out bit (read only)
+          1 - After power up, CLRWDT or SLEEP instructions
+          0 - A WDT Timeout occured
+  bit 3 - PD - Power down bit (read only)
+          1 - After power up or CLRWDT instruction
+          0 - By execution of the sleep instruction
+  bit 2 - Z - Zero Bit
+          1 - Result was zero
+          0 - Result was nonzero
+  bit 1 - DC - Digit carry
+          ADDWF
+            1 - A carry across nybbles occured
+            0 - A carry across nybbles did not occur
+          SUBWF
+            1 - A borrow across nybbles did not occur
+            0 - A borrow across nybbles occured
+  bit 0 - C - Carry
+          ADDWF
+            1 - A carry occured
+            0 - A carry did not occur
+          SUBWF
+            1 - A borrow did not occur
+            0 - A borrow occured
+
+OSCCAL Register
+  bit 7 - CAL5
+  bit 6 - CAL4
+  bit 5 - CAL3
+  bit 4 - CAL2
+  bit 3 - CAL1
+  bit 2 - CAL0
+  bit 1 - unused
+  bit 0 - unused
+
+Processor configuration word - Address 0xfff
+  bit 4 - /mclr enable bit
+          1 - /mclr pin enabled
+          0 - /mclr disabled
+  bit 3 - Code protection bit
+          1 - Code protection off
+          0 - Code protection on
+  bit 2 - WDTE - Watchdog timer enable
+          1 - WDT Enabled
+          0 - WDT Disabled
+  bits 1-0 - Oscillator selection
+          1 1 - EXTRC
+          1 0 - INTRC
+          0 1 - XT oscillator
+          0 0 - LP oscillator
+
+Special notes concerning this device in DCE:
+--------------------------------------------
+  The simulation of this device in DCE does not support the programming
+mode.  Microcontroller programs are instead read from .rom files.  When
+making .rom files for this device, be aware that it each instruction is
+actually 12 bits wide, Therefore it takes two entries in the .rom file
+for each increment of the address pointer.  The first byte entry provides
+the upper 8 bits of the instruction, the low nybble of the next entry
+provides the low 4 bits.
+
+  Also not that the configuration word can only be set into the device from
+the .rom file at location 0fff:.

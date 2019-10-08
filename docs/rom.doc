@@ -1,0 +1,30 @@
+EPROMS:
+There are four standard EPROMS provided with DCE.  These are
+2708, 2716, 2732, and 2764.  The programming characteristics of
+these devices is not emulated, only the read capability.  You can
+provide programming for EPROMs using .rom files.
+
+When you place an EPROM into a circuit you will be asked for the
+.rom file that contains the image for the rom.
+
+The .rom file is a straight ASCII file containing hex data
+describing the image for the rom.  Two types of data can be entered
+into this file: Hex data to be placed into the rom and hex address
+data to set the write pointer.  Hex data consists of two characters
+of hex data that will be written to the current write pointer in the
+rom.  A Hex address is preceeded by a colon (:), this resets the
+current write pointer for following data.  It is not necessary to
+load the rom in sequential order, you can in fact jump all over the
+address space in any order you choose.
+
+Below is a sample .rom file:
+
+    00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+    :1000
+    FF FF FF FF
+    :0200
+    0A 0A 0A 0A
+
+This file would set the first 16 addresses to the numbers 00-0F,
+then four FF's are stored starting at address 1000h, and then 4
+0A's are stored starting at address 200h.

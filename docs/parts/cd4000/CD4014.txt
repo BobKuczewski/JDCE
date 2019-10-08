@@ -1,0 +1,24 @@
+.NAME=CD4014
+.PINS=16
+P8
+Q6
+Q8
+P4
+P3
+P2
+P1
+VSS
+PAR/ser
+CLK
+SIN
+Q7
+P5
+P6
+P7
+VDD
+This device contains an 8-bit parallel/serial-in serial-out
+shift register.  When PAR/SER is held high, the data on the P
+inputs will be transfered to the register on the next rising
+clock pulse.  When PAR/SER is held low, The data in the register
+is shifted left, the value at SIN will be placed into bit 1 of
+the register.  Outputs are provided for bits 6, 7, and 8.

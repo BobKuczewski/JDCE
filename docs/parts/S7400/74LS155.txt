@@ -1,0 +1,75 @@
+.NAME=74LS155
+.PINS=16
+C1
+g1
+B
+Y1-3
+Y1-2
+Y1-1
+Y1-O
+GND
+Y2-O
+Y2-1
+Y2-2
+Y2-3
+A
+g2
+c2
+VCC
+This device consists of 2 1-line to 4-line decoder/demultiplexers
+with individual strobes and common binary address inputs.
+ 
+TRUTH TABLE - 2-line to 4-line decoder or 1-line to 4-line demux.
++-----+-----+----++---------------------+
+| B A | /G1 | C1 || Y1-0 Y1-1 Y1-2 Y1-3 |
+=========================================
+| X X |  H  |  X ||   H    H    H    H  |
+| L L |  L  |  H ||   L    H    H    H  |
+| L H |  L  |  H ||   H    L    H    H  |
+| H L |  L  |  H ||   H    H    L    H  |
+| H H |  L  |  H ||   H    H    H    L  |
+| X X |  X  |  L ||   H    H    H    H  |
++-----+-----+----++---------------------+
++-----+-----+----++---------------------+
+| B A | /G2 | C2 || Y2-0 Y2-1 Y2-2 Y2-3 |
+=========================================
+| X X |  H  |  X ||   H    H    H    H  |
+| L L |  L  |  L ||   L    H    H    H  |
+| L H |  L  |  L ||   H    L    H    H  |
+| H L |  L  |  L ||   H    H    L    H  |
+| H H |  L  |  L ||   H    H    H    L  |
+| X X |  X  |  H ||   H    H    H    H  |
++-----+-----+----++---------------------+
+TRUTH TABLE - 3-line to 8-line decoder or 1-line to 8-line demux.
++-------+----++----------------------------------------+
+| C B A | /G || Y2-0 Y2-1 Y2-2 Y2-3 Y1-0 Y1-1 Y1-2 Y1-3|
+========================================================
+| X X X |  H ||   H    H    H    H    H    H    H    H |
+| L L L |  L ||   L    H    H    H    H    H    H    H |
+| L L H |  L ||   H    L    H    H    H    H    H    H |
+| L H L |  L ||   H    H    L    H    H    H    H    H |
+| L H H |  L ||   H    H    H    L    H    H    H    H |
+| H L L |  L ||   H    H    H    H    L    H    H    H |
+| H L H |  L ||   H    H    H    H    H    L    H    H |
+| H H L |  L ||   H    H    H    H    H    H    L    H |
+| H H H |  L ||   H    H    H    H    H    H    H    L |
++-------+----++----------------------------------------+
+In this table, both C inputs are tied together and both gate
+inputs are tied together.
+
+PROPAGATION DELAY
++----------+----------+----------+------------------------+
+| FUNCTION |   FROM   |    TO    | TIME                   |
+===========================================================
+| tPLH     | A,B,C,G  | Y        | 13-20 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | A,B,C,G  | Y        | 18-27 ns               |
++----------+----------+----------+------------------------+
+| tPLH     | A or B   | Y        | 21-32 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | A or B   | Y        | 21-32 ns               |
++----------+----------+----------+------------------------+
+| tPLH     | C        | Y        | 16-24 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | C        | Y        | 20-30 ns               |
++----------+----------+----------+------------------------+

@@ -1,0 +1,50 @@
+.NAME=74LS590
+.PINS=16
+QB
+QC
+QD
+QE
+QF
+QG
+QH
+GND
+rco
+cclr
+CCK
+ccken
+RCK
+g
+QA
+VCC
+This device contains an 8-bit binary counter with output registers
+and tri-state outputs.  Separate clocks are provided for the counter
+and the output latch.  CCK clocks the counter while RCK clocks the
+output registers.  If both clock inputs are tied together the counter
+will remain 1 count ahead of the output.  /G controls the outputs
+from the device.  /CCKEN must be low for the counter to count.  The
+/CCLR input will reset the counter to zero leaving the output
+register
+untouched.
+
+PROPAGATION DELAY
++----------+----------+----------+------------------------+
+| FUNCTION |   FROM   |    TO    | TIME                   |
+===========================================================
+| tPLH     | CCK      | RCO      | 14-22 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | CCK      | RCO      | 20-30 ns               |
++----------+----------+----------+------------------------+
+| tPLH     | CCLR     | RCO      | 30-45 ns               |
++----------+----------+----------+------------------------+
+| tPLH     | RCK      | Q        | 12-18 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | RCK      | Q        | 22-33 ns               |
++----------+----------+----------+------------------------+
+| tPZH     | G\       | Q        | 25-38 ns               |
++----------+----------+----------+------------------------+
+| tPZL     | G\       | Q        | 30-45 ns               |
++----------+----------+----------+------------------------+
+| tPHZ     | G/       | Q        | 20-30 ns               |
++----------+----------+----------+------------------------+
+| tPLZ     | G/       | Q        | 25-38 ns               |
++----------+----------+----------+------------------------+

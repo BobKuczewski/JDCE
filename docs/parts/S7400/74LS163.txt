@@ -1,0 +1,48 @@
+.NAME=74LS163
+.PINS=16
+clr
+CLK
+A
+B
+C
+D
+ENP
+GND
+load
+ENT
+QD
+QC
+QB
+QA
+RCO
+VCC
+This device contains a 4-bit presettable binary counter with
+synchronus clear.  This device can be preset by placing the 
+starting count on A-D and then taking /LOAD low.  Both count
+enable inputs (ENT and ENP) must be high for counting to occur.
+The clear of this device is synchronus with the clock, therefore
+to clear the counter you must place /CLR low and then after the
+next clock pulse, the counter will be cleared.
+
+PROPAGATION DELAY
++----------+-------------+----------+------------------------+
+| FUNCTION |   FROM      |    TO    | TIME                   |
+==============================================================
+| tPLH     | CLK         | RCO      | 20-35 ns               |
++----------+-------------+----------+------------------------+
+| tPHL     | CLK         | RCO      | 18-35 ns               |
++----------+-------------+----------+------------------------+
+| tPLH     | CLK         | Any Q    | 13-24 ns               |
++----------+             +----------+------------------------+
+| tPHL     | (/LOAD high)| Any Q    | 18-27 ns               |
++----------+-------------+----------+------------------------+
+| tPLH     | CLK         | Any Q    | 13-24 ns               |
++----------+             +----------+------------------------+
+| tPHL     | (/LOAD low) | Any Q    | 18-27 ns               |
++----------+-------------+----------+------------------------+
+| tPLH     | ENT         | RCO      |  9-14 ns               |
++----------+-------------+----------+------------------------+
+| tPHL     | ENT         | RCO      |  9-14 ns               |
++----------+-------------+----------+------------------------+
+| tPHL     | /CLR        | Any Q    | 20-28 ns               |
++----------+-------------+----------+------------------------+

@@ -1,0 +1,36 @@
+.NAME=74285
+.PINS=16
+C2
+B2
+A2
+D1
+A1
+B1
+C1
+GND
+Y3
+Y2
+Y1
+YO
+gb
+ga
+D2
+VCC
+This device contains the low portion of a 4-bit by 4-bit
+multiplier.  When both gate enables (Ga and Gb) are low,
+the outputs represent the low 4-bits of the product of
+input-1 and input-2.  This chip when used in conjunction
+with a 74284 will provide an 8-bit product.
+
+PROPAGATION DELAY
++----------+----------+-----------+------------------------+
+| FUNCTION |   FROM   |    TO     | TIME                   |
+============================================================
+| tPLH     | /Ga,/Gb  | Any Output| 20-30 ns               |
++----------+----------+-----------+------------------------+
+| tPHL     | /Ga,/Gb  | Any Output| 20-30 ns               |
++----------+----------+-----------+------------------------+
+| tPLH     | Any Input| Any Output| 40-60 ns               |
++----------+----------+-----------+------------------------+
+| tPHL     | Any Input| Any Output| 40-60 ns               |
++----------+----------+-----------+------------------------+

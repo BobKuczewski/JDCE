@@ -1,0 +1,30 @@
+.NAME=TIL311
+.PINS=14
+LEDVCC
+B
+A
+LDP
+LATCH
+NC
+GND
+BLANK
+NC
+RDP
+NC
+D
+C
+VCC
+This device consists of a single hexadecimal display unit,
+decoder, and latch.
+ 
+Function        Description
+----------------------------------------------------------
+LATCH           When this input is low, the display will 
+                follow the inputs.  When high the data on
+                the display will not change.
+BLANK           When this input is high, the display will
+                be blanked.  The latch data is not affected.
+D,C,B,A         Data from these inputs are placed into the
+                display latch when LATCH is held low.
+LEDVCC          This pin provides the power for the LED
+                elements.

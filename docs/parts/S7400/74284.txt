@@ -1,0 +1,36 @@
+.NAME=74284
+.PINS=16
+C2
+B2
+A2
+D1
+A1
+B1
+C1
+GND
+Y7
+Y6
+Y5
+Y4
+gb
+ga
+D2
+VCC
+This chip contains the upper half of a 4-bit by 4-bit
+multiplier.  This device returns the high 4-bits of the
+eight bit result while the 74285 returns the low 4-bits.
+For the multiplication to work, both enable inputs (Ga
+and Gb) must be low.
+
+PROPAGATION DELAY
++----------+----------+-----------+------------------------+
+| FUNCTION |   FROM   |    TO     | TIME                   |
+============================================================
+| tPLH     | /Ga,/Gb  | Any Output| 20-30 ns               |
++----------+----------+-----------+------------------------+
+| tPHL     | /Ga,/Gb  | Any Output| 20-30 ns               |
++----------+----------+-----------+------------------------+
+| tPLH     | Any Input| Any Output| 40-60 ns               |
++----------+----------+-----------+------------------------+
+| tPHL     | Any Input| Any Output| 40-60 ns               |
++----------+----------+-----------+------------------------+

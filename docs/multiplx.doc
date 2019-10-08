@@ -1,0 +1,83 @@
+MULTIPLEXERS/ENCODERS
+
+  A multiplexer is a circuit that allows you select from a number of
+available data sources.  Through the use of multiplexers multiple
+devices can share a common bus.  Multiplexers are also referred to as
+data selectors.
+
+  Lets start our investigation of multiplexers with the 74LS151.  This
+device is a 1 of 8 data selector/multiplexer, meaning that one of eight
+possible inputs will routed to the output.  The circuit "74LS151.CKT"
+demonstrates the use of this device.  The switches marked 'DATA' are
+all fed into the inputs of the '151.  The 'SELECT' switches then select
+which of the data inputs to route to the output LED.  The DATA switches
+provide a high when in the up position and a low in the down position.
+Notice that only the SELECTed switch will change the state of the LED.
+The GATE input enables the device when the input is low.  When this
+input is high the chip will output a low.
+
+  Now lets look at the 74LS150.  This device is a 1 of 16 data
+selector.  Up to 16 data sources can be connected to the inputs of this
+device.  The circuit "74LS150.CKT" demonstrates the function of this
+chip.  Notice that there is a very important difference between this
+chip and the '151.  The '150 has an inverted output, this means that
+the output of the device will be the opposite of whatever the selected
+input is.  This device is also gated and when the device is not
+selected a high will presented at the output.
+
+  The 74LS153 is a dual 1 of 4 data selector.  This chip is used if you
+need to route two signals from up to 4 sources.  Load the circuit
+"74LS153.CKT" to see the operation of this device.  Notice the select
+inputs are shared between the two halves of this multiplexer.  Separate
+gates are provided for both multiplexers.
+
+  The 74LS157 is a quad 1 of 2 data selector.  This device is primarily
+used to route up to 4 signals from 2 data sources.  The circuit
+"74LS157.CKT" demonstrates the operation of the '157.  Notice that when
+the select switch is in the A position, the states of the DATA A
+switches appear on the output LEDs and when the select switch is in the
+B position the DATA B switches appear on the LEDs.  This device is also
+gated and will output lows when the device is not enabled.
+
+  All other data selectors and multiplexers in the 7400 series as well
+as other families will work very similarly to the above devices.
+
+  Now lets take a look at Encoders.  An encoder is a circuit that takes
+multiple input lines and encodes the numeric value associated with the
+input line into standard binary numbering which is then output from the
+chip.
+
+  The74LS147 is a 10 to 4 encoder.  With 10 possible output states this
+device is referred to as a decimal encoder.  There are actually only
+nine active low inputs on this device.  No active inputs is considered
+the tenth state of the device.  Load the circuit "74LS147.CKT" and try
+experimenting with this chip.  This device actually outputs the encoded
+value as an active low number, therefore the bits are inverted from we
+normally recognize as binary numbers.  For instance when you turn
+switch 2 on the output is actually H H L H, which in standard binary
+numbers is really 13 (or D in hex).  Therefore if you actually require
+the correct binary output, the outputs must be put through inverters.
+In the sample circuit the green LEDs represent the standard output from
+the '147, while the red LEDs represent inverted data which will show
+the correct binary number.  When changing switches take note that the
+largest number input is the input that will actually be encoded.  It is
+for this trait that these devices are often called priority encoders.
+
+  The 74LS148 is a 8 to 3 encoder, and is often called an Octal
+encoder.  This device acts much like the '147.  Like the '147 the '148
+has both active low inputs as well as active low outputs.  In addition
+there are three inputs provided that allow for expansion of the
+encoder.  Circuit "74LS148.CKT" demonstrates the operation of the '148.
+ Notice again that the largest active input is the one that is encoded,
+also note that now there is an actual zero input, no longer is the zero
+state implied.  The EI or Enable Input is used when cascading multiple
+'148s.  When this input is low the chip will perform the encoding
+function, if EI is high all outputs from the device will be high.  The
+GS output signals when a valid encode is available on the outputs.  If
+any input is active then the output will be valid and GS will be low.
+If all inputs are high then the output state is considered to be
+invalid and the GS output will be high.  The EO or Enable Output is the
+cascading output.  If the device is enabled and there are no active
+inputs then the EO will be low which could allow another encoder to be
+active.  If any inputs are active and EI is low then the EO will be
+high.

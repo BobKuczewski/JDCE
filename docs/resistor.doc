@@ -1,0 +1,23 @@
+THE RESISTOR
+
+  The resistor, as its name implies, resists the flow of electrons,
+thereby limiting the amount of current that can pass through them.  The
+primary use of resisters is to either reduce current, or reduce
+voltage.  The amount of resistance is measured in ohms.  The greater
+the value of ohms the greater the resistance to the flow of
+electricity.  A resister works by converting electrical energy into
+heat, therefore resisters are also measured in watts.  The Watts value
+is the amount of energy that can be converted before damage to the
+device occurs.  It is not wise to put more power through a resister
+than its rated value or the resister may explode.  The schematic
+diagram for the resister is shown in Figure 1.  Two resisters placed
+in series will have the summed value of the two resisters, while two
+resisters placed in parallel will have the resistance computed by the
+formula shown in figure 2:
+
+     ___/\  /\  /\  ___                    1
+          \/  \/  \/                   ---------
+     Figure 1                Rtotal =   1     1
+                                       ---   ---
+                                        R1    R2
+                             Figure 2

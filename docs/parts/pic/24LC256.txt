@@ -1,0 +1,48 @@
+.NAME=24LC256
+.PINS=8
+A0
+A1
+A2
+GND
+DATA
+CLK
+WP
+VCC
+This device contains a 32K x 8 bit serial eeprom.  
+
+A0,A1,A2  - Chip select inputs
+            These input must match the A0, A1, and A2 in the status
+            byte for the chip to be active
+DATA      - Data is read or written on this pin
+CLK       - Control clock for reading and writing data
+WP        - The chip is in write protected mode when this is high
+
+All transfers to or from the chip operate on bytes of 8 bits, and use
+9 clocks to transfer the byte.  The first 8 clocks are used by the
+sender to deliver the data, the 9th clock is used by the receiver to 
+acknowledge the transfer.
+
+Data is considered valid when it remains stable during a high on the
+CLK input.  A change of level during a CLK high indicates two special
+situations.  A high-to-low transition indicates a operation start, after
+this the eeprom will expect to receive the status byte.  A low-to-high
+transition indicates a stop of the current operation.
+
+Status Byte:
+  7   6   5   4   3   2   1   0
+  1   0   1   0   A2  A1  A0  RW
+  The status byte is always sent to the chip prior to read or write
+operation.  The RW bit is low to indicate an upcoming write operation
+and high to indicate an upcoming read operation.
+
+Acknowledge:
+  An ack is required by the sender after each byte of data transfered.
+A low level during the 9th clock indicates positive acknowledgement.
+A high level indicates an error, or end of data while in read mode.
+During data writes to the eeprom, the eeprom will provide the ack
+signal and therefore the data line must be released, when in read from
+eeprom mode, the receiving device must signal the ack during the 9th 
+clock.
+
+
+

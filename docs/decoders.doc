@@ -1,0 +1,77 @@
+DEMULTIPLEXERS/DECODERS
+
+  Decoder circuits are capable of taking multiple-bit binary data and
+changing into another form for use.  We will in this chapter look at
+decoders as well as demultiplexers which are very similar to decoders.
+
+  Lets start our investigation of decoders with the 74LS42.  This
+device is a decimal decoder, meaning that it can decode numbers in the
+range from 0 to 9.  Load the circuit "74LS42.CKT" which demonstrates
+the usage of the '42.  The outputs from this device are active low, so
+notice that with the LEDs we connected the outputs to the cathodes
+rather than the anodes like in previous circuits.  The '42 will
+activate one and only one output based upon the value of the input.
+This is said to be a 1 of 10 decoder, meaning the device will activate
+one output from ten possible inputs.  Try changing the switches in the
+circuit and notice which LED lights.  The number of the lit LED will
+correspond with the numbers of the on switches added together.  If a
+number greater than 9 is entered the '42 will not have any active
+outputs.  One useful application of the '42 is for sequencing.  In
+synchronous systems it is important for certain actions to occur at
+certain times.  When attached to a counter the '42 provides a sequenced
+output that can be used to synchronize other parts of a circuit.  Try
+looking at circuit "74LS42-2.CKT" which demonstrates a sequencer.
+
+  The 74LS47 is a very useful device.  This chip takes as its input a 4
+bit BCD number and provides outputs to drive 7 segment LED display
+corresponding to the number on its inputs.  The circuit "74LS47.CKT"
+demonstrates all of the functions of the '47.  The '47 provides a Lamp
+Test input that will turn on all of the segments as well as blanking
+inputs to turn off all of the segments.  The blanking inputs are used
+when you want to remove leading zeroes.  If the RBI is low and the
+inputs to the chip represent a zero then the display will be blanked
+and a low will be output on the RBO.  This signal can then be fed into
+the RBI of the next digit.  This allows for all leading zeroes of a
+number to be blanked.  The BI pin (which is also the RBO pin) will
+allow you to blank the display regardless of what the inputs are,
+remember RBI only blanks the display when the input is also zero.
+
+  Now lets take a look at the 74LS138.  The circuit "74LS138.CKT"
+demonstrates the operation of this device.  The '138 is a 1 of 8 or
+Octal decoder.  Unlike the '42 this chip has only three inputs, the
+required number of inputs to provide 8 possible combinations.  This
+device is also gated, meaning that there are control signals that must
+be set a certain way in order for the chip to activate an output.
+Decoders that are gated are also referred to as demultiplexers.  In the
+'138 the G1 input must be high while both G2 inputs must be low.  If
+these conditions are not met then all outputs from the device will be
+high.  Why are there three gate conditions on this chip?  Well this is
+done in order to simplify circuit design.  Suppose you want this chip
+to activate when a particular signal is low and another signal is high.
+ Ordinarily you would have to decode this condition using other chips,
+but with the gate scheme used by the '138 this could be done with
+direct connections to the chip.
+
+  The 74LS137 is very similar to the '138.  Technically it is pin
+compatible with the '138 except one of the gate inputs performs a
+different function.  In this device the input bits are latchable.  when
+the GL (which was G2a on the '138) input is low then the device
+operates exactly like the '138.  When GL goes high the last input value
+is stored in an internal latch and the output will continue to show
+this latched value regardless of what happens to the inputs until GL
+once again goes low.
+
+  The 74LS139 is a dual 2 to 4 decoder, or a 1 of 4 decoder.  Each side
+contains two binary inputs, four outputs and an output gate.  Circuit
+"74LS139.CKT" demonstrates one side of this device.  This device will
+operate similarly to the '138 except for the number of inputs and
+outputs and there is only one gate input.
+
+  The 74154 is a 1 of 16 decoder.  This device can fully decode a 4 bit
+binary input.  Circuit "74154.CKT" demonstrates this device.  Like all
+the decoders above this chip also has active low outputs.  The '154
+also has two active low gate enables, therefore in order for the chip
+to provide an output, both gate enables must be low.
+
+  Nearly all other decoder/demultiplexers in the 7400 series family
+work like the above devices.

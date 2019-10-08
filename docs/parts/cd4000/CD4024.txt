@@ -1,0 +1,19 @@
+.NAME=CD4024
+.PINS=14
+CLK
+RES
+Q7
+Q6
+Q5
+Q4
+VSS
+NC
+Q3
+NC
+Q2
+Q1
+NC
+VDD
+This device contains a single 7-bit binary counter.  The count
+is incremented on the positive edge of CLK.  The counter can
+be reset to zero by taking RES high.

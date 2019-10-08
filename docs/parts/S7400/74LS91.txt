@@ -1,0 +1,43 @@
+.NAME=74LS91
+.PINS=14
+NC
+NC
+NC
+NC
+VCC
+NC
+NC
+NC
+CLK
+GND
+B
+A
+QH
+qh
+This device contains a serial-in serial-out 8-bit shift
+register.  Complementary outputs are provided from the 
+8th bit of the register.
+
+TRUTH TABLE
++-------++---------+
+| AT Tn || AT Tn+8 |
++---+---++---+-----+
+| A | B || Qh| /Qh |
+====================
+| H | H || H | L   |
++---+---++---+-----+
+| L | X || L | H   |
++---+---++---+-----+
+| X | L || L | H   |
++---+---++---+-----+
+Tn   = Reference bit time, clock low.
+Tn+8 = Bit time after 8 low-to-high transitions of CLK
+
+PROPAGATION DELAY
++----------+----------+----------+------------------------+
+| FUNCTION |   FROM   |    TO    | TIME                   |
+===========================================================
+| tPLH     | CLK      | Q,/Q     | 24-40 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | CLK      | Q,/Q     | 27-40 ns               |
++----------+----------+----------+------------------------+

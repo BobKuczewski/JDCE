@@ -1,0 +1,55 @@
+.NAME=74199
+.PINS=24
+k
+J
+A
+QA
+B
+QB
+C
+QC
+D
+QD
+CLKINH
+GND
+CLK
+clr
+QE
+E
+QF
+F
+QG
+G
+QH
+H
+SH/ld
+VCC
+  This device contains an 8-bit parallel-access shift register
+with J/K serial input.
+
+FUNCTION TABLE
++------+-------+-----+-----+--------+----------++----------------------+
+|      | SHIFT | CLK |     | SERIAL | PARALLEL ||                      |
+| /CLR | /LOAD | INH | CLK |  J  K  |  A...H   ||  Qa  Qb  Qc  ... Qh  |
+========================================================================
+|   L  |   X   |  X  |  X  |  X  X  |    X     ||   L   L   L       L  |
+|   H  |   X   |  L  |  L  |  X  X  |    X     ||  Qa* Qb* Qc*     Qh* |
+|   H  |   L   |  L  |  /  |  X  X  |  a...h   ||   a   b   c       h  |
+|   H  |   H   |  L  |  /  |  L  H  |    X     ||  Qa* Qa* Qb*     Qg* |
+|   H  |   H   |  L  |  /  |  L  L  |    X     ||   L  Qa* Qb*     Qg* |
+|   H  |   H   |  L  |  /  |  H  H  |    X     ||   H  Qa* Qb*     Qg* |
+|   H  |   H   |  L  |  /  |  H  L  |    X     || /Qa* Qa* Qb*     Qg* |
+|   H  |   X   |  H  |  /  |  X  X  |    X     ||  Qa* Qb* Qc*     Qh* |
++------+-------+-----+-----+--------+----------++----------------------+
+* Previous state of Qn
+
+PROPAGATION DELAY
++----------+----------+----------+------------------------+
+| FUNCTION |   FROM   |    TO    | TIME                   |
+===========================================================
+| tPHL     | /CLR     | Q        | 23-35 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | CLK      | Q        | 20-30 ns               |
++----------+----------+----------+------------------------+
+| tPLH     | CLK      | Q        | 17-26 ns               |
++----------+----------+----------+------------------------+

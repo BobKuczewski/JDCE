@@ -1,0 +1,68 @@
+.NAME=74154
+.PINS=24
+O
+1
+2
+3
+4
+5
+6
+7
+8
+9
+1O
+GND
+11
+12
+13
+14
+15
+g1
+g2
+D
+C
+B
+A
+VCC
+This chip contains a single 4-line to 16-line decoder/
+demultiplexer.  When both gate enables (/G1,/G2) are low
+the binary input (D,C,B,A) is decoded and the corresponding
+output is taken low, all other outputs remain high.
+ 
+TRUTH TABLE
++---+---+--------++------------------------------------------------+
+|/G1|/G2|D C B A ||  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15|
+====================================================================
+| L | L |L L L L ||  L  H  H  H  H  H  H  H  H  H  H  H  H  H  H  H|
+| L | L |L L L H ||  H  L  H  H  H  H  H  H  H  H  H  H  H  H  H  H|
+| L | L |L L H L ||  H  H  L  H  H  H  H  H  H  H  H  H  H  H  H  H|
+| L | L |L L H H ||  H  H  H  L  H  H  H  H  H  H  H  H  H  H  H  H|
+| L | L |L H L L ||  H  H  H  H  L  H  H  H  H  H  H  H  H  H  H  H|
+| L | L |L H L H ||  H  H  H  H  H  L  H  H  H  H  H  H  H  H  H  H|
+| L | L |L H H L ||  H  H  H  H  H  H  L  H  H  H  H  H  H  H  H  H|
+| L | L |L H H H ||  H  H  H  H  H  H  H  L  H  H  H  H  H  H  H  H|
+| L | L |H L L L ||  H  H  H  H  H  H  H  H  L  H  H  H  H  H  H  H|
+| L | L |H L L H ||  H  H  H  H  H  H  H  H  H  L  H  H  H  H  H  H|
+| L | L |H L H L ||  H  H  H  H  H  H  H  H  H  H  L  H  H  H  H  H|
+| L | L |H L H H ||  H  H  H  H  H  H  H  H  H  H  H  L  H  H  H  H|
+| L | L |H H L L ||  H  H  H  H  H  H  H  H  H  H  H  H  L  H  H  H|
+| L | L |H H L H ||  H  H  H  H  H  H  H  H  H  H  H  H  H  L  H  H|
+| L | L |H H H L ||  H  H  H  H  H  H  H  H  H  H  H  H  H  H  L  H|
+| L | L |H H H H ||  H  H  H  H  H  H  H  H  H  H  H  H  H  H  H  L|
+| L | H |X X X X ||  H  H  H  H  H  H  H  H  H  H  H  H  H  H  H  H|
+| H | L |X X X X ||  H  H  H  H  H  H  H  H  H  H  H  H  H  H  H  H|
+| H | H |X X X X ||  H  H  H  H  H  H  H  H  H  H  H  H  H  H  H  H|
++---+---+--------++------------------------------------------------+
+
+PROPAGATION DELAY
++----------+----------+----------+------------------------+
+| FUNCTION |   FROM   |    TO    | TIME                   |
+===========================================================
+| tPLH     | D,C,B,A  | Output   | 24-36 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | D,C,B,A  | Output   | 22-33 ns               |
++----------+----------+----------+------------------------+
+| tPLH     | /G1,/G2  | Output   | 20-30 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | /G1,/G2  | Output   | 18-27 ns               |
++----------+----------+----------+------------------------+

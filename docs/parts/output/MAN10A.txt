@@ -1,0 +1,24 @@
+.NAME=MAN10A
+.PINS=14
+A
+F
+ANODE
+NC
+NC
+DP
+E
+D
+NC
+C
+G
+NC
+B
+ANODE
+This device is a common anode 7-segment LED display.
+ 
+            A
+          +---+
+        F | G | B
+          +---+
+        E | D | C
+          +---+

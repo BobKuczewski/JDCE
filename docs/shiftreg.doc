@@ -1,0 +1,79 @@
+SHIFT REGISTERS
+
+  A shift register is a circuit that is capable of taking a binary
+number and shifts the bits left or right.  The principle use of shift
+registers is to convert data from parallel to serial or from serial
+back to parallel.  Nearly all shift registers are built from D-type
+flip-flops.  The circuit "FFSHIFT.CKT" demonstrates a shift register
+built out of flip-flops.
+
+  The 74LS91 is the most basic of shift registers.  It is an 8-bit
+serial-in serial-out register, meaning that data is fed into the
+register in serial form and the data is taken out in serial form.  The
+principle use of this device is to delay the transmission of data.  The
+circuit "74LS91.CKT" demonstrates the operation of this device.  For
+each positive clock pulse, data is read into the lowest order bit in
+the register.  Eight clock pulses later the bit will appear at the
+output.
+
+  Now lets take a look at the 74LS164.  This shift register is an 8-bit
+serial-in parallel-out register.  The main use of this register is to
+convert a serial transmission into parallel data.  Load the circuit
+"74LS164.CKT" and try experimenting with this device.  It is much
+easier to see the function of the shift register from this circuit
+since you can actually watch the bits being shifted on the LEDs.  The
+'164 also has a clear function in order to set all outputs low.  On the
+rising edge of each clock pulse the input data is shifted into the
+register while all the bits currently in the register are shifted left
+
+  The 74LS165 performs the opposite function of the '164.  The '165
+converts parallel data into serial.  The circuit "74LS165.CKT"
+demonstrates the function of this device.  Data can be placed onto the
+inputs of this device and then when LOAD is pulsed low all 8 bits of
+data will be stored into the register.  Now with each positive clock
+pulse the bits will be shifted and sent out of the register.  Note that
+this device also has a serial input.  On each clock pulse this input is
+shifted into the register, just like in the '164.  The main reason why
+there is a serial input is to allow cascading of multiple chips in
+order to serialize data that is longer than 8 bits.  If you take the
+output bit from the lowest order register and feed it into the serial
+input of the next higher register you can serialize more than 1 byte at
+a time.
+
+  Now lets take a look at the 74178.  This device is a 4 bit
+parallel/serial in parallel out shift register.  When both the input
+and output of a shift register can be done in parallel then the device
+is said to be a parallel access device.  The circuit "74178.CKT"
+demonstrates the '178.  Notice that in order for shifting to occur the
+SHIFT input must be high.  This device is also negative edge triggered
+rather than positive edge as in the previous shift registers we have
+looked at.  Notice that just like the other shift registers there is
+also a serial input that is used during shift operations.  The load
+operation is performed by taking the LOAD input high and then providing
+a negative edge clock pulse.
+
+  So far all the shift registers we have looked at could only shift
+bits to the left.  The 74LS194 can shift bits both left and right.  The
+'194 is also a parallel access device.  When a shift register is
+parallel access and can shift in both directions the device is said to
+be a universal register.  The '194 is a 4 bit universal register.  The
+circuit "74LS194.CKT" demonstrates the functioning of this device.
+Notice that this device contains two serial inputs, one is used during
+shift operations to the left and the other is used during shift
+operations to the right.  The two mode select inputs (S1 and S0) select
+which function the '194 will perform on the next rising edge of the
+clock.  When the mode is set as L L then the device does not do
+anything.  When the mode is set as L H then the device shifts bits to
+the left (low order to high order).  when the mode is set as H L then
+the device shifts bits from the left to the right.  And when the mode
+is set as H H parallel data from inputs A, B, C, and D is loaded into
+the register.
+
+  Lets take a quick look at one last shift register.  The 74198 is an 8
+bit version of the 74LS194.  The circuit "74198.CKT" demonstrates this
+device.  All the inputs and modes work the same on this device as they
+did on the '194
+
+  All other shift registers in the 7400 series family operate similarly
+to the above registers.  Shift registers in other families of chips
+will also operate very closely like the devices in the 7400 family.

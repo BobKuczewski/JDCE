@@ -1,0 +1,124 @@
+.NAME=5C031
+.PINS=20
+CLK/A
+B
+C
+D
+E
+F
+G
+H
+I
+GND
+J
+R/Q7
+Q/Q6
+P/Q5
+O/Q4
+N/Q3
+M/Q2
+L/Q1
+K/QO
+VCC
+This device contains a user programmable logic array.  This device
+normally requires a special programmer to program.  For the purposes
+of this simulation, the PLD programming can be read from .PLD files.
+
+The following commands are recognized by the PLD programmer:
+ 
+  Qn=formula
+      This command defines the boolean expression for macro-cell 'n'.
+ 
+  On=formula
+      This command is used to define the formala that turns on the
+      output for macro-cell 'n'.
+ 
+  OUTMODEn=mode
+      This command sets the output mode for macro-cell 'n'.
+      The following out put modes are available:
+            1 - Output from AND-OR array.
+            2 - Inverted output from AND-OR array.
+            3 - Output from D-type flip-flop.
+            4 - Inverted output from D-type flip-flop.
+ 
+  FEEDBACKn=mode
+      This command sets the feedback mode for data going back into
+      the AND-OR array from the output register.  'n' specifies which
+      macro-cell to set the feedback on and 'mode' must one of the
+      following:
+            1 - Output from AND-OR array.
+            2 - Output from the D-type flip-flop.
+            3 - Gated output or pin used as input.
+ 
+  PRESET=formula
+      This command sets the formula that presets all output register
+      flip-flops to logical high.
+ 
+  RESET=formula
+      This command sets the formula that resets all output register
+      flip-flops to logical low.
+ 
+All formulas must be in boolean logic format.  OR terms are separated
+by the plus (+) symbol.  Therefore if you want A OR B the formula would
+be A+B.  The AND term just has the two operators next to each other.
+If you wanted A AND B you would use AB.  If  a term needs to be inverted
+you use the slash (/) symbol.  If you want the inverted value of A you
+would use /A.  Using these rules lets look at a couple of formulas:
+ 
+    AB+/A/B    (A and B) or (NOT A and NOT B)
+    A/B+/AB    (A and NOT B) or (NOT A and B)
+ 
+When programming a macro-cell, you are programming the state that the
+macro-cell will output a logical high.  Therefore you must specifiy 
+all the conditions that would produce a logical high.  You can have up
+to 8 terms (or OR combinations) per macro-cell.  If you need more than
+this you would utilize another macro-cell and therefore lose an output
+pin.  Here are some sample formulas for some common gates:
+ 
+    AB              AND gate     (1 term)
+    A+B             OR gate      (2 terms)
+    A/B+/AB         XOR gate     (2 terms)
+    AB+/A/B         XNOR gate    (2 terms)
+    A/B+/A/B+/AB    NAND gate    (3 terms)
+    /A/B            NOR gate     (1 term)
+ 
+Below is a sample PLD program to implement an 8-bit counter:
+
+  Q1=/K
+  Q2=/LK+L/K
+  Q3=/MLK+M/L+M/K
+  Q4=/NMLK+N/M+N/L+N/K
+  Q5=/ONMLK+O/N+O/M+O/L+O/K
+  Q6=/PONMLK+P/O+P/N+P/M+P/L+P/K
+  Q7=/QPONMLK+Q/P+Q/O+Q/N+Q/M+Q/L+Q/K
+  Q8=/RQPONMLK+R/Q+R/P+R/O+R/N+R/M+R/L+R/K
+  O1=/J
+  O2=/J
+  O3=/J
+  O4=/J
+  O5=/J
+  O6=/J
+  O7=/J
+  O8=/J
+  OUTMODE1=3
+  OUTMODE2=3
+  OUTMODE3=3
+  OUTMODE4=3
+  OUTMODE5=3
+  OUTMODE6=3
+  OUTMODE7=3
+  OUTMODE8=3
+  FEEDBACK1=2
+  FEEDBACK2=2
+  FEEDBACK3=2
+  FEEDBACK4=2
+  FEEDBACK5=2
+  FEEDBACK6=2
+  FEEDBACK7=2
+  FEEDBACK8=2
+  PRESET=/B
+  RESET=/C
+ 
+In this chip, Pin 1 is the clock input, Pin 2 sets the counter to
+255, Pin 3 resets the counter zero, Pin 11 is the output enable and
+pins 19-12 provide the output from the counter.

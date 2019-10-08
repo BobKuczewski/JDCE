@@ -1,0 +1,60 @@
+.NAME=7494
+.PINS=16
+P1A
+P1B
+P1C
+P1D
+VCC
+PE1
+SER
+CLK
+QD
+CLR
+P2D
+GND
+P2C
+P2B
+PE2
+P2A
+This device contains a 4-bit parallel-in serial-out shift
+register.  One of two 4-bit words may be parallel loaded
+into this shift register.
+
+TRUTH TABLE - Preset function
++-----------------++------------+
+| PE1 P1n PE2 P2n || INTERNAL n |
+=================================
+|  L   X   L   X  ||      H     |
+|  L   X   X   L  ||      H     |
+|  X   L   L   X  ||      H     |
+|  X   L   X   L  ||      H     |
+|  H   H   X   X  ||      L     |
+|  X   X   H   H  ||      L     |
++-----------------++------------+
+n - Represents Bit number
+
+TRUTH TABLE - Register function
++---------+-------------++-------------+-----+
+| A B C D | CLR CLK SER ||  Qa  Qb  Qc |  Qd |
+==============================================
+| H H H H |  H   X   X  ||  L   L   L  |  L  |
+| L L L L |  L   X   X  ||  H   H   H  |  H  |
+| H H H H |  L   L   X  || Qa* Qb* Qc* | Qd* |
+| L H L H |  L   L   X  ||  H  Qb*  H  | Qd* |
+| H H H H |  L   /   H  ||  H  Qa* Qb* | Qc* |
+| H H H H |  L   /   L  ||  L  Qa* Qb* | Qc* |
++---------+-------------++-------------+-----+
+* Previous state of internal outputs.
+
+PROPAGATION DELAY
++----------+----------+----------+------------------------+
+| FUNCTION |   FROM   |    TO    | TIME                   |
+===========================================================
+| tPLH     | CLK      | Qd       | 25-40 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | CLK      | Qd       | 25-40 ns               |
++----------+----------+----------+------------------------+
+| tPLH     | PE       | Qd       |    35 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | PE       | Qd       |    40 ns               |
++----------+----------+----------+------------------------+

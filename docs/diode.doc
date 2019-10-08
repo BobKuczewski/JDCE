@@ -1,0 +1,86 @@
+THE DIODE
+
+  In a conductor electricity can flow in both directions.  A device
+that allows electricity to flow in only one direction is called a
+semi-conductor.  The diode is the most basic semiconductor.  The
+schematic diagram for the diode is shown in figure 1.  The vertical
+line represents the cathode (or negative) pole of the diode.
+ 
+       ! /!
+       !/ !
+  -----K  !----
+       !\ !
+       ! \!
+  Figure 1
+
+  The diode is made from two different substances, called P-material
+and N-material (see figure 2).  Most diodes use silicon as the base
+material for making the P and N materials.  In P material the silicon
+is impregnated with impurities that give the resultant material an
+abundance of holes, or positively charged material.  In N material the
+silicon is impregnated with impurities that give the resultant material
+an abundance of electrons, thereby making the material negatively
+charged.  The barrier between the P and N materials requires a certain
+amount of voltage for an electron to jump it (thereby preventing the
+mutual attraction of the positive and negative charges).  This
+threshold level is referred to as the standing hill battery.  Under
+normal operating conditions the negative pole of your circuit is
+connected to the negative pole (or cathode) of the diode, while the
+positive pole of your circuit is connected to the positive pole (or
+anode) of the diode.
+
+                 P           N
+           +-----------+-----------+
+           ! +   +   + ! -   -  -  !
+      -----!    +  +   !    -    - !-----
+           !  +     +  !  -    -   !
+           +-----------+-----------+
+               Figure 2
+
+  Lets first look at what happens when voltage is applied in the
+reverse direction.  Figure 3 shows what happens.  Notice in the
+P-material the positive charges were attracted to the negative charge
+being applied, and in the N-material the negative charges are attracted
+to the positive charge being applied.  This results in a zone of
+non-conductive material near the barrier.  If enough voltage is applied
+you can actually force electrons across, but this will permanently
+damage the device.  The voltage at which this break-down occurs is
+called the Peak Inverse Voltage or PIV.  You should never exceed the
+PIV when voltages on the diode are reversed.
+
+
+                 P           N
+           +-----------+-----------+
+           !++++       !       ----!
+    - -----!++++       !       ----!----- +
+           !++++       !       ----!
+           +-----------+-----------+
+               Figure 3
+
+  Now lets look at what happens when the voltage is applied in the
+forward direction.  Notice in Figure 4 that the positive charge being
+applied to the anode repels the positive charges, forcing them to the
+barrier, and in the N-material the negative charge repels the negative
+charges and forces them towards the barrier. 
+                 P           N
+           +-----------+-----------+
+           !       ++++!----       !
+    + -----!       ++++!----       !----- -
+           !       ++++!----       !
+           +-----------+-----------+
+               Figure 4
+
+As the voltage is continually applied the P-material fills up with holes
+and the N-material fills up with electrons (see Figure 5).  When both
+sides are full, then if enough voltage is applied (the threshold voltage)
+then an electron will jump the barrier and continue on through the P
+material and out the anode.  At this point electrons can flow across
+the barrier so long as the applied voltage remains above the threshold
+level.
+                 P           N
+           +-----------+-----------+
+           !+++++++++++!-----------!
+    + -----!+++++++++++!-----------!----- -
+           !+++++++++++!-----------!
+           +-----------+-----------+
+               Figure 5

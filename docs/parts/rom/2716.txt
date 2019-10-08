@@ -1,0 +1,34 @@
+.NAME=2716
+.PINS=24
+A7
+A6
+A5
+A4
+A3
+A2
+A1
+AO
+QO
+Q1
+Q2
+GND
+Q3
+Q4
+Q5
+Q6
+Q7
+ce
+A1O
+oe
+VPP
+A9
+A8
+VCC
+This device contains a 2K x 8-bit eprom.  These devices are normally
+programmed using a special programmer.  For this simulation the EPROM
+can be programmed with a .ROM file.  See the manual under EPROMs to
+see how to program these devices.
+ 
+Maximum typical access time of this device is 450 ns
+
+See the data sheet for the 2708 for the format for .ROM files.

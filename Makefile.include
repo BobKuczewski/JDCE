@@ -1,0 +1,22 @@
+JC=javac
+JFLAGS=
+JCLASSPATH=$(PROJECT_ROOT):$(CLASSPATH)
+
+#uncomment next two lines for gnu make
+FILES := $(shell ls *.java)
+CLASSES := $(subst .java,.class,$(FILES))
+
+# uncomment next two lines for sun make
+#FILES :sh = ls *.java
+#CLASSES = $(FILES:.java=.class)
+
+.SUFFIXES: .java .class
+
+all: $(CLASSES)
+
+.java.class:
+	@echo "Compiling $<"
+	@$(JC) $(JFLAGS) $<
+
+clean:
+	rm *.class

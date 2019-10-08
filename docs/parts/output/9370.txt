@@ -1,0 +1,49 @@
+.NAME=9370
+.PINS=16
+B
+C
+le
+bi/rbo
+rbi
+D
+A
+GND
+E
+D
+C
+B
+A
+G
+F
+VCC
+This device consists of a 4-input hexadecimal to 7-Segment
+display decoder.  This device incorporates both a lamp test
+and zero blanking capability.
+ 
+The Data inputs (DD,DC,DB,DA) specify in binary the numeral to
+be displayed.  Numerals are provided for 0-9 as well as the
+letters A thru F.
+ 
+The output segments are defined as follows:
+ 
+       A
+     +---+
+   F | G | B
+     +---+
+   E | D | C
+     +---+
+ 
+Notes: 1. The blanking input (/BI) must be high for display
+          output.  The ripple-blanking-input (/RBI) must be
+          high if blanking of a decimal zero is not desired
+ 
+       2. When the blanking input (/BI) is held low, the display
+          is blanked regardless of any other input.
+ 
+       3. When the ripple-blanking-input (/RBI) and the data
+          inputs (DD,DC,DB,DA) are low, the display will be
+          blanked and ripple-blanking-output (/RBO) goes low.
+
+       4. Data is entered into the output latches when /LE is held
+          low.  When /LE is high the latched values will continue
+          to be displayed regardless of the input data.

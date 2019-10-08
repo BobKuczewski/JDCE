@@ -1,0 +1,49 @@
+.NAME=7473
+.PINS=14
+CLK1
+clr1
+K1
+VCC
+CLK2
+clr2
+J2
+q2
+Q2
+K2
+GND
+Q1
+q1
+J1
+This device contains 2 independent J-K Master-Slave flip-flops
+with clear.  Data is loaded into the master on the leading edge
+of the clock pulse and transfered to the slave (outputs) on the
+negative edge.
+
+TRUTH TABLE
++------+-----+---+---++----+----+
+| /CLR | CLK | J | K || Q  | /Q |
+=================================
+| L    | X   | X | X || L  | H  |
++------+-----+---+---++----+----+
+| H    | ++  | L | L || Q* | /Q*|
++------+-----+---+---++----+----+
+| H    | ++  | H | L || H  | L  |
++------+-----+---+---++----+----+
+| H    | ++  | L | H || L  | H  |
++------+-----+---+---++----+----+
+| H    | ++  | H | H || /Q*| Q* |
++------+-----+---+---++----+----+
+* Previous states of Q and /Q
+
+PROPAGATION DELAY
++----------+----------+----------+------------------------+
+| FUNCTION |   FROM   |    TO    | TIME                   |
+===========================================================
+| tPLH     | /CLR     | /Q       | 16-25 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | /CLR     | Q        | 25-40 ns               |
++----------+----------+----------+------------------------+
+| tPLH     | CLK      | Q or /Q  | 16-25 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | CLK      | Q or /Q  | 25-40 ns               |
++----------+----------+----------+------------------------+

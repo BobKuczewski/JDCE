@@ -1,0 +1,24 @@
+.NAME=2114
+.PINS=18
+A6
+A5
+A4
+A3
+AO
+A1
+A2
+cs
+GND
+we
+I/O4
+I/O3
+I/O2
+I/O1
+A9
+A8
+A7
+VCC
+This device contains a 1k by 4-bit static ram array.  Data is
+output on the I/O lines when /CS is Low and /WE is high.  When
+/WE is Low and /CS is Low, the data on the I/O lines is written 
+into ram.

@@ -1,0 +1,26 @@
+.NAME=CD4078
+.PINS=14
+NC
+A
+B
+C
+D
+NC
+VSS
+NC
+E
+F
+G
+H
+Y
+VDD
+This device contains a single 8-input NOR gate.
+
+TRUTH TABLE
++-------++---+
+| A-H   || Y |
+==============
+| ALL L || H |
+--------++---+
+| ANY H || L |
++-------++---+

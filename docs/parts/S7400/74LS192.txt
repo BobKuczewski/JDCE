@@ -1,0 +1,46 @@
+.NAME=74LS192
+.PINS=16
+B
+QB
+QA
+DOWN
+UP
+QC
+QD
+GND
+D
+C
+load
+co
+bo
+CLR
+A
+VCC
+This device contains a 4-bit presettable up/down decade counter
+with seperate up and down count inputs and seperate carry and
+borrow outputs.  The starting count can be set by setting the
+starting value into A-D and taking /LOAD low.  The counter can
+be reset to zero by taking CLR high.
+
+PROPAGATION DELAY
++----------+----------+----------+------------------------+
+| FUNCTION |   FROM   |    TO    | TIME                   |
+===========================================================
+| tPLH     | UP       | /CO      | 17-26 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | UP       | /CO      | 18-24 ns               |
++----------+----------+----------+------------------------+
+| tPLH     | DOWN     | /BO      | 16-24 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | DOWN     | /BO      | 15-24 ns               |
++----------+----------+----------+------------------------+
+| tPLH     | UP,DOWN  | Q        | 27-38 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | UP,DOWN  | Q        | 30-47 ns               |
++----------+----------+----------+------------------------+
+| tPLH     | /LOAD    | Q        | 24-40 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | /LOAD    | Q        | 25-40 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | CLR      | Q        | 23-35 ns               |
++----------+----------+----------+------------------------+

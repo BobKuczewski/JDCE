@@ -1,0 +1,30 @@
+.NAME=CDP1872
+.PINS=22
+/cs1
+DI0
+DO0
+DI1
+DO1
+DI2
+DO2
+DI3
+DO3
+CLOCK
+VSS
+CS2
+clr
+DO4
+DI4
+DO5
+DI5
+DO6
+DI6
+DO7
+DI7
+VDD
+
+This device consists of an 8-bit gated input port.  Data is read from
+the input source on the rising edge of CLOCK and latched to the outputs
+on the falling edge.  /CLR can be used to clear the contents of the
+latch while the clock input is not active.  The chip selects control
+the tri-state outputs.

@@ -1,0 +1,31 @@
+.NAME=4164
+.PINS=16
+NC
+D
+we
+ras
+A0
+A2
+A1
+VCC
+A7
+A5
+A4
+A3
+A6
+Q
+cas
+GND
+
+This device is a 64k x 1 bit dynamic memory.
+
+/RAS - Row address select (low order byte)
+/CAS - Column address select (high order byte)
+D    - Data input
+Q    - Data output
+/WE  - Write
+
+Dynamic memories require periodic refreshing.  This device refreshes
+an entire column when /CAS is pulled low.  For the purposes of this
+simulation, a cell will hold its contents for 10,000 cycles without
+being refreshed.

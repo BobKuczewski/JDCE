@@ -1,0 +1,57 @@
+.NAME=74265
+.PINS=16
+A1
+W1
+Y1
+A2
+B2
+W2
+Y2
+GND
+Y3
+W3
+A3
+B3
+Y4
+W4
+A4
+VCC
+This device contains 4 independent complementary output elements.
+These devices are used when synchronus switching is required for
+complementary signals.  Gates 1 and 4 are single input while
+gates 2 and 3 consists of a two-input AND gate.
+
+TRUTH TABLE - Gates 1 and 4
++---++---+---+
+| A || W | Y |
+==============
+| 0 || 0 | 1 |
++---++---+---+
+| 1 || 1 | 0 |
++---++---+---+
+
+TRUTH TABLE - Gates 2 and 3
++---+---++---+---+
+| A | B || W | Y |
+==================
+| 0 | 0 || 0 | 1 |
++---+---++---+---+
+| 0 | 1 || 0 | 1 |
++---+---++---+---+
+| 1 | 0 || 0 | 1 |
++---+---++---+---+
+| 1 | 1 || 1 | 0 |
++---+---++---+---+
+
+PROPAGATION DELAY
++----------+----------+----------+------------------------+
+| FUNCTION |   FROM   |    TO    | TIME                   |
+===========================================================
+| tPLH(W)  | A or B   | W        | 11-18 ns               |
++----------+----------+----------+------------------------+
+| tPLH(Y)  | A or B   | Y        | 11-18 ns               |
++----------+----------+----------+------------------------+
+| tPHL(W)  | A or B   | W        | 10-18 ns               |
++----------+----------+----------+------------------------+
+| tPLH(Y)  | A or B   | Y        | 10-18 ns               |
++----------+----------+----------+------------------------+

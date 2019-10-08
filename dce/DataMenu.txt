@@ -1,0 +1,235 @@
+MENU Arithmatic {
+ ITEM /docs/parts/S7400/74LS83.txt  74LS83 - 4-bit binary adder
+ ITEM /docs/parts/S7400/74LS85.txt  74LS85 - 4-bit magnitude comparator
+ ITEM /docs/parts/S7400/74LS181.txt 74LS181 - ALU/Function generator
+ ITEM /docs/parts/S7400/74S182.txt  74S182 - Look-ahead carry generator
+ ITEM /docs/parts/S7400/74LS183.txt 74LS183 - Dual carry-save full adders
+ ITEM /docs/parts/S7400/74284.txt   74284 - 4-bit by 4-bit multiplier hi
+ ITEM /docs/parts/S7400/74285.txt   74285 - 4-bit by 4-bit multiplier lo
+ ITEM /docs/parts/S7400/74LS381.txt 74LS381 - ALU/Function generator
+ ITEM /docs/parts/S7400/74LS382.txt 74LS382 - ALU/Function generator
+ ITEM /docs/parts/S7400/74LS684.txt 74LS684 - 8-Bit magnitude comparator
+ ITEM /docs/parts/S7400/74LS686.txt 74LS686 - 8-Bit magnitude comparator
+ ITEM /docs/parts/S7400/74LS688.txt 74LS688 - 8-Bit magnitude comparator
+ }
+MENU Buffers/Drivers {
+ ITEM /docs/parts/S7400/74LS125.txt 74LS125 - Quad tri-state buffer
+ ITEM /docs/parts/S7400/74LS126.txt 74LS126 - Quad tri-state buffer
+ ITEM /docs/parts/S7400/74LS240.txt 74LS240 - Octal tri-state inverting buffer
+ ITEM /docs/parts/S7400/74LS241.txt 74LS241 - Octal tri-state buffer
+ ITEM /docs/parts/S7400/74LS244.txt 74LS244 - Octal tri-state buffer
+ ITEM /docs/parts/S7400/74LS245.txt 74LS245 - Octal tri-state bus transceiver
+ ITEM /docs/parts/S7400/74LS367.txt 74LS367 - Hex tri-state buffer
+ }
+MENU Counters {
+ ITEM /docs/parts/S7400/74LS68.txt  74LS68 - Dual 4-bit decade counter
+ ITEM /docs/parts/S7400/74LS69.txt  74LS69 - Dual 4-bit binary counter
+ ITEM /docs/parts/S7400/74LS90.txt  74LS90 - Decade counter
+ ITEM /docs/parts/S7400/74LS92.txt  74LS92 - Divide-by-12 counter
+ ITEM /docs/parts/S7400/74LS93.txt  74LS93 - 4-bit binary counter
+ ITEM /docs/parts/S7400/74143.txt   74143 - Decade counter with 7-segment
+ ITEM /docs/parts/S7400/74LS160.txt 74LS160 - Decade counter
+ ITEM /docs/parts/S7400/74LS161.txt 74LS161 - Binary counter
+ ITEM /docs/parts/S7400/74LS162.txt 74LS162 - Decade counter
+ ITEM /docs/parts/S7400/74LS163.txt 74LS163 - Binary counter
+ ITEM /docs/parts/S7400/74LS169.txt 74LS169 - 4-bit up/down binary counter
+ ITEM /docs/parts/S7400/74176.txt   74176 - Presettable decade counter
+ ITEM /docs/parts/S7400/74177.txt   74177 - Presettable binary counter
+ ITEM /docs/parts/S7400/74LS190.txt 74LS190 - BCD up/down counter
+ ITEM /docs/parts/S7400/74LS191.txt 74LS191 - 4-bit up/down counter
+ ITEM /docs/parts/S7400/74LS192.txt 74LS192 - BCD counter
+ ITEM /docs/parts/S7400/74LS193.txt 74LS193 - 4-bit counter
+ ITEM /docs/parts/S7400/74LS590.txt 74LS590 - 8-bit binary counter
+ }
+MENU Decoders {
+ ITEM /docs/parts/S7400/74LS42.txt  74LS42 - BCD to decimal decoder
+ ITEM /docs/parts/S7400/7445.txt    7445 - BCD to decimal decoder
+ ITEM /docs/parts/S7400/74LS47.txt  74LS47 - Seven segment decoder
+ ITEM /docs/parts/S7400/74LS137.txt 74LS137 - 3-line to 8-line decoder, latched
+ ITEM /docs/parts/S7400/74LS138.txt 74LS138 - 3-line to 8-line decoder
+ ITEM /docs/parts/S7400/74LS139.txt 74LS139 - Dual 2-line to 4-line decoder
+ ITEM /docs/parts/S7400/74LS145.txt 74LS145 - BCD to decimal decoder
+ ITEM /docs/parts/S7400/74154.txt   74154 - 4-line to 16-line decoder
+ ITEM /docs/parts/S7400/74LS155.txt 74LS155 - Dual 2-line to 4-line decoder
+ ITEM /docs/parts/S7400/74LS156.txt 74LS156 - Dual 2-line to 4-line decoder OC
+ ITEM /docs/parts/S7400/74159.txt   74159 - 4-line to 16-line decoder OC
+ ----
+ ITEM /docs/parts/output/9370.txt    9370 - Hex seven segment decoder
+ }
+MENU Flip-Flops {
+ ITEM /docs/parts/S7400/74LS74.txt  74LS74 - Dual D-type flip flops
+ ITEM /docs/parts/S7400/74LS75.txt  74LS75 - 4-bit bistable latch
+ ITEM /docs/parts/S7400/74116.txt   74116 - Dual 4-bit latches
+ ITEM /docs/parts/S7400/74LS171.txt 74LS171 - Quad D-type /w clear
+ ITEM /docs/parts/S7400/74LS173.txt 74LS173 - Quad D-type tri-state
+ ITEM /docs/parts/S7400/74LS174.txt 74LS174 - Hex D-type flip flops
+ ITEM /docs/parts/S7400/74LS175.txt 74LS175 - Quad D-type flip flops
+ ITEM /docs/parts/S7400/74LS273.txt 74LS273 - Octal D-type flip flops
+ ITEM /docs/parts/S7400/74LS279.txt 74LS279 - Quad S-R type flip flops
+ ITEM /docs/parts/S7400/74LS373.txt 74LS373 - Octal D-type latches
+ }
+MENU Gates {
+ ITEM /docs/parts/S7400/74LS00.txt  74LS00 - Nand
+ ITEM /docs/parts/S7400/74LS02.txt  74LS02 - Nor
+ ITEM /docs/parts/S7400/74LS08.txt  74LS08 - And
+ ITEM /docs/parts/S7400/74LS10.txt  74LS10 - 3-input nand
+ ITEM /docs/parts/S7400/74LS11.txt  74LS11 - 3-input and
+ ITEM /docs/parts/S7400/74LS20.txt  74LS20 - 4-input nand
+ ITEM /docs/parts/S7400/74LS21.txt  74LS21 - 4-input and
+ ITEM /docs/parts/S7400/7425.txt    7425 - Dual 4-input nor with strobe
+ ITEM /docs/parts/S7400/74LS27.txt  74LS27 - 3-input nor
+ ITEM /docs/parts/S7400/74LS30.txt  74LS30 - 8-input nand
+ ITEM /docs/parts/S7400/74LS32.txt  74LS32 - Quad 2-input or
+ ITEM /docs/parts/S7400/74LS86.txt  74LS86 - Exclusive or
+ ITEM /docs/parts/S7400/74LS132.txt 74LS132 - Nand schmitt trigger
+ ITEM /docs/parts/S7400/74S133.txt  74S133 - 13-input Nand
+ ITEM /docs/parts/S7400/74S134.txt  74S134 - Tri-state 12-input Nand
+ ITEM /docs/parts/S7400/74S136.txt  74S136 - Quad exclusive or OC
+ ITEM /docs/parts/S7400/74265.txt   74265 - Quad complementary elements
+ ITEM /docs/parts/S7400/74LS266.txt 74LS266 - Quad exclusive nor
+ }
+MENU Inverters {
+ ITEM /docs/parts/S7400/74LS04.txt  74LS04 - Hex inverter
+ ITEM /docs/parts/S7400/74LS05.txt  74LS05 - Hex inverter OC
+ ITEM /docs/parts/S7400/74LS14.txt  74LS14 - Hex inverter schmitt trigger
+ }
+MENU J-K Flip-Flops {
+ ITEM /docs/parts/S7400/7470.txt    7470 - And gated J-K Flip Flop
+ ITEM /docs/parts/S7400/7472.txt    7472 - And gated J-K Master-Slave
+ ITEM /docs/parts/S7400/7473.txt    7473 - Dual J-K with clear
+ ITEM /docs/parts/S7400/74LS73.txt  74LS73 - Dual J-K with clear
+ ITEM /docs/parts/S7400/7476.txt    7476 - Dual J-K with clear,preset
+ ITEM /docs/parts/S7400/74LS76.txt  74LS76 - Dual J-K with clear,preset
+ ITEM /docs/parts/S7400/74LS78.txt  74LS78 - Dual J-K negative-edge
+ ITEM /docs/parts/S7400/74107.txt   74107 - Dual J-K with clear
+ ITEM /docs/parts/S7400/74LS107.txt 74LS107 - Dual J-K with clear
+ ITEM /docs/parts/S7400/74LS109.txt 74LS109 - Dual J-not-K Flip Flops
+ ITEM /docs/parts/S7400/74111.txt   74111 - Dual J-K Flip Flops
+ ITEM /docs/parts/S7400/74LS112.txt 74LS112 - Dual J-K with clear,preset
+ ITEM /docs/parts/S7400/74LS113.txt 74LS113 - Dual J-K with preset
+ ITEM /docs/parts/S7400/74LS114.txt 74LS114 - Dual J-K with common clear,clock
+ }
+MENU Memories {
+ ITEM /docs/parts/S7400/74LS170.txt  74LS170 - 4x4-bit register file OC
+ ITEM /docs/parts/S7400/74LS612.txt  74LS612 - Memory mapper
+ ITEM /docs/parts/ram/2114.txt     2114 - 1kx4 static ram
+ ITEM /docs/parts/ram/CDM6116A.txt CDM6116A - 2kx8 static ram
+ ITEM /docs/parts/ram/CDM6264.txt  CDM6264 - 8kx8 static ram
+ ITEM /docs/parts/ram/4164.txt     4164 - 64kx1 dynamic ram
+ ITEM /docs/parts/rom/2708.txt     2708 - 1kx8 EPROM
+ ITEM /docs/parts/rom/2716.txt     2716 - 2kx8 EPROM
+ ITEM /docs/parts/rom/2732.txt     2732 - 4kx8 EPROM
+ ITEM /docs/parts/rom/2764.txt     2764 - 8kx8 EPROM
+ }
+MENU Miscelaneous Chips {
+ ITEM /docs/parts/S7400/74180.txt     74180 - 9-bit parity generator/checker
+ ITEM /docs/parts/input/Clock.txt     CLOCK - Clock source
+ ITEM /docs/parts/cdp1800/CDP1802BC.txt CDP1802BC - Microprocessor
+ ITEM /docs/parts/pld/5C031.txt     5C031 - Programmable logic device
+ ITEM /docs/parts/cpu/8080A.txt     8080A - Microprocessor
+ ITEM /docs/parts/cpu/Z86E08.txt    Z86E08 - Z8 Microcontroller
+ }
+MENU Multi-Gates {
+ ITEM /docs/parts/S7400/7451.txt   7451 - 2-wide and-or-invert
+ ITEM /docs/parts/S7400/74LS51.txt 74LS51 - 2-wide and-or-invert
+ ITEM /docs/parts/S7400/7454.txt   7454 - 4-wide and-or-invert
+ ITEM /docs/parts/S7400/74LS54.txt 74LS54 - 4-wide and-or-invert
+ ITEM /docs/parts/S7400/74LS55.txt 74LS55 - 2-wide 4-input and-or-invert
+ ITEM /docs/parts/S7400/74S64.txt  74S64 - 4-2-3-2-input and-or-invert
+ ITEM /docs/parts/S7400/74S135.txt 74S135 - Quad exclusive or/nor gates
+ }
+MENU Multiplexers {
+ ITEM /docs/parts/S7400/74LS147.txt 74LS147 - 10 to 4-line priority encoder
+ ITEM /docs/parts/S7400/74LS148.txt 74LS148 - 8 to 3-line priority encoder
+ ITEM /docs/parts/S7400/74150.txt   74150 - 16 to 1-line selector/multiplexer
+ ITEM /docs/parts/S7400/74LS151.txt 74LS151 - 8 to 1-line selector/multiplexer
+ ITEM /docs/parts/S7400/74LS153.txt 74LS153 - Dual 4 to 1-line selector/multiplexer
+ ITEM /docs/parts/S7400/74LS157.txt 74LS157 - Quad 2 to 1-line data selector
+ ITEM /docs/parts/S7400/74LS158.txt 74LS158 - Quad 2 to 1-line data selector INV
+ ITEM /docs/parts/S7400/74LS251.txt 74LS251 - 8 to 1-line selector tri-state
+ ITEM /docs/parts/S7400/74LS253.txt 74LS253 - Dual 4 to 1-line selector tri-state
+ ITEM /docs/parts/S7400/74LS257.txt 74LS257 - Quad 2 to 1-line selector tri-state
+ ITEM /docs/parts/S7400/74LS258.txt 74LS258 - Quad 2 to 1-line selector tri-state INV
+ ITEM /docs/parts/S7400/74LS604.txt 74LS604 - Octal 2-input multiplexed latches
+ }
+MENU Output Devices {
+ ITEM /docs/parts/output/MAN10A.txt    MAN10A - 7-segment led display
+ ITEM /docs/parts/output/TIL311.txt    TIL311 - Hex display with decoder
+ }
+MENU Shift Registers {
+ ITEM /docs/parts/S7400/74LS91.txt  74LS91 - 8-bit serial-in serial-out
+ ITEM /docs/parts/S7400/7494.txt    7494 - 4-bit serial/par-in serial-out
+ ITEM /docs/parts/S7400/74LS95.txt  74LS95 - 4-bit parallel-access
+ ITEM /docs/parts/S7400/74LS96.txt  74LS96 - 5-bit parallel-access
+ ITEM /docs/parts/S7400/74LS164.txt 74LS164 - 8-bit parallel-out serial-in
+ ITEM /docs/parts/S7400/74LS165.txt 74LS165 - 8-bit parallel-in serial-out
+ ITEM /docs/parts/S7400/74LS166.txt 74LS166 - 8-bit parallel-in serial-out /w clear
+ ITEM /docs/parts/S7400/74178.txt   74178 - 4-bit parallel-access
+ ITEM /docs/parts/S7400/74LS194.txt 74LS194 - 4-bit bidirectional universal register
+ ITEM /docs/parts/S7400/74LS195.txt 74LS195 - 4-bit parallel-access J/K serial
+ ITEM /docs/parts/S7400/74198.txt   74198 - 8-bit bidirectional universal register
+ ITEM /docs/parts/S7400/74199.txt   74199 - 8-bit parallel-access J/K serial
+ }
+MENU CD4000 Series {
+ MENU Arithmatic {
+   ITEM /docs/parts/cd4000/CD4008.txt  CD4008 - 4-bit Adder with carry
+   }
+ MENU Buffers/Drivers {
+   ITEM /docs/parts/cd4000/CD4010.txt  CD4010 - Hex non-inverting buffers
+   ITEM /docs/parts/cd4000/CD4050.txt  CD4050 - Hex non-inverting buffers
+   }
+ MENU Counters {
+   ITEM /docs/parts/cd4000/CD4020.txt  CD4020 - 14-bit counter
+   ITEM /docs/parts/cd4000/CD4024.txt  CD4024 - 7-bit counter
+   }
+ MENU Flip Flops {
+   ITEM /docs/parts/cd4000/CD4013.txt  CD4013  - Dual independent D-type flip-flops
+   }
+ MENU Gates {
+   ITEM /docs/parts/cd4000/CD4000.txt     CD4000 Dual 3-input NOR gates plus an inverter
+   ITEM /docs/parts/cd4000/CD4001.txt     CD4001 Quad 2-input NOR gates
+   ITEM /docs/parts/cd4000/CD4002.txt     CD4002 Dual 4-input NOR gates
+   ITEM /docs/parts/cd4000/CD4011.txt     CD4011 Quad 2-input NAND gates
+   ITEM /docs/parts/cd4000/CD4012.txt     CD4012 Dual 4-input NAND gates
+   ITEM /docs/parts/cd4000/CD4023.txt     CD4023 Triple 3-input NAND gates
+   ITEM /docs/parts/cd4000/CD4025.txt     CD4025 Triple 3-input NOR gates
+   ITEM /docs/parts/cd4000/CD4030.txt     CD4030 Quad XOR gates
+   ITEM /docs/parts/cd4000/CD4068.txt     CD4068 8-input NAND gate
+   ITEM /docs/parts/cd4000/CD4070.txt     CD4070 Quad XOR gates
+   ITEM /docs/parts/cd4000/CD4071.txt     CD4071 Quad OR gates
+   ITEM /docs/parts/cd4000/CD4072.txt     CD4072 Dual 4-input OR gates
+   ITEM /docs/parts/cd4000/CD4073.txt     CD4073 Triple 3-input AND gates
+   ITEM /docs/parts/cd4000/CD4075.txt     CD4075 Triple 3-input OR gates
+   ITEM /docs/parts/cd4000/CD4077.txt     CD4077 Quad XNOR gates
+   ITEM /docs/parts/cd4000/CD4078.txt     CD4078 8-input NOR gate
+   ITEM /docs/parts/cd4000/CD4081.txt     CD4081 Quad AND gates
+   ITEM /docs/parts/cd4000/CD4082.txt     CD4082 Dual 4-input AND gates
+   }
+ MENU Inverters {
+   ITEM /docs/parts/cd4000/CD4009.txt  CD4009 - Hex inverter
+   ITEM /docs/parts/cd4000/CD4049.txt  CD4049 - Hex inverter
+   ITEM /docs/parts/cd4000/CD4069.txt  CD4069 - Hex inverter
+   }
+ MENU J-K Flip Flops {
+   ITEM /docs/parts/cd4000/CD4027.txt  CD4027 - Dual J-K flip-flops
+   }
+ MENU Shift Registers {
+   ITEM /docs/parts/cd4000/CD4014.txt  CD4014 - 8-bit parallel-in/serial-out shift register
+   }
+  }
+MENU CDP1800 Series {
+  ITEM /docs/parts/cdp1800/CDP1852.txt  CDP1852 - 8-bit Input/Output port
+  ITEM /docs/parts/cdp1800/CDP1853.txt  CDP1853 - 1 of 8 decoder, active-high
+  ITEM /docs/parts/cdp1800/CDP1857.txt  CDP1857 - 4-bit bus driver/separator
+  ITEM /docs/parts/cdp1800/CDP1872.txt  CDP1872 - 8-bit Input Port
+  ITEM /docs/parts/cdp1800/CDP1874.txt  CDP1874 - 8-bit Input Port
+  ITEM /docs/parts/cdp1800/CDP1875.txt  CDP1875 - 8-bit Output Port
+  ITEM /docs/parts/cdp1800/CDP1881.txt  CDP1881 - 6-bit Memory Decoder
+  ITEM /docs/parts/cdp1800/CDP1882.txt  CDP1882 - 6-bit Memory Decoder
+  ITEM /docs/parts/cdp1800/CDP1883.txt  CDP1883 - 7-bit Memory Decoder
+  }
+MENU PIC {
+  ITEM /docs/parts/pic/24LC256.txt      24LC256 - 32Kx8 serial EEPROM
+  ITEM /docs/parts/pic/12C5XX.txt       12C5XX  - PIC Microcontroller
+  }
+

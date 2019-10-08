@@ -1,0 +1,89 @@
+Now try wiring this circuit:
+
+1. Make sure you have a clean perfboard by clicking on the NEW
+   button in the upper right corner of the screen.
+
+2. Pull down the parts menu and select 'COUNTERS'.
+
+3. Select a 74LS68 and place it on the perfboard about the
+   middle of the screen.
+
+4. Pull down the parts menu and select 'POWER SUPPLY' and
+   place it to the left of the 74LS68.
+
+5. Pull down the parts menu and select 'SWITCHES'. Select the
+   'BUTTON SPDT 2-IN 1-OUT' and place it below the 74LS68 about 6 or
+   7 holes.
+
+6. Pull down the parts menu and select 'LABEL'. When asked
+   for the label type 'CLR' and press enter. You will now get the
+   placement cursor click on the hole below the switch to place the
+   label.
+
+7. Place another button (same type) about 5 holes to the right
+   of the first button.
+
+8. Pull down the parts menu and select 'LABEL'. Use CLK for
+   the label. place it on the whole beneath the second switch.
+
+9. Pull down the parts menu and select 'OUTPUT DEVICES'. Select
+   the 'TIL311' and place it above the 74LS68 about 6 or 7 holes.
+
+10. Pull down the 'WCLR' menu and select 'BLACK'. Once again
+    we are going to place some ground lines.
+
+11. Place a wire between the negative pole of the power supply
+    and pin 3 of the switch marked 'CLR'. Remember pin 3 is towards
+    the top of the screen.
+
+12. Place a wire between pin 3 of switch 'CLR' and pin 1 of
+    switch 'CLK. Remember pin 1 is towards the bottom.
+
+13. Place a wire between the negative power terminal and pin 5
+    of the TIL311.	Pin 5 is on the left side 5 pins from the bottom
+    of the device.	Remember pin 1 is marked by the dot which is in
+    the lower left on this chip.
+
+14. Place a wire between pin 5 of the TIL311 and pin 8 of the
+    TIL311.	 Pin 8 is on the upper right.
+
+15. Pull down the WCLR menu and select 'RED' wires.
+
+16. Place a wire between the positive power terminal and pin 1
+    of the switch 'CLR'.
+
+17. Place a wire between pin 1 of switch 'CLR' and pin 3 of
+    switch 'CLK'.
+
+18. Pull down the WCLR menu and select 'BLUE' wires.
+
+19. Place a wire between pin 2 of switch 'CLR' (thats the middle pin)
+    and pin 11 of the 74LS68. Pin 11 is the third pin from the right
+    on the bottom side of the chip.
+
+20. Place a wire between pin 2 of switch 'CLK' and pin 9 of
+    the 74LS68. Pin 9 is on the lower right corner of the chip.
+
+21. Pull down the WCLR menu and select gray wires.
+
+22. Place a wire between pin 7 of the 74LS68 and pin 3 of the TIL311.
+
+23. Place a wire between pin 10 of the 74LS68 and pin 2 of the TIL311.
+
+24. Place a wire between pin 5 of the 74LS68 and pin 13 of the TIL311.
+
+25. Place a wire between pin 12 of the 74LS68 and pin 12 of the TIL311.
+
+Our circuit is now ready to start.  Click on the RUN button in
+the upper left corner of the screen.  Click on the CLR button to
+reset the output display back to zero.	Buttons will remain
+pressed as long as the mouse cursor remains on them and the mouse
+button is held down.  Now repeatedly press the CLK button and notice
+what happens on the display.  This circuit is called a counter
+circuit.  Keep pressing CLK and notice where the counter resets
+back to zero.  This counter is an example of a Decade or BCD counter.
+Try rebuilding this circuit and substitute a 74LS69 in place of the
+74LS68. The 74LS69 is a Binary counter and actually counts all the
+way to 15 before resetting back to zero.  Notice also that above 9
+letters are shown.  these letters are part of the hexadecimal
+numbering system.

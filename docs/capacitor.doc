@@ -1,0 +1,38 @@
+THE CAPACITOR
+
+  The capacitor is a form of storage device.  A capacitor is made from
+two plates separated by an insulator called a dielectric.  The
+schematic diagram for the capacitor is shown in Figure 1.  The amount
+
+           ! /
+      -----! !----
+           ! \
+      Figure 1
+
+of capacitance is measured in farads.  When electricity is fed into the
+two plates an abundance of electrons accumulates on the negative plate
+and a lack of electrons accumulates on the positive plate.  The
+dielectric between the plates is thin enough that mutual attraction
+between the positive and negative plates can occur.  This loosely holds
+the electrons on the negative plate (see Figure 2-3).  If the
+dielectric is "leaky" then electrons from the negative plate can cross
+to the positive plate and nullify the effect of the capacitor.  Over a
+given time period the capacitor will charge 66% of its full charge,
+over the next time period 66% of what remains will be charged and so
+forth.  The time period is determined by the voltage and amperage used
+to charge the capacitor.  When power is removed and no circuit exists
+between the negative and positive plates, the electrons will continue
+to be stored.  When a circuit is provided between the plates the
+electrons will then flow through the circuit to equalize the pressure
+lacking in the positive plate.  Like the charging cycle, the discharge
+cycle also releases only 66% of the remaining charge.  Two capacitors
+wired in parallel will have the sum of the individual capacitance while
+capacitors wired in series will have the total capacitance as computed
+by this formula:
+
+
+                       1
+                   ---------
+          Ctotal=   1     1
+                   ---   ---
+                    C1    C2

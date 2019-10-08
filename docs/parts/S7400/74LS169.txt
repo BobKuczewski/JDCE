@@ -1,0 +1,45 @@
+.NAME=74LS169
+.PINS=16
+U/D
+CLK
+A
+B
+C
+D
+enp
+GND
+load
+ent
+QD
+QC
+QB
+QA
+rco
+VCC
+This device contains a 4-bit presettable up/down binary counter.
+When U/D is high the counter counts up, and when U/D is low the
+counter counts down.  The counter can be preset by placing the 
+starting value on A-D and then taking /LOAD low.  Both count
+enable inputs (/ENT and /ENP) must be low for the counter to 
+count.  The counter can be reset to zero by taking /CLR low.
+
+PROPAGATION DELAY
++----------+----------+----------+------------------------+
+| FUNCTION |   FROM   |    TO    | TIME                   |
+===========================================================
+| tPLH     | CLK      | /RCO     | 26-40 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | CLK      | /RCO     | 17-25 ns               |
++----------+----------+----------+------------------------+
+| tPLH     | /ENT     | /RCO     | 15-25 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | /ENT     | /RCO     | 11-20 ns               |
++----------+----------+----------+------------------------+
+| tPLH     | U/D      | /RCO     | 23-35 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | U/D      | /RCO     | 15-25 ns               |
++----------+----------+----------+------------------------+
+| tPLH     | CLK      | Any Q    | 16-25 ns               |
++----------+----------+----------+------------------------+
+| tPHL     | CLK      | Any Q    | 17-25 ns               |
++----------+----------+----------+------------------------+
