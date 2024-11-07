@@ -46,7 +46,8 @@ MENU Decoders {
  ITEM /docs/parts/S7400/7445.txt    7445 - BCD to decimal decoder
  ITEM /docs/parts/S7400/74LS47.txt  74LS47 - Seven segment decoder
  ITEM /docs/parts/S7400/74LS137.txt 74LS137 - 3-line to 8-line decoder, latched
- ITEM /docs/parts/S7400/74LS138.txt 74LS138 - 3-line to 8-line decoder
+ ITEM /docs/parts/S7400/74LS138.txt 74LS138 - 3-line to 8-line decoder, selected=low
+ ITEM /docs/parts/S7400/74LS238.txt 74LS238 - 3-line to 8-line decoder, selected=high
  ITEM /docs/parts/S7400/74LS139.txt 74LS139 - Dual 2-line to 4-line decoder
  ITEM /docs/parts/S7400/74LS145.txt 74LS145 - BCD to decimal decoder
  ITEM /docs/parts/S7400/74154.txt   74154 - 4-line to 16-line decoder
