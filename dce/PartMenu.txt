@@ -47,6 +47,7 @@ MENU Decoders {
  ITEM parts.S7400.C74ls47  74LS47 - Seven segment decoder
  ITEM parts.S7400.C74ls137 74LS137 - 3-line to 8-line decoder, latched
  ITEM parts.S7400.C74ls138 74LS138 - 3-line to 8-line decoder
+ ITEM parts.S7400.C74ls238 74LS238 - 3-line to 8-line decoder
  ITEM parts.S7400.C74ls139 74LS139 - Dual 2-line to 4-line decoder
  ITEM parts.S7400.C74ls145 74LS145 - BCD to decimal decoder
  ITEM parts.S7400.C74154   74154 - 4-line to 16-line decoder
