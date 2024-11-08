@@ -86,17 +86,24 @@ public class View implements ActionListener,AdjustmentListener,WindowListener {
        DataSheet d=new DataSheet(e.getActionCommand().substring(1,
          e.getActionCommand().length()));
        }
-    else if (e.getActionCommand()=="Save") {
+    else if ((e.getActionCommand()=="Save")&&(Globals.current_file_name!=null)) {
+      board.saveFile(Globals.current_file_name);
+      }
+    else if ((e.getActionCommand()=="Save As...")||(e.getActionCommand()=="Save")) {
       fileDialog=new FileDialog(window,"Save File",FileDialog.SAVE);
       fileDialog.setVisible(true);
-      if (fileDialog.getFile()!=null)
-        board.saveFile(fileDialog.getFile());
+      if (fileDialog.getFile()!=null) {
+        Globals.current_file_name = fileDialog.getFile();
+        board.saveFile(Globals.current_file_name);
+        }
       }
     else if (e.getActionCommand()=="Load") {
       fileDialog=new FileDialog(window,"Load File",FileDialog.LOAD);
       fileDialog.setVisible(true);
-      if (fileDialog.getFile()!=null)
+      if (fileDialog.getFile()!=null) {
+        Globals.current_file_name = fileDialog.getFile();
         board.loadFile(fileDialog.getFile());
+        }
         perfBoard.update(perfBoard.getGraphics());
         parts=board.getParts();
         for (i=0;i<parts.size();i++) {
@@ -110,6 +117,7 @@ public class View implements ActionListener,AdjustmentListener,WindowListener {
       Main.mode='E';
       board.clear();
       perfBoard.update(perfBoard.getGraphics());
+      Globals.current_file_name = null;
       }
     else if (e.getActionCommand()=="Exit") {
       window.setVisible(false);
