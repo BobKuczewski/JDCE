@@ -95,6 +95,7 @@ public class View implements ActionListener,AdjustmentListener,WindowListener {
       if (fileDialog.getFile()!=null) {
         Globals.current_file_name = fileDialog.getFile();
         board.saveFile(Globals.current_file_name);
+        window.setTitle("DCE: " + Globals.current_file_name);
         }
       }
     else if (e.getActionCommand()=="Load") {
@@ -103,6 +104,7 @@ public class View implements ActionListener,AdjustmentListener,WindowListener {
       if (fileDialog.getFile()!=null) {
         Globals.current_file_name = fileDialog.getFile();
         board.loadFile(fileDialog.getFile());
+        window.setTitle("DCE: " + Globals.current_file_name);
         }
         perfBoard.update(perfBoard.getGraphics());
         parts=board.getParts();
@@ -118,6 +120,7 @@ public class View implements ActionListener,AdjustmentListener,WindowListener {
       board.clear();
       perfBoard.update(perfBoard.getGraphics());
       Globals.current_file_name = null;
+      window.setTitle("DCE");
       }
     else if (e.getActionCommand()=="Exit") {
       window.setVisible(false);
