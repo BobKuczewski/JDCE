@@ -32,7 +32,11 @@ public class MainMenu {
     m=new MenuItem("Load");
     m.addActionListener(view);
     menu.add(m);
+    menu.addSeparator();
     m=new MenuItem("Save");
+    m.addActionListener(view);
+    menu.add(m);
+    m=new MenuItem("Save As...");
     m.addActionListener(view);
     menu.add(m);
     menu.addSeparator();

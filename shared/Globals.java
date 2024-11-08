@@ -15,4 +15,5 @@ public class Globals {
   public static Color darkCyan=new Color(0,128,128);
   public static Color darkYellow=new Color(128,128,0);
   public static Font courier=new Font("Courier",Font.PLAIN,12);
+  public static String current_file_name=null;
   }
