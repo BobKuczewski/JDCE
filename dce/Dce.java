@@ -26,7 +26,7 @@ public class Dce extends Thread {
         board.cycle(net);
         try {
           if (down==0) { sleep(1); down=100;  }
-          yield();
+          Thread.yield();
           } catch (InterruptedException e) { }
         }
       }
