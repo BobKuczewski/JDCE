@@ -3,11 +3,18 @@ Digital Circuit Emulator (DCE)
 by Michael H. Riley
 
 DCE stands for Digital Circuit Emulator.  This program contains
-the code for emulating a large number of TTL (7400 series) chips.
+the code for emulating a large number of TTL (7400 series), CMOS
+(4000 series), and a number of other integrated circuits (chips).
 This program allows you to put together electronic circuits and
 test them without the need to hardwire the actual circuit.  DCE
 also provides an excellent platform for learning Digital Electronics
 because experimentation is so easy.
+
+DCE operates in one of two primary modes: EDIT and RUN.
+The program starts out in EDIT mode where you can place parts and
+wire them together. You can enter RUN mode through the "Circuit/Run"
+menu item.  The "Circuit/Run" menu item is a toggle and it will
+switch between the two modes.
 
 
 EDIT MODE:
@@ -15,6 +22,11 @@ EDIT MODE:
 The edit mode is used to build your circuit.  In this mode parts
 can be placed, wires connected and digi-scope probes attached or
 removed.
+
+RUN MODE:
+
+The run mode is used to simulate your circuit. In this mode all
+of the parts will become active and some will become interactive.
 
 
 FILE Menu:
@@ -26,8 +38,14 @@ circuit.  A file access box will be displayed on the screen show
 ing the available circuit files.
 
 SAVE - This command will allow you to save the current circuit.
-The file access box will be displayed and selection of a save
-file can be performed.
+The SAVE command will save to the last file either opened or
+saved. If no file has been opened or saved, then it will ask
+for a file name for saving.
+
+SAVE AS - This command will allow you to choose a file to save
+the current circuit. The file access box will be displayed and
+selection of a save file can be performed.
+
 
 CIRCUIT Menu:
 
@@ -67,9 +85,10 @@ be displayed on the screen.
 WIRE - This command allows you to change the color in which wires
 are drawn.
 
+
 CHIP FUNCTIONS MENU:
 When any pin of a placed part is clicked, a menu appears allowing
-you to select options for this part.
+you to select options for this part as described below.
 
 ADD WIRE - This option allows you to connect a wire from the
 selected pin to another pin.  When selected the cursor will change
@@ -117,7 +136,7 @@ saved, any dip switch settings will also be saved.
 NOTES:
 
 1.    You do not need to connect the GND or VCC connections of
-any chips.     these connections are placed on an internally used
+any chips.  These connections are placed on an internally used
 Net.  You also cannot get power from these pins, If you need GND
 or +5v then place a power-supply part.
 
@@ -130,7 +149,7 @@ SQUARE pins while the outputs will have the usual CIRCLE pins.
 The normal position of a switch is indicated with a line going
 between the center pin and the normal pin.
 
-3.    Leds have a line located near the Cathode (-) end.  Both
+3.    LEDs have a line located near the Cathode (-) end.  Both
 leads of an LED must be connected for the LED to work.  Pin 1
 of an LED is the cathode.
 

@@ -1,8 +1,9 @@
 QUICK TUTORIAL: In this tutorial we will build a few simple circuits.
 First we need to learn about pin numbers so that wires can be properly
 connected.  On all chips there is a small dot near pin 1.  When in the
-edit mode, this dot appears in the upper left corner of the chip.  In
-the run mode, the dot appears in the lower left.  The pin numbers then
+edit mode, this dot appears in the upper left corner of the chip because
+the chip is being viewed from below.  In the run mode, the dot appears
+in the lower left because it's viewed from above.  The pin numbers then
 move along the same side of the chip.  Pin 2 will be just to the right
 of pin 1.  When we get to the end we move to the opposite side of the
 chip and start moving leftwards assigning pin numbers.  Below is a
@@ -26,19 +27,20 @@ the same as chips.
 
   Now lets build a circuit.  Just follow the steps below:
 
-1. Pull down the parts menu and select 'GATES'.
+1. Pull down the PARTs menu and select 'GATES'.
 
-2. Select the 74LS08.
+2. Select the 74LS08 (third from the top).
 
-3. The cursor will change to a small picture of chip with
+3. The cursor will change to a hand or a small picture of chip with
    a small arrow pointing upwards to the left.  This is called the
    placement cursor.  Click on a hole near the middle of the screen
    and a 74LS08 part will appear on the screen.  Look for pin 1,
-   re member it is in the upper left corner of the chip and is marked
+   remember it is in the upper left corner of the chip and is marked
    with a white dot.
-4. Pull down the parts menu and select 'SWITCHES'.
 
-5. Select the 'SWITCH SPDT 2-IN 1-OUT'. This is the sec ond one on
+4. Pull down the PARTs menu and select 'SWITCHES'.
+
+5. Select the 'SWITCH SPDT 2-IN 1-OUT'. This is the second one on
    the list.
 
 6. Place this part about 6 or 7 holes below the 74LS08.
@@ -47,58 +49,58 @@ the same as chips.
    round switch pin represents the output from the switch and the
    square ones represent inputs.  Also note that there is a line
    connecting the center pin with the square pin on the top.
-   This line represents the normal position of the switch (The
-   position the switch is in when the circuit is turned on)
+   This line represents the normal position of the switch (the
+   position the switch is in when the circuit is turned on).
 
-7. Get one more of the same switches and place it below
-   the 74LS08 and about 5 holes left or right from the first switch.
+7. Get one more of the same switches and place it below the
+   74LS08 and about 5 holes left or right from the first switch.
 
-8. Pull down the parts menu and select 'POWER SUPPLY'.
+8. Pull down the PARTs menu and select 'POWER SUPPLY'.
 
 9. Place the power supply part to the left of the 74LS08.
    Notice that near one pin of the power supply there is a minus (-)
    sign, this represents the ground pin of the circuit.  Next to the
    other pin is a plus (+) sign, this represents the +5v supply.
 
-10. Pull down the parts menu and select 'OUTPUT DEVICES'
+10. Pull down the PARTs menu and select 'OUTPUT DEVICES'
 
 11. Select any color of LED. and place it directly above
     the 74LS08 about 6 or 7 holes away.
 
-12. Pull down the WCLR menu.  This menu lets you change
-    the colors of wires.  Select black.  We are going to place some
+12. Pull down the WIRE menu.  This menu lets you change the
+    colors of wires.  Select black.  We are going to place some
     ground wires, which are typically black.
 
-13. Click on the negative pole of the power supply (the
-    one with the minus sign).  A menu will appear. Select 'ADD
-    WIRE'. The cursor will now change to a picture of a soldering
-    iron.
+13. Click on the negative pole of the power supply (the one
+    with the minus sign).  A menu will appear. Select 'ADD WIRE'.
+    The cursor will now change to either a picture of a
+    soldering iron or possibly a hand.
 
-14. Click on pin 1 of one of the switches (Remember pin 1
-    on switches is towards the bottom of the screen.  A black wire
-    will be drawn between the power supply and the switch.
+14. Click on pin 1 of one of the switches (remember pin 1 on
+    switches is towards the bottom of the screen in Edit mode).
+    A black wire will be drawn between the power supply ground
+    terminal and the switch.
 
 15. Now connect pin 1 of the switch above with pin 1 of
     the other switch.
 
-16. Now connect a wire from the negative power supply to
-    the cathode of the LED.  The cathode can be identified by a small
+16. Now connect a wire from the negative power supply to the
+    cathode of the LED.  The cathode can be identified by a small
     line that appears closer to the top pin.  Therefore the wire
     should be connected to the top pin.
 
-17. Pull down the WCLR menu and select RED.  We are now
-    going add some positive power connections which are typically
-    red.
+17. Pull down the WIRE menu and select RED.  We are now going to
+    add some positive power connections which are typically red.
 
 18. Place a wire between the positive pole of the power
     supply (the pin with the plus sign) and pin 3 of one of the
-    switches. Pin 3 will be the pin towards the top of the screen.
-    Remember pin 1 was on the bottom.
+    switches. Pin 3 will be the pin towards the top of the screen
+    in Edit mode.  Remember pin 1 was on the bottom.
 
 19. Connect pin 3 of the switch above with pin 3 of the
     other switch.
 
-20. Pull down the WCLR menu and select BLUE.
+20. Pull down the WIRE menu and select BLUE.
 
 21. Connect a wire from pin 2 of one of the switches to pin 1 of
     the 74LS08.  Remember pin 1 of the 74LS08 is marked by a white dot.
@@ -108,15 +110,16 @@ the same as chips.
 
 23. Connect a wire from pin 3 of the 74LS08 to the anode
     of the LED. Remember the cathode was the pin with the line near
-    it which appears towards the top of the screen, therefore the anode
-    is the pin towards the bottom of the screen.
+    it which appears towards the top of the screen, therefore the
+    anode is the pin towards the bottom of the screen.
 
 This circuit is now completed.	Turn the power to the circuit on
-by clicking on the RUN button in the upper left corner of the
-screen.	 The circuit board will now be flipped right side up.
-Both switches will be in the down position and the LED will not
-be lit.	 Turn on a switch by clicking on the switch.  The switch
-will change to the up position, the LED will still be off.  Now
-turn on the other switch and the LED will turn on. In this circuit
+by using the CIRCUIT/RUN menu option.  The circuit board will now
+be flipped right side up. Both switches will be in the down position
+and the LED will not be lit.
+
+Turn on a switch by clicking on the white part of the switch.  The
+switch will change to the up position, the LED will still be off.
+Now turn on the other switch and the LED will turn on. In this circuit
 the LED will only light when switch 1 AND switch 2 are in the ON
 (or up) position.  This circuit is therefore called an AND gate.
