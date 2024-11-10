@@ -23,7 +23,7 @@ public class MainMenu {
     Menu b,c;
     menuBar=new MenuBar();
 
-
+    // File menu
     menu=new Menu("File");
     m=new MenuItem("New");
     m.addActionListener(view);
@@ -45,6 +45,7 @@ public class MainMenu {
     menu.add(m);
     menuBar.add(menu);
 
+    // Circuit menu
     menu=new Menu("Circuit");
     m=new MenuItem("Run");
     m.addActionListener(view);
@@ -61,17 +62,18 @@ public class MainMenu {
     menu.add(m);
     menuBar.add(menu);
 
+    // Part menu
     menu=readMenu("Part","PartMenu.txt","C");
     m=new MenuItem("Label");
     m.addActionListener(view);
     menu.add(m);
     menuBar.add(menu);
 
+    // Data menu
     menu=readMenu("Data","DataMenu.txt","D");
     menuBar.add(menu);
 
-
-
+    // Wire menu
     menu=new Menu("Wire");
     m=new MenuItem("White");
     m.addActionListener(view);
@@ -128,7 +130,31 @@ public class MainMenu {
     m.setActionCommand("dark Yellow");
     menu.add(m);
     menuBar.add(menu);
+
+    // Set menu
+    menu=new Menu("Set");
+    // Background submenu
+    b=new Menu("Background");
+    m=new MenuItem("BG Normal");
+    m.addActionListener(view);
+    b.add(m);
+    m=new MenuItem("BG Dark");
+    m.addActionListener(view);
+    b.add(m);
+    m=new MenuItem("BG Light");
+    m.addActionListener(view);
+    b.add(m);
+    menu.add(b);
+    // Zoom submenu
+    b=new Menu("Zoom");
+    m=new MenuItem("Zoom Normal");
+    m.addActionListener(view);
+    b.add(m);
+    menu.add(b);
+    menuBar.add(menu);
+
 //    window.setMenuBar(menuBar);
+    // Help menu
     menu=new Menu("Help");
     m=new MenuItem("General Help");
     m.addActionListener(view);
@@ -145,6 +171,7 @@ public class MainMenu {
     m=new MenuItem("PLD Files");
     m.addActionListener(view);
     menu.add(m);
+    // DCE Tutorial submenu
     b=new Menu("DCE Tutorial");
     m=new MenuItem("First Circuit");
     m.addActionListener(view);
@@ -156,7 +183,9 @@ public class MainMenu {
     m.addActionListener(view);
     b.add(m);
     menu.add(b);
+    // Electronics Tutorial submenu
     b=new Menu("Electronics Tutorial");
+    // Electronics subsubmenu
     c=new Menu("Electronics");
     m=new MenuItem("Electricity");
     m.addActionListener(view);
@@ -179,6 +208,7 @@ public class MainMenu {
     m.addActionListener(view);
     c.add(m);
     b.add(c);
+    // Digital Electronics subsubmenu
     c=new Menu("Digital Electronics");
     m=new MenuItem("Basics");
     m.addActionListener(view);
@@ -209,9 +239,8 @@ public class MainMenu {
     m.addActionListener(view);
     menu.add(m);
     menuBar.add(menu);
-
-
     }
+
   private Menu readMenu(String title,String filename,String prefix) {
     Menu[] menus=new Menu[10];
     int    menuCount,j;
