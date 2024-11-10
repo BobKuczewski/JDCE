@@ -17,9 +17,15 @@ all:
 	    cd $$PROJECT_ROOT; \
 	    fi; \
 	  done
+
 dist:
 	jar cf jdce.jar *.class *.txt *.doc *.dat
 	jar cf samples.jar *.ckt *.rom *.pld
 
+docs:
+	mkdir api
+	find . -type f -name "*.java" | xargs javadoc -d api
+
 clean:
 	find . -type f -name '*.class' -exec rm {} \;
+	rm -rf api
