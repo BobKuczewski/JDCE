@@ -33,6 +33,9 @@ public class PerfBoard extends Canvas implements MouseListener,ModelListener {
     public void setWindow(Frame win) {
       window=win;
       }
+    public void setBGColor(Color bgColor) {
+      setBackground(bgColor);
+      }
     public void setDevice(parts.Component dev) {
       device=dev;
       }
