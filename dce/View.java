@@ -174,6 +174,15 @@ public class View implements ActionListener,AdjustmentListener,WindowListener {
     else if (e.getActionCommand()=="dark Yellow") {
       perfBoard.setWireColor(Globals.darkYellow);
       }
+    else if (e.getActionCommand()=="BG Normal") {
+      perfBoard.setBGColor(new Color(189,183,107));
+      }
+    else if (e.getActionCommand()=="BG Dark") {
+      perfBoard.setBGColor(new Color(50,50,50));
+      }
+    else if (e.getActionCommand()=="BG Light") {
+      perfBoard.setBGColor(new Color(200,200,200));
+      }
     else if (e.getActionCommand()=="Run") {
       if (Main.mode=='E') {
         Main.cycles=0;
