@@ -19,13 +19,8 @@ all:
 	  done
 
 dist:
-	jar cf jdce.jar *.class *.txt *.doc *.dat
-	jar cf samples.jar *.ckt *.rom *.pld
-
-docs:
-	mkdir api
-	find . -type f -name "*.java" | xargs javadoc -d api
-
+	jar --create --verbose --file jdce.jar --main-class=dce.Main `find . -name "*.class" -print` `find . -name "*.txt" -print` `find . -name "*.doc" -print`
+	jar --create --verbose --file samples.jar `find . -name "*.ckt" -print` `find . -name "*.rom" -print` `find . -name "*.pld" -print`
 clean:
 	find . -type f -name '*.class' -exec rm {} \;
 	rm -rf api
