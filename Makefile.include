@@ -1,5 +1,5 @@
 JC=javac
-JFLAGS=
+JFLAGS=-source 8 -target 8
 JCLASSPATH=$(PROJECT_ROOT):$(CLASSPATH)
 
 #uncomment next two lines for gnu make
