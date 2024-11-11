@@ -7,6 +7,12 @@ import java.io.*;
 import dce.*;
 import parts.*;
 
+/**
+ * Contains lists of parts, wires, probes, and labels.
+ * <p>
+ * This class represents the circuit itself as a series
+ * of Vectors (arrays).
+*/
 public class Board implements ActionListener {
   Vector parts;
   Vector wires;
@@ -15,6 +21,7 @@ public class Board implements ActionListener {
   int    maxNet;
   ModelListener viewer;
   ProbeListener digiScope=null;
+  boolean logProbes = false;
   public Board() {
     parts.Component i;
     parts=new Vector();
@@ -29,6 +36,12 @@ public class Board implements ActionListener {
   public void setProbeListener(ProbeListener l) {
     digiScope=l;
     }
+  /**
+   * Clear all internal data
+   * <p>
+   * Clears the parts, wires, probes, and labels.
+   *
+   */
   public void clear() {
     parts=null;
     wires=null;
@@ -39,6 +52,19 @@ public class Board implements ActionListener {
     labels=new Vector();
     maxNet=0;
     } /* end Board() */
+  /**
+   * Load a circuit file and convert to internal data.
+   * <p>
+   * Read header line of: numParts, numWires, numNets, numProbes, numLabels
+   * <ul>
+   *   <li>Read each part</li>
+   *   <li>Read each wire</li>
+   *   <li>Read each probe</li>
+   *   <li>Read each label</li>
+   * </ul>
+   *
+   * @param  fileName  Name of file to load
+   */
   public void loadFile(String fileName) {
     int i,j;
     int x,y;
@@ -166,6 +192,20 @@ public class Board implements ActionListener {
           System.out.println(er.toString());
       }
     }
+
+  /**
+   * Save a circuit data as a text file.
+   * <p>
+   * Write a header line of: numParts, numWires, numNets, numProbes, numLabels
+   * <ul>
+   *   <li>Write each part</li>
+   *   <li>Write each wire</li>
+   *   <li>Write each probe</li>
+   *   <li>Write each label</li>
+   * </ul>
+   *
+   * @param  fileName  Name of file to save
+   */
   public void saveFile(String fileName) {
     int i,j;
     Wire wire;
@@ -394,6 +434,13 @@ public class Board implements ActionListener {
     resolverOut(net);
     resolverIn(net);
     resolverRun();
+    if (logProbes) {
+      for (int i=0; i<probes.size(); i++) {
+        Probe p = (Probe)(probes.elementAt(i));
+        System.out.print( p.part.pin[p.pin] + " " );
+      }
+      System.out.println();
+    }
     }
 
   public void resolverOut(Net net) {

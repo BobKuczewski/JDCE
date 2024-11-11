@@ -48,9 +48,10 @@ these conditions are not met then all outputs from the device will be
 high.  Why are there three gate conditions on this chip?  Well this is
 done in order to simplify circuit design.  Suppose you want this chip
 to activate when a particular signal is low and another signal is high.
- Ordinarily you would have to decode this condition using other chips,
+Ordinarily you would have to decode this condition using other chips,
 but with the gate scheme used by the '138 this could be done with
-direct connections to the chip.
+direct connections to the chip. Note that the 74LS238 is very similar
+to the 74LS138, but with non-inverted outputs (high when selected).
 
   The 74LS137 is very similar to the '138.  Technically it is pin
 compatible with the '138 except one of the gate inputs performs a
