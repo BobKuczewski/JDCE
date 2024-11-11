@@ -174,6 +174,18 @@ public class View implements ActionListener,AdjustmentListener,WindowListener {
     else if (e.getActionCommand()=="dark Yellow") {
       perfBoard.setWireColor(Globals.darkYellow);
       }
+    else if (e.getActionCommand()=="Log Probes") {
+      board.logProbes = ! board.logProbes;
+      if (board.logProbes) {
+        System.out.println( "--- Logging Started ---" );
+        for (int p=0; p<board.probes.size(); p++) {
+          System.out.print( ((Probe)board.probes.elementAt(p)).name + " " );
+        }
+        System.out.println();
+      } else {
+        System.out.println( "--- Logging Ended ---" );
+      }
+      }
     else if (e.getActionCommand()=="BG Normal") {
       perfBoard.setBGColor(new Color(189,183,107));
       }

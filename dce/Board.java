@@ -10,7 +10,8 @@ import parts.*;
 /**
  * Contains lists of parts, wires, probes, and labels.
  * <p>
- * This class
+ * This class represents the circuit itself as a series
+ * of Vectors (arrays).
 */
 public class Board implements ActionListener {
   Vector parts;
@@ -20,6 +21,7 @@ public class Board implements ActionListener {
   int    maxNet;
   ModelListener viewer;
   ProbeListener digiScope=null;
+  boolean logProbes = false;
   public Board() {
     parts.Component i;
     parts=new Vector();
@@ -432,6 +434,13 @@ public class Board implements ActionListener {
     resolverOut(net);
     resolverIn(net);
     resolverRun();
+    if (logProbes) {
+      for (int i=0; i<probes.size(); i++) {
+        Probe p = (Probe)(probes.elementAt(i));
+        System.out.print( p.part.pin[p.pin] + " " );
+      }
+      System.out.println();
+    }
     }
 
   public void resolverOut(Net net) {

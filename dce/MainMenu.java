@@ -151,6 +151,11 @@ public class MainMenu {
     m.addActionListener(view);
     b.add(m);
     menu.add(b);
+    // Log Probes
+    m=new MenuItem("Log Probes");
+    m.addActionListener(view);
+    menu.add(m);
+
     menuBar.add(menu);
 
 //    window.setMenuBar(menuBar);
