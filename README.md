@@ -2,6 +2,11 @@
 Digital Circuit Emulator written in Java
 
 ![JDCE_1802_Sim](images/JDCE_1802_Sim.png)
+
+---
+- [General Description](#general)
+- [Quick Tutorial](#quick-tutorial)
+
 ---
 ## General
 Digital Circuit Emulator (DCE)
@@ -168,7 +173,7 @@ If you use the RBI then you must have a connection on the RBO/BI
 connection for proper operation.  If you do not make a connection here,
 then when the display is blanked, it will not unblank.
 
-## QUICK TUTORIAL:
+## QUICK TUTORIAL
 
 In this tutorial we will build a few simple circuits.
 First we need to learn about pin numbers so that wires can be properly
