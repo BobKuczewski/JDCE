@@ -233,4 +233,6 @@ MENU PIC {
   ITEM /docs/parts/pic/24LC256.txt      24LC256 - 32Kx8 serial EEPROM
   ITEM /docs/parts/pic/12C5XX.txt       12C5XX  - PIC Microcontroller
   }
-
+MENU Experimental {
+ ITEM /docs/parts/experiment/C1BitCPU.txt    1BitCPU - Simple 1-bit instruction CPU
+}

@@ -260,4 +260,7 @@ MENU CDP1800 Series {
   ITEM parts.cdp1800.CCDP1882  CDP1882 - 6-bit Memory Decoder
   ITEM parts.cdp1800.CCDP1883  CDP1883 - 7-bit Memory Decoder
   }
+MENU Experimental {
+ ITEM parts.experiment.C1BitCPU   1BitCPU - Simple 1-bit instruction CPU
+}
 ITEM parts.input.CPower     Power Supply
