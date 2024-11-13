@@ -184,17 +184,18 @@ in the lower left because it's viewed from above.  The pin numbers then
 move along the same side of the chip.  Pin 2 will be just to the right
 of pin 1.  When we get to the end we move to the opposite side of the
 chip and start moving leftwards assigning pin numbers.  Below is a
-sample chip showing the pin numbers:
+sample chip showing the pin numbers from both top and bottom views:
 
 
-      8  7  6  5
-      |  |  |  |
-    +-+--+--+--+-+
-    |            |
-    |.           |
-    +-+--+--+--+-+
-      |  |  |  |
-      1  2  3  4
+        8  7  6  5                1  2  3  4
+        |  |  |  |                |  |  |  |
+      +-+--+--+--+-+            +-+--+--+--+-+
+      |            |            |.           |
+      |.           |            |            |
+      +-+--+--+--+-+            +-+--+--+--+-+
+        |  |  |  |                |  |  |  |
+        1  2  3  4                8  7  6  5
+    Top View (Run Mode)     Bottom View (Edit Mode)
 
 The two display chips (MAN10a, and TIL311) appear vertically on
 the screen and the pin 1 will appear in the lower left on these
