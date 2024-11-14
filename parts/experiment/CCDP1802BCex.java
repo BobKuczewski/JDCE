@@ -2,6 +2,14 @@ package parts.experiment;
 import parts.*;
 import shared.*;
 
+/**
+* This class/part aspires to be a clock-for-clock simulation
+* of a CDP1802BC microprocessor. At this time, it only
+* generates /XTAL, TPA, TPB, and SC0.
+*
+* </pre>
+*/
+
 public class CCDP1802BCex extends Ic {
 
   // Define pin numbers for this part
@@ -61,6 +69,11 @@ public class CCDP1802BCex extends Ic {
     }
   }
 
+  /**
+  * <pre>
+  * This method is called by JDCE to build this part.
+  * </pre>
+  */
   public CCDP1802BCex() {
     super();
     name = new String("CDP1802BCex");
@@ -71,11 +84,19 @@ public class CCDP1802BCex extends Ic {
     println ( "Created a " + name );
   }
 
-  // Return the number of pins for this part
+  /**
+  * <pre>
+  * This method is called by JDCE to find out how many pins this part has.
+  * </pre>
+  */
   public int numPins() {
     return 40;
   }
 
+  /**
+  * This method is called by JDCE to figure out which pins are outputs.
+  * This method should return a 1 for output pins and 0 otherwise.
+  */
   public int pinOut(int pn) {
     // What does this section do? What is pin[42]? What are return codes 128 and 129?
     if (pn>=pDB7 && pn<=pDB0) {
@@ -96,8 +117,14 @@ public class CCDP1802BCex extends Ic {
     }
   }
 
-  // Run one "iteration" of this code
+  /**
+  * This method is called by JDCE during simulation.
+  * <p/>
+  * Note that this method may be called many times during
+  * a single clock cycle.
+  */
   public int run() {
+    // Run one "iteration" (half clock) of the 1802
     boolean rising_edge = false;
     boolean falling_edge = false;
 
