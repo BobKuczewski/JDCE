@@ -1,5 +1,6 @@
 package parts.experiment;
 import parts.*;
+import shared.*;
 
 public class CCDP1802BCex extends Ic {
 
@@ -44,10 +45,21 @@ public class CCDP1802BCex extends Ic {
   final int pnDMAIN = 38;
   final int pnXTAL = 39;
   final int pVDD = 40;
-  
+  final int nPins = 40;
+
+  // Define the output pins
+  final int outpins[] = {pQ,pSC1,pSC0,pnMRD,pN2,pN1,pN0,pMA0,pMA1,pMA2,pMA3,pMA4,pMA5,pMA6,pMA7,pTPB,pTPA,pnMWR,pnXTAL};
+
   int lastCLK = 0;
   boolean in_init = true;
-  int clock_num = 0;
+  int clk = 14;        // Currently counts half clocks, initialized for proper phasing (not currently counting init)
+
+  // Helper function for debugging
+  void println ( String s ) {
+    if (Globals.debug_enabled) {
+      System.out.println ( s );
+    }
+  }
 
   public CCDP1802BCex() {
     super();
@@ -56,66 +68,81 @@ public class CCDP1802BCex extends Ic {
     lastCLK = 0;
     pin[pTPA] = 0;
     pin[pTPB] = 0;
-    System.out.println ( "Created a " + name );
+    println ( "Created a " + name );
   }
 
+  // Return the number of pins for this part
   public int numPins() {
     return 40;
   }
 
   public int pinOut(int pn) {
+    // What does this section do? What is pin[42]? What are return codes 128 and 129?
     if (pn>=pDB7 && pn<=pDB0) {
       if (pin[42]==4) {
         return 129;
       } else {
         return 128;
       }
-    } else if ((pn>=pQ && pn<=pnMRD) || (pn>=pN2 && pn<=pN0) || (pn>=pMA0 && pn<=pnMWR)) {
-      return 1;
     } else {
+      // Check if this is an output pin and return 1 if it is.
+      for (int i=0; i<outpins.length; i++) {
+        if (pn == outpins[i]) {
+          return 1;
+        }
+      }
+      // Otherwise return 0 (not an output pin)
       return 0;
     }
   }
 
+  // Run one "iteration" of this code
   public int run() {
     boolean rising_edge = false;
     boolean falling_edge = false;
+
+    // Check for a clock edge ... everything happens on a clock edge
     if ( (pin[pCLK] != 0) && (lastCLK == 0) ) rising_edge = true;
     if ( (pin[pCLK] == 0) && (lastCLK != 0) ) falling_edge = true;
     lastCLK = pin[pCLK];
-
-    if (rising_edge) {
-      // This is a rising clock edge
-      System.out.println ( "Rising Edge" );
-      if (in_init) {
-        // Do nothing
-      } else {
-        // Check for TPB which changes on a rising edge
-        if (clock_num == 6) {
-          pin[pTPB] = 1;
-        } else if (clock_num == 7) {
-          pin[pTPB] = 0;
-        }
-      }
-    } else if (falling_edge) {
-      // This is a falling clock edge
-      System.out.println ( "Falling Edge" );
-      if (in_init) {
-        clock_num += 1;
-        if (clock_num > 9) {
-          in_init = false;
-          clock_num = 0;
-        }
-      } else {
-        // Check for TPA which changes on a falling edge
-        if (clock_num == 1) {
-          pin[pTPA] = 1;
-        } else if (clock_num == 2) {
-          pin[pTPA] = 0;
-        }
-        clock_num += 1;
+    for (int i=0; i<outpins.length; i++) {
+      if (pin[outpins[i]] == 2) {
+        pin[outpins[i]] = 0;
       }
     }
+    if (rising_edge || falling_edge) {
+
+      if (rising_edge) {
+        // This is a rising clock edge
+        println ( "Rising Edge of clock " + clk );
+      } else if (falling_edge) {
+        // This is a falling clock edge
+        println ( "Falling Edge of clock " + clk );
+      }
+
+      // Set TPA and TPB as needed
+      if        ((clk%16) == 1) {
+        pin[pTPA] = 1;
+      } else if ((clk%16) == 3) {
+        pin[pTPA] = 0;
+      } else if ((clk%16) == 12) {
+        pin[pTPB] = 1;
+      } else if ((clk%16) == 14) {
+        pin[pTPB] = 0;
+      }
+      // Toggle SC0 as needed
+      if ((clk%16) == 15) {
+        pin[pSC0] = 1 - pin[pSC0];
+      }
+
+      // Print the state if debugging is enabled
+      println ( "TPA=" + pin[pTPA] + ", TPB=" + pin[pTPB] + ", SC0=" + pin[pSC0] );
+
+      // Advance the clock by half a cycle
+      clk = clk + 1;
+    }
+
+    // Output to the nXTAL pin (opposite of CLK)
     if (pin[pCLK] == 0) {
       pin[pnXTAL] = 1;
     } else {
