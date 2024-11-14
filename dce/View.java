@@ -186,6 +186,14 @@ public class View implements ActionListener,AdjustmentListener,WindowListener {
         System.out.println( "--- Logging Ended ---" );
       }
       }
+    else if (e.getActionCommand()=="Enable Debug") {
+      Globals.debug_enabled = ! Globals.debug_enabled;
+      if (Globals.debug_enabled) {
+        System.out.println ( "--- Debug Output Enabled ---" );
+      } else {
+        System.out.println ( "--- Debug Output Disabled ---" );
+      }
+      }
     else if (e.getActionCommand()=="BG Normal") {
       perfBoard.setBGColor(new Color(189,183,107));
       }
