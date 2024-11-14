@@ -1,0 +1,16 @@
+.NAME=1BitCPU
+.PINS=8
+CLK
+DATA
+Q
+VSS
+A0
+A1
+A2
+VDD
+This device is a simple CPU. It has 3 address lines and one
+data line. It understands two instructions REQ(0) and SEQ(1).
+The processor will set the Q output based on its instruction.
+The processor executes one instruction on the positive edge
+of the clock. There is no way to reset this processor other
+than to restart it.
