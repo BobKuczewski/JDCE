@@ -177,7 +177,7 @@ then when the display is blanked, it will not unblank.
 
 ## QUICK TUTORIAL
 
-In this tutorial we will build a few simple circuits.
+In this tutorial we will build a simple circuit.
 First we need to learn about pin numbers so that wires can be properly
 connected.  On all chips there is a small dot near pin 1.  When in the
 edit mode, this dot appears in the upper left corner of the chip because
