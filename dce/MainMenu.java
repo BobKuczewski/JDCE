@@ -155,6 +155,10 @@ public class MainMenu {
     m=new MenuItem("Log Probes");
     m.addActionListener(view);
     menu.add(m);
+    // Enable Debug Output
+    m=new MenuItem("Enable Debug");
+    m.addActionListener(view);
+    menu.add(m);
 
     menuBar.add(menu);
 

@@ -18,6 +18,9 @@ all:
 	    fi; \
 	  done
 
+apidocs:
+	mkdir -p api
+	find . -type f -name "*.java" | xargs javadoc -d api
 dist:
 	jar --create --verbose --file jdce.jar --main-class=dce.Main `find . -name "*.class" -print` `find . -name "*.txt" -print` `find . -name "*.doc" -print`
 	jar --create --verbose --file samples.jar `find . -name "*.ckt" -print` `find . -name "*.rom" -print` `find . -name "*.pld" -print`

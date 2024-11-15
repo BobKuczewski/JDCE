@@ -1,42 +1,46 @@
 package parts.experiment;
 import parts.*;
 
-//
-// This is a simple 1 bit processor with 2 instructions:
-//   0 = REQ: Reset the Q output
-//   1 = SEQ: Set the Q output
-//
-// This machine has 2 states: 0=Fetch, 1=Execute
-//
-// There are no branching instructions.
-// The 3 address lines just continually count (and wrap).
-//
-// The clock input is connected to a red LED.
-// Memory is a 2708 EPROM with 8 instructions.
-// The Q output of the processor is connected to a white LED.
-// The current program: is SEQ SEQ SEQ SEQ SEQ SEQ REQ REQ
-// Since there is only one bit needed, but the 2708 has 8,
-// all 8 output bits are programmed with the same value:
-//
-//    :0000 FF   ; SEQ
-//    :0001 FF   ; SEQ
-//    :0002 FF   ; SEQ
-//    :0003 FF   ; SEQ
-//    :0004 FF   ; SEQ
-//    :0005 FF   ; SEQ
-//    :0006 00   ; REQ
-//    :0007 00   ; REQ
-//
-// Pin Diagram of the processor:
-//
-//  Clock 1 -====- 8 Power
-//   Data 2 -====- 7 A2
-//      Q 3 -====- 6 A1
-// Ground 4 -====- 5 A0
-//
+/**
+* <pre>
+* This is a simple 1 bit processor with 2 instructions:
+*   0 = REQ: Reset the Q output
+*   1 = SEQ: Set the Q output
+*
+* This machine has 2 states: 0=Fetch, 1=Execute
+*
+* There are no branching instructions.
+* The 3 address lines just continually count (and wrap).
+*
+* Typical configuration:
+*
+*   The clock input is connected to a Clock and an LED.
+*   The Q output of the processor is connected to an LED.
+*   Memory is a 2708 EPROM with exactly 8 instructions.
+*   A typical program might be: REQ SEQ REQ SEQ SEQ REQ SEQ SEQ
+*   Since there is only one bit of instruction, but the 2708 has 8,
+*   all 8 output bits are typically programmed with the same value:
+*
+*    :0000 00   ; REQ
+*    :0001 FF   ; SEQ
+*    :0002 00   ; REQ
+*    :0003 FF   ; SEQ
+*    :0004 FF   ; SEQ
+*    :0005 00   ; REQ
+*    :0006 FF   ; SEQ
+*    :0007 FF   ; SEQ
+*
+* Pin Diagram of the processor:
+*
+*    Clock 1 -==-==- 8 Power
+*     Data 2 -=====- 7 A2
+*        Q 3 -=====- 6 A1
+*   Ground 4 -=====- 5 A0
+* </pre>
+*/
 
 public class C1BitCPU extends Ic {
-  // Define some constants to make it readable!
+  // Define some constants to make the code readable!
 
   static int CLK = 1;  // External Pin: Clock
   static int DAT = 2;  // External Pin: Data "Bus"
@@ -49,7 +53,23 @@ public class C1BitCPU extends Ic {
   static int SC  = 24;  // Internal: State Code
   static int LCK = 25;  // Internal: Last Clock (for edge trigger)
 
-  // Constructor - Runs when it is created
+  /**
+  * <pre>
+  * This method is called by JDCE to build this part.
+  *
+  * Create a 1 bit CPU of type "C1BitCPU" with 8 pins:
+  *
+  *   CLK 1 -====- 8 (pwr)
+  *   DAT 2 -====- 7 A2
+  *     Q 3 -====- 6 A1
+  * (gnd) 4 -====- 5 A0
+  *
+  * The processor will have access to each pin through
+  * through the superclass "pin" variable:
+  *
+  *   pin[CLK], pin[DAT], pin[Q], ...
+  * </pre>
+  */
   public C1BitCPU() {
     super();
     //// System.out.println ( "Top of constructor" );
@@ -64,16 +84,22 @@ public class C1BitCPU extends Ic {
     //// System.out.println ( "Done with constructor" );
   }
 
-  // Called by JDCE to find out how many pins this part has
+  /**
+  * <pre>
+  * This method is called by JDCE to find out how many pins this part has.
+  * </pre>
+  */
   public int numPins() {
     //// System.out.println ( "numPins called" );
     return 8;        // This is the actual number of pins
   }
 
-  // Called by JDCE to figure out which pins are outputs
+  /**
+  * This method is called by JDCE to figure out which pins are outputs.
+  * This method should return a 1 for output pins and 0 otherwise.
+  */
   public int pinOut(int pn) {
     //// System.out.println ( "pinOut called for pin " + pn );
-    // Report which pins are outputs
     if (pn==3 || pn==5 || pn==6 || pn==7) {
       return 1;
     } else {
@@ -81,7 +107,12 @@ public class C1BitCPU extends Ic {
     }
   }
 
-  // Called by JDCE during simulation (may be called many times!!)
+  /**
+  * This method is called by JDCE during simulation.
+  * <p/>
+  * Note that this method may be called many times during
+  * a single clock cycle.
+  */
   public int run() {
     //// System.out.println ( "run with SC = " + pin[SC] + ", PC = " + pin[PC] );
 

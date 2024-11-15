@@ -262,5 +262,6 @@ MENU CDP1800 Series {
   }
 MENU Experimental {
  ITEM parts.experiment.C1BitCPU   1BitCPU - Simple 1-bit instruction CPU
+ ITEM parts.experiment.CCDP1802BCex 1802Ex - Experimental 1802 CPU
 }
 ITEM parts.input.CPower     Power Supply
