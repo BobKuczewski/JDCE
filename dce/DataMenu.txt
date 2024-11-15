@@ -234,6 +234,6 @@ MENU PIC {
   ITEM /docs/parts/pic/12C5XX.txt       12C5XX  - PIC Microcontroller
   }
 MENU Experimental {
- ITEM /docs/parts/experiment/C1BitCPU.txt    1BitCPU - Simple 1-bit instruction CPU
+ ITEM /docs/parts/experimental/C1BitCPU.txt    1BitCPU - Simple 1-bit instruction CPU
  ITEM /docs/parts/cdp1800/CDP1802BC.txt    CCDP1802BCex - Experimental 1802 CPU
 }

@@ -75,7 +75,7 @@ public class View implements ActionListener,AdjustmentListener,WindowListener {
         Main.mode='C';
         perfBoard.setCursor(new Cursor(Cursor.HAND_CURSOR));
         } catch (ClassNotFoundException er) {
-          System.out.println("Class Not Found");
+          System.out.println("Class Not Found: " + e.getActionCommand());
         } catch (IllegalAccessException er) {
           System.out.println("Illegal Access");
         } catch (InstantiationException er) {

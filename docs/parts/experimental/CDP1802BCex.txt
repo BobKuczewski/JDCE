@@ -1,0 +1,98 @@
+.NAME=CDP1802BCex
+.PINS=40
+CLK
+wait
+clear
+Q
+SC1
+SC0
+mrd
+DB7
+DB6
+DB5
+DB4
+DB3
+DB2
+DB1
+DB0
+VCC
+N2
+N1
+N0
+VSS
+ef4
+ef3
+ef2
+ef1
+MA0
+MA1
+MA2
+MA3
+MA4
+MA5
+MA6
+MA7
+TPB
+TPA
+mwr
+int
+dmaout
+dmain
+xtal
+VDD
+This experimental device contains an 8-bit register oriented central processing
+unit. It currently only generates XTAL, TPA, TPB, and SC0. No instructions are
+supported at this time.
+
+/CLEAR  - CPU mode input.
+CLK     - Clock input.
+DBx     - Data bus.
+/DMAIN  - DMA input request.
+/DMAOUT - DMA output request.
+EF1-EF4 - External flag inputs.
+/INT    - Interrupt input.
+MAx     - Memory Address Bus.
+/MRD    - Memory Read Signal.
+/MWR    - Memory Write Signal.
+N0-N2   - I/O Port address lines.
+Q       - Output from Q flip-flop.
+SC1,SC0 - State code outputs.
+TPA     - Timing pulse A.  Occurs between falling edges of cycles 1 and 2.
+TPB     - Timing pulse B.  Occurs between rising edges of cycles 7 and 0.
+/WAIT   - CPU mode input.
+
+State Codes:
+State      SC1    SC0
+S0 Fetch    L      L
+S1 Exec     L      H
+S2 DMA      H      L
+S3 INT      H      H
+
+CPU Modes:
+Mode        /CLEAR  /WAIT
+LOAD           L      L
+RESET          L      H
+PAUSE          H      L
+RUN            H      H
+
+Special Registers:
+Register       Purpose
+R(0)           DMA in or out
+R(1)           Interrupt vector
+R(2)           X register during interrupt
+
+Registers:
+D   8-bits     Data Register
+DF  1-bit      Data Flag (Carry)
+R   16-bits    16 Scratchpad Registers
+P   4-bits     Specifies which R register is program counter
+X   4-bits     Specifies which R register is data pointer
+N   4-bits     Low order nybble of instruction
+T   8-bits     Holds X and P during interrupt. X is high nybble
+IE  1-bit      Interrupt Enable
+Q   1-bit      Output flip-flop
+
+Instruction Set:
+Opcode  Mnemonic  Instruction             Operation
+===========================================================================
+
