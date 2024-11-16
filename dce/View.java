@@ -98,6 +98,16 @@ public class View implements ActionListener,AdjustmentListener,WindowListener {
         window.setTitle("DCE: " + Globals.current_file_name);
         }
       }
+    else if ((e.getActionCommand()=="Reload")&&(Globals.current_file_name!=null)) {
+      board.loadFile(Globals.current_file_name);
+      perfBoard.update(perfBoard.getGraphics());
+      parts=board.getParts();
+      for (i=0;i<parts.size();i++) {
+        temp=(parts.Component)parts.elementAt(i);
+        if (temp instanceof CKeyboard)
+          perfBoard.addKeyListener((KeyListener)temp);
+        }
+      }
     else if (e.getActionCommand()=="Load") {
       fileDialog=new FileDialog(window,"Load File",FileDialog.LOAD);
       fileDialog.setVisible(true);
@@ -174,25 +184,25 @@ public class View implements ActionListener,AdjustmentListener,WindowListener {
     else if (e.getActionCommand()=="dark Yellow") {
       perfBoard.setWireColor(Globals.darkYellow);
       }
-    else if (e.getActionCommand()=="Log Probes") {
-      board.logProbes = ! board.logProbes;
+    else if (e.getActionCommand()=="Enable Logging") {
+      board.logProbes = true;
       if (board.logProbes) {
-        System.out.println( "--- Logging Started ---" );
         for (int p=0; p<board.probes.size(); p++) {
           System.out.print( ((Probe)board.probes.elementAt(p)).name + " " );
         }
         System.out.println();
-      } else {
-        System.out.println( "--- Logging Ended ---" );
       }
       }
-    else if (e.getActionCommand()=="Enable Debug") {
-      Globals.debug_enabled = ! Globals.debug_enabled;
-      if (Globals.debug_enabled) {
-        System.out.println ( "--- Debug Output Enabled ---" );
-      } else {
-        System.out.println ( "--- Debug Output Disabled ---" );
+    else if (e.getActionCommand()=="Disable Logging") {
+      board.logProbes = false;
       }
+    else if (e.getActionCommand()=="Start Debug") {
+      Globals.debug_enabled = true;
+      System.out.println ( "--- Debug Output Enabled ---" );
+      }
+    else if (e.getActionCommand()=="Stop Debug") {
+      Globals.debug_enabled = false;
+      System.out.println ( "--- Debug Output Disabled ---" );
       }
     else if (e.getActionCommand()=="BG Normal") {
       perfBoard.setBGColor(new Color(189,183,107));

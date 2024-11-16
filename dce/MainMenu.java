@@ -32,6 +32,9 @@ public class MainMenu {
     m=new MenuItem("Load");
     m.addActionListener(view);
     menu.add(m);
+    m=new MenuItem("Reload");
+    m.addActionListener(view);
+    menu.add(m);
     menu.addSeparator();
     m=new MenuItem("Save");
     m.addActionListener(view);
@@ -152,13 +155,24 @@ public class MainMenu {
     b.add(m);
     menu.add(b);
     // Log Probes
-    m=new MenuItem("Log Probes");
+    // Background submenu
+    b=new Menu("Probes");
+    m=new MenuItem("Enable Logging");
     m.addActionListener(view);
-    menu.add(m);
+    b.add(m);
+    m=new MenuItem("Disable Logging");
+    m.addActionListener(view);
+    b.add(m);
+    menu.add(b);
     // Enable Debug Output
-    m=new MenuItem("Enable Debug");
+    b=new Menu("Debug");
+    m=new MenuItem("Start Debug");
     m.addActionListener(view);
-    menu.add(m);
+    b.add(m);
+    m=new MenuItem("Stop Debug");
+    m.addActionListener(view);
+    b.add(m);
+    menu.add(b);
 
     menuBar.add(menu);
 
