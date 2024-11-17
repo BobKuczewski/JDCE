@@ -10,6 +10,8 @@ public class DataSheet implements ActionListener,WindowListener {
   Frame window;
   Pinout pinout;
   Button exitButton;
+  Button flipButton;
+  Button rotateButton;
   TextArea text;
   public DataSheet(String name) {
     int ret=0;
@@ -26,19 +28,38 @@ public class DataSheet implements ActionListener,WindowListener {
     text.setSize(570,450);
     text.setLocation(201,25);
     text.setVisible(true);
+
     exitButton=new Button("Close");
     exitButton.setSize(50,20);
     exitButton.setLocation(1,25);
     exitButton.setVisible(true);
     exitButton.addActionListener(this);
+
+    flipButton=new Button("Flip");
+    flipButton.setSize(50,20);
+    flipButton.setLocation(50,25);
+    flipButton.setVisible(true);
+    flipButton.addActionListener(this);
+
+    /*
+    rotateButton=new Button("Rotate");
+    rotateButton.setSize(50,20);
+    rotateButton.setLocation(100,25);
+    rotateButton.setVisible(true);
+    rotateButton.addActionListener(this);
+    */
+
     ret=readFile(name);
     window.add(text);
     window.add(exitButton);
+    window.add(flipButton);
+    // window.add(rotateButton);
     window.setVisible(true);
     if (ret==0) {
       window.dispose();
       }
     }
+
   public int readFile(String name) {
     MyBufferedInputStream file;
     StringBuffer   buffer=new StringBuffer();
@@ -97,6 +118,12 @@ public class DataSheet implements ActionListener,WindowListener {
     if ("Close".equals(e.getActionCommand())) {
       window.dispose();
       }
+    if ("Flip".equals(e.getActionCommand())) {
+      pinout.flip_diagram();
+      }
+    //if ("Rotate".equals(e.getActionCommand())) {
+    //  pinout.rotate_diagram();
+    //  }
     }
   public void windowActivated(WindowEvent e) {
     }

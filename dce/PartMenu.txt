@@ -249,6 +249,7 @@ MENU CD4000 Series {
    }
   }
 MENU CDP1800 Series {
+  ITEM parts.cdp1800.CCDP1802BC CDP1802BC - Microprocessor
   ITEM parts.cdp1800.CCDP1852  CDP1852 - 8-bit Input/Output port
   ITEM parts.cdp1800.CCDP1853  CDP1853 - 1 of 8 decoder, active-high
   ITEM parts.cdp1800.CCDP1857  CDP1857 - 4-bit bus driver/separator
