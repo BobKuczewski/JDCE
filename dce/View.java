@@ -66,47 +66,14 @@ public class View implements ActionListener,AdjustmentListener,WindowListener {
     FileDialog fileDialog;
     double st,et,cy;
     Vector parts;
-    if (e.getActionCommand().charAt(0)=='C') {
-      try {
-        Class c=Class.forName(e.getActionCommand().substring(1));
-        temp=(parts.Component)c.newInstance();
-        temp.init(window);
-        perfBoard.setDevice(temp);
-        Main.mode='C';
-        perfBoard.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        } catch (ClassNotFoundException er) {
-          System.out.println("Class Not Found: " + e.getActionCommand());
-        } catch (IllegalAccessException er) {
-          System.out.println("Illegal Access");
-        } catch (InstantiationException er) {
-          System.out.println("Instantiation");
-        }
-      }
-    else if (e.getActionCommand().charAt(0)=='D') {
-       DataSheet d=new DataSheet(e.getActionCommand().substring(1,
-         e.getActionCommand().length()));
-       }
-    else if ((e.getActionCommand()=="Save")&&(Globals.current_file_name!=null)) {
-      board.saveFile(Globals.current_file_name);
-      }
-    else if ((e.getActionCommand()=="Save As...")||(e.getActionCommand()=="Save")) {
-      fileDialog=new FileDialog(window,"Save File",FileDialog.SAVE);
-      fileDialog.setVisible(true);
-      if (fileDialog.getFile()!=null) {
-        Globals.current_file_name = fileDialog.getFile();
-        board.saveFile(Globals.current_file_name);
-        window.setTitle("DCE: " + Globals.current_file_name);
-        }
-      }
-    else if ((e.getActionCommand()=="Reload")&&(Globals.current_file_name!=null)) {
-      board.loadFile(Globals.current_file_name);
+
+    if (e.getActionCommand()=="New") {
+      keyListener=null;
+      Main.mode='E';
+      board.clear();
       perfBoard.update(perfBoard.getGraphics());
-      parts=board.getParts();
-      for (i=0;i<parts.size();i++) {
-        temp=(parts.Component)parts.elementAt(i);
-        if (temp instanceof CKeyboard)
-          perfBoard.addKeyListener((KeyListener)temp);
-        }
+      Globals.current_file_name = null;
+      window.setTitle("DCE");
       }
     else if (e.getActionCommand()=="Load") {
       fileDialog=new FileDialog(window,"Load File",FileDialog.LOAD);
@@ -124,17 +91,27 @@ public class View implements ActionListener,AdjustmentListener,WindowListener {
             perfBoard.addKeyListener((KeyListener)temp);
           }
       }
-    else if (e.getActionCommand()=="New") {
-      keyListener=null;
-      Main.mode='E';
-      board.clear();
+    else if ((e.getActionCommand()=="Reload")&&(Globals.current_file_name!=null)) {
+      board.loadFile(Globals.current_file_name);
       perfBoard.update(perfBoard.getGraphics());
-      Globals.current_file_name = null;
-      window.setTitle("DCE");
+      parts=board.getParts();
+      for (i=0;i<parts.size();i++) {
+        temp=(parts.Component)parts.elementAt(i);
+        if (temp instanceof CKeyboard)
+          perfBoard.addKeyListener((KeyListener)temp);
+        }
       }
-    else if (e.getActionCommand()=="Exit") {
-      window.setVisible(false);
-      System.exit(0);
+    else if ((e.getActionCommand()=="Save")&&(Globals.current_file_name!=null)) {
+      board.saveFile(Globals.current_file_name);
+      }
+    else if ((e.getActionCommand()=="Save As...")||(e.getActionCommand()=="Save")) {
+      fileDialog=new FileDialog(window,"Save File",FileDialog.SAVE);
+      fileDialog.setVisible(true);
+      if (fileDialog.getFile()!=null) {
+        Globals.current_file_name = fileDialog.getFile();
+        board.saveFile(Globals.current_file_name);
+        window.setTitle("DCE: " + Globals.current_file_name);
+        }
       }
     else if (e.getActionCommand()=="Black") {
       perfBoard.setWireColor(Color.black);
@@ -194,6 +171,7 @@ public class View implements ActionListener,AdjustmentListener,WindowListener {
       }
       }
     else if (e.getActionCommand()=="Disable Logging") {
+      System.out.println ( "--- Probe Logging Disabled ---" );
       board.logProbes = false;
       }
     else if (e.getActionCommand()=="Start Debug") {
@@ -325,6 +303,30 @@ public class View implements ActionListener,AdjustmentListener,WindowListener {
         Main.mode='L';
         }
       }
+    else if (e.getActionCommand()=="Exit") {
+      window.setVisible(false);
+      System.exit(0);
+      }
+    else if (e.getActionCommand().charAt(0)=='C') {
+      try {
+        Class c=Class.forName(e.getActionCommand().substring(1));
+        temp=(parts.Component)c.newInstance();
+        temp.init(window);
+        perfBoard.setDevice(temp);
+        Main.mode='C';
+        perfBoard.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        } catch (ClassNotFoundException er) {
+          System.out.println("Class Not Found: " + e.getActionCommand());
+        } catch (IllegalAccessException er) {
+          System.out.println("Illegal Access");
+        } catch (InstantiationException er) {
+          System.out.println("Instantiation");
+        }
+      }
+    else if (e.getActionCommand().charAt(0)=='D') {
+       DataSheet d=new DataSheet(e.getActionCommand().substring(1,
+         e.getActionCommand().length()));
+       }
     }
   public void windowActivated(WindowEvent e) {
     }
