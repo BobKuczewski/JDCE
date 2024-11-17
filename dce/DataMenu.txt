@@ -219,15 +219,16 @@ MENU CD4000 Series {
    }
   }
 MENU CDP1800 Series {
-  ITEM /docs/parts/cdp1800/CDP1852.txt  CDP1852 - 8-bit Input/Output port
-  ITEM /docs/parts/cdp1800/CDP1853.txt  CDP1853 - 1 of 8 decoder, active-high
-  ITEM /docs/parts/cdp1800/CDP1857.txt  CDP1857 - 4-bit bus driver/separator
-  ITEM /docs/parts/cdp1800/CDP1872.txt  CDP1872 - 8-bit Input Port
-  ITEM /docs/parts/cdp1800/CDP1874.txt  CDP1874 - 8-bit Input Port
-  ITEM /docs/parts/cdp1800/CDP1875.txt  CDP1875 - 8-bit Output Port
-  ITEM /docs/parts/cdp1800/CDP1881.txt  CDP1881 - 6-bit Memory Decoder
-  ITEM /docs/parts/cdp1800/CDP1882.txt  CDP1882 - 6-bit Memory Decoder
-  ITEM /docs/parts/cdp1800/CDP1883.txt  CDP1883 - 7-bit Memory Decoder
+  ITEM /docs/parts/cdp1800/CDP1802BC.txt CDP1802BC - Microprocessor
+  ITEM /docs/parts/cdp1800/CDP1852.txt   CDP1852 - 8-bit Input/Output port
+  ITEM /docs/parts/cdp1800/CDP1853.txt   CDP1853 - 1 of 8 decoder, active-high
+  ITEM /docs/parts/cdp1800/CDP1857.txt   CDP1857 - 4-bit bus driver/separator
+  ITEM /docs/parts/cdp1800/CDP1872.txt   CDP1872 - 8-bit Input Port
+  ITEM /docs/parts/cdp1800/CDP1874.txt   CDP1874 - 8-bit Input Port
+  ITEM /docs/parts/cdp1800/CDP1875.txt   CDP1875 - 8-bit Output Port
+  ITEM /docs/parts/cdp1800/CDP1881.txt   CDP1881 - 6-bit Memory Decoder
+  ITEM /docs/parts/cdp1800/CDP1882.txt   CDP1882 - 6-bit Memory Decoder
+  ITEM /docs/parts/cdp1800/CDP1883.txt   CDP1883 - 7-bit Memory Decoder
   }
 MENU PIC {
   ITEM /docs/parts/pic/24LC256.txt      24LC256 - 32Kx8 serial EEPROM

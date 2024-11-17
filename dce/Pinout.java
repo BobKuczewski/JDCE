@@ -7,6 +7,7 @@ public class Pinout extends Canvas {
   int numPins;
   Vector pinLabels;
   String name;
+  boolean flipped = false;
   public Pinout(String nm,int pins) {
     name=nm;
     setSize(200,400);
@@ -20,6 +21,14 @@ public class Pinout extends Canvas {
     }
   public void addLabel(String label) {
     pinLabels.addElement(label);
+    }
+  public void flip_diagram() {
+    flipped = !flipped;
+    // System.out.println ( "Flip Diagram = " + flipped );
+    repaint();
+    }
+  public void rotate_diagram() {
+    // System.out.println ( "Rotate Diagram (not implemented yet)" );
     }
   private void pintextxy(Graphics g,int x,int y,String txt) {
     char character;
@@ -74,21 +83,48 @@ public class Pinout extends Canvas {
     if (pins<13) diff=5; else diff=3;
     scale=15; diff=5;
     g.drawRect(x+70,y+scale,60,y+scale*(pins-1));
-    g.drawRect(x+95,y+scale,10,7);
+    if (flipped) {
+      g.fillOval(x+115,y+scale+4,8,8);
+    } else {
+      g.drawRect(x+95,y+scale,10,7);
+      g.fillOval(x+75,y+scale+4,8,8);
+    }
     for (i=1;i<=pins;i++) {
-      g.drawRect(x+60,y+scale*i+diff-1,10,8);
-      g.drawRect(x+130,y+scale*i+diff-1,10,8);
-      showNum(g,x+62,y+scale*i+diff+1,i);
-      showNum(g,x+132,y+scale*i+diff+1,(pins*2)-i+1);
+      if (flipped) {
+        g.drawRect(x+130,y+scale*i+diff-1,10,8);
+        g.drawRect(x+60,y+scale*i+diff-1,10,8);
+        showNum(g,x+132,y+scale*i+diff+1,i);
+        showNum(g,x+62,y+scale*i+diff+1,(pins*2)-i+1);
+      } else {
+        g.drawRect(x+60,y+scale*i+diff-1,10,8);
+        g.drawRect(x+130,y+scale*i+diff-1,10,8);
+        showNum(g,x+62,y+scale*i+diff+1,i);
+        showNum(g,x+132,y+scale*i+diff+1,(pins*2)-i+1);
+      }
       if (pinLabels.size()>=i) {
-        label=(String)pinLabels.elementAt(i-1);
+        if (flipped) {
+          label=(String)pinLabels.elementAt(pins*2-i);
+        } else {
+          label=(String)pinLabels.elementAt(i-1);
+        }
         pintextxy(g,x+59-8*label.length(),y+scale*i+diff,label);
         }
       if (pinLabels.size()>=(pins*2)-i) {
-        label=(String)pinLabels.elementAt(pins*2-i);
+        if (flipped) {
+          label=(String)pinLabels.elementAt(i-1);
+        } else {
+          label=(String)pinLabels.elementAt(pins*2-i);
+        }
         pintextxy(g,x+146,y+scale*i+diff,label);
         }
       }
     g.drawString(name,x+70,y+10);
+    if (flipped) {
+      g.drawString(name,x+70,y+10);
+      g.drawString("Bot",x+90,y+40);
+    } else {
+      g.drawString(name,x+70,y+10);
+      g.drawString("Top",x+88,y+40);
+    }
     }
   }
