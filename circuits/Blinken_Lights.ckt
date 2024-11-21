@@ -1,0 +1,84 @@
+11 37 11 8 8   ; NumParts, NumWires, NumNets, NumProbes, NumLabels
+
+; Parts List (package..class, LocationX, LocationY, [options]):  
+
+parts.cdp1800.CCDP1802BC 29 19  ; 1802 located at grid point (20,18)
+
+parts.input.CPower 21 21        ; Power for the circuit
+parts.input.CClock 32 14        ; Clock chip to drive the 1802
+parts.input.CBT_SPDT_I 25 15    ; Run switch
+
+parts.output.CLED_R 27 29       ; 4 Red LED for TPA
+parts.output.CLED_G 31 29       ; 5 Green LED for TPB
+parts.output.CLED_Y 35 29       ; 6 Yellow LED for SC0
+parts.output.CLED_B 39 29       ; 7 Blue LED for A2
+parts.output.CLED_W 43 29       ; 8 White LED for A1
+parts.output.CLED_R 47 29       ; 9 Red LED for A0
+parts.output.CLED_W 23 29       ; 10 White LED for CLK
+
+; Wires:   PartNum,PinNum, PartNum,PinNum, Color
+
+2 1 0 1 2     ; Clock chip to 1802 Pin 1 (CLK)
+1 1 0 16 9    ; Power to 1802 Pin 16 (VCC)
+1 1 0 2 9     ; Power to 1802 Pin  2 (/Wait)
+1 1 0 40 9    ; Power to 1802 Pin 40 (VDD)
+0 40 0 38 9   ; Power to /DMA In
+0 38 0 37 9   ; Power to /DMA Out
+0 37 0 36 9   ; Power to /INT
+1 2 0 20 1    ; Ground to 1802 Pin 20 (VSS)
+
+0 9 0 8 11    ; Power  to DB7 (for NOP)
+0 13 0 9 11   ; Power  to DB6 (for NOP)
+0 11 0 10 3   ; Ground to DB5 (for NOP)
+0 12 0 11 3   ; Ground to DB4 (for NOP)
+0 14 0 12 3   ; Ground to DB3 (for NOP)
+0 16 0 13 11  ; Power  to DB2 (for NOP)
+0 15 0 14 3   ; Ground to DB1 (for NOP)
+0 20 0 15 3   ; Ground to DB0 (for NOP)
+
+0 16 0 24 9   ; Power to /EF1
+0 24 0 23 9   ; Power to /EF2
+0 23 0 22 9   ; Power to /EF3
+0 22 0 21 9   ; Power to /EF4
+
+3 2 0 3 5     ; Switch(3) Pin2 (center) to 1802 Pin3 (/CLEAR)
+3 1 1 2 1     ; Switch(3) Pin1 to Ground(1,2)
+1 1 3 3 9     ; Switch(3) Pin3 to Power(1,1)
+
+1 2 10 1 1    ; Ground to LED
+10 1 4 1 1    ; Ground to LED
+4 1 5 1 1     ; Ground to LED
+5 1 6 1 1     ; Ground to LED
+6 1 7 1 1     ; Ground to LED
+7 1 8 1 1     ; Ground to LED
+8 1 9 1 1     ; Ground to LED
+
+0 1 10 2 11   ; CLK to LED
+0 34 4 2 11   ; TPA to LED
+0 33 5 2 11   ; TPB to LED
+0 6 6 2 11    ; SC0 to LED
+0 27 7 2 11   ; MA2 to LED
+0 26 8 2 11   ; MA1 to LED
+0 25 9 2 11   ; MA0 to LED
+
+; Probes:  PartNum, PinNum, DisplayName
+
+0 1 CLK
+0 34 TPA
+0 33 TPB
+0 6 SC0
+0 25 MA0
+0 26 MA1
+0 27 MA2
+0 3 /CLR
+
+; Labels:  LocationX, LocationY, Text
+
+26 32 TPA
+30 32 TPB
+34 32 SC0
+38 32 A2
+42 32 A1
+46 32 A0
+22 32 CLK
+24 19 Run
