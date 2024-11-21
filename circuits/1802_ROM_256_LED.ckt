@@ -1,10 +1,18 @@
-6 44 24 24 0
-parts.cdp1800.CCDP1802BC 20 18
-parts.rom.C2708 28 32 Blink_Q
-parts.input.CClock 25 12
-parts.input.CPower 14 28
-parts.S7400.C74ls91 15 12
-parts.output.CLED_R 23 29
+; Header Line:  NumParts, NumWires, NumNets, NumProbes, NumLabels
+
+6 44 24 24 2
+
+; Parts List:   Package.Class, LocationX, LocationY, optional parameters
+
+parts.cdp1800.CCDP1802BC 20 18  ; 1802 located at grid point (20,18)
+parts.rom.C2708 28 32 Blink_Q   ; This is a ROM from file "Blink_Q.rom"
+parts.input.CClock 25 12        ; Clock chip
+parts.input.CPower 14 28        ; Power for the circuit
+parts.S7400.C74ls91 15 12       ; Shift register to provide delayed reset
+parts.output.CLED_R 23 29       ; Q Output LED
+
+; Wires List:   PartNum,PinNum, PartNum,PinNum, Color
+
 1 17 0 8 2
 0 9 1 16 2
 1 15 0 10 2
@@ -20,7 +28,7 @@ parts.output.CLED_R 23 29
 0 29 1 4 5
 1 3 0 30 5
 0 31 1 2 5
-2 1 0 1 5
+2 1 0 1 5    ; 1802's Pin1 (CLK) from Clock's Pin1
 3 2 1 19 1
 1 19 1 22 1
 1 22 1 23 1
@@ -39,7 +47,7 @@ parts.output.CLED_R 23 29
 0 3 4 13 3
 4 5 4 11 9
 3 1 1 24 9
-0 4 5 2 11
+0 4 5 2 11   ; 1802's Pin4 (Q) to LED's Pin2
 5 1 3 2 1
 0 36 0 37 9
 0 37 0 38 9
@@ -49,6 +57,9 @@ parts.output.CLED_R 23 29
 0 24 0 23 9
 0 23 0 22 9
 0 22 0 21 9
+
+; Probes List:  PartNum, PinNum, DisplayName
+
 0 3 /CLR
 0 1 CLK
 0 34 TPA
@@ -73,3 +84,8 @@ parts.output.CLED_R 23 29
 0 14 D1
 0 15 D0
 0 4 Q
+
+; Labels List:  LocationX, LocationY, Text
+
+12 36 Simple 1802
+12 38 with 256 byte ROM

@@ -37,10 +37,32 @@ public class Board implements ActionListener {
     digiScope=l;
     }
   /**
+   * Return the next valid JDCE line ignoring comments and empty lines
+   */
+  public String readLine(BufferedReader file) throws IOException {
+    // System.out.println ( "Loading from \"" + file + "\"" );
+    String line;
+    int comment_start;
+    do {
+      line = file.readLine();
+      // System.out.println ( "  Line = \"" + line + "\"" );
+      if (line == null) {
+        throw ( new IOException() );
+      } else {
+        comment_start = line.indexOf(';');
+        if (comment_start >= 0) {
+          line = line.substring(0,comment_start);
+        }
+        line = line.trim();
+      }
+    } while ( line.length() <= 0 );
+    // System.out.println ( "Return \"" + line + "\"" );
+    return ( line );
+    }
+  /**
    * Clear all internal data
    * <p>
    * Clears the parts, wires, probes, and labels.
-   *
    */
   public void clear() {
     parts=null;
@@ -80,7 +102,7 @@ public class Board implements ActionListener {
       clear();
       file=new BufferedReader(new FileReader(fileName));
       buffer.setLength(0);
-      buffer.append(file.readLine());
+      buffer.append(this.readLine(file));
       buffer2.setLength(0);
       j=0;
       while (buffer.charAt(j)!=' ') buffer2.append(buffer.charAt(j++));
@@ -103,7 +125,7 @@ public class Board implements ActionListener {
       numLabels=(new Integer(buffer2.toString())).intValue();
       for (i=0;i<numParts;i++) {
         buffer.setLength(0);
-        buffer.append(file.readLine());
+        buffer.append(this.readLine(file));
         buffer2.setLength(0);
         j=0;
         while (buffer.charAt(j)!=' ') buffer2.append(buffer.charAt(j++));
@@ -117,7 +139,7 @@ public class Board implements ActionListener {
         }
       for (i=0;i<numWires;i++) {
         buffer.setLength(0);
-        buffer.append(file.readLine());
+        buffer.append(this.readLine(file));
         buffer2.setLength(0);
         j=0;
         while (buffer.charAt(j)!=' ') buffer2.append(buffer.charAt(j++));
@@ -146,7 +168,7 @@ public class Board implements ActionListener {
         }
       for (i=0;i<numProbes;i++) {
         buffer.setLength(0);
-        buffer.append(file.readLine());
+        buffer.append(this.readLine(file));
         buffer2.setLength(0);
         j=0;
         while (buffer.charAt(j)!=' ') buffer2.append(buffer.charAt(j++));
@@ -164,7 +186,7 @@ public class Board implements ActionListener {
         }
       for (i=0;i<numLabels;i++) {
         buffer.setLength(0);
-        buffer.append(file.readLine());
+        buffer.append(this.readLine(file));
         j=0;
         buffer2.setLength(0);
         while (buffer.charAt(j)!=' ') buffer2.append(buffer.charAt(j++));
@@ -184,6 +206,7 @@ public class Board implements ActionListener {
       file.close();
       } catch (IOException er) {
           System.out.println(er.toString());
+          System.out.println("Check format of file: \"" + fileName + "\"");
       } catch (ClassNotFoundException er) {
           System.out.println(er.toString());
       } catch (IllegalAccessException er) {
